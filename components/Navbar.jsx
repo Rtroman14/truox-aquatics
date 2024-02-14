@@ -19,25 +19,17 @@ import { Separator } from "@/components/ui/separator";
 import Logo from "./Logo";
 
 const links = [
-    // {
-    //     title: "Affiliates",
-    //     href: "#",
-    // },
     {
-        title: "Features",
-        href: "#features",
+        title: "RWI",
+        href: "/recreational-water-illness",
     },
     {
-        title: "Demo",
-        href: "#demo",
+        title: "Remediation",
+        href: "/remediation",
     },
     {
-        title: "How It Works",
-        href: "#how-it-works",
-    },
-    {
-        title: "Pricing",
-        href: "#pricing",
+        title: "Water/Air Quality",
+        href: "/water-and-air-quality",
     },
 ];
 
@@ -128,8 +120,8 @@ export default function Navbar({ customer }) {
                             {links.map((link) => (
                                 <li key={link.title}>
                                     <Link
-                                        href={`/${link.href}`}
-                                        className="focus-visible:shadow-outline-indigo flex rounded-full py-2 text-sm text-gray-200 antialiased transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 lg:px-3">
+                                        href={link.href}
+                                        className="focus-visible:shadow-outline-indigo flex rounded-full py-2 text-sm text-gray-100 antialiased transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 lg:px-3">
                                         {link.title}
                                     </Link>
                                 </li>
@@ -155,10 +147,7 @@ export default function Navbar({ customer }) {
                     </nav>
                     <div>
                         <div className="hidden items-center gap-4 lg:flex">
-                            <Button
-                                asChild
-                                size="sm"
-                                className="px-4 bg-white hover:bg-white/90 text-black">
+                            <Button asChild size="sm" className="px-4 ">
                                 <Link href="#" className="group ">
                                     Book Meeting
                                     <svg

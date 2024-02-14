@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Banner({ title, description }) {
     return (
         <section className="container">
-            <div className="relative flex flex-col items-center overflow-hidden rounded-3xl bg-home-primary p-8 text-center md:px-20 md:py-20">
+            <div className="relative flex flex-col items-center overflow-hidden rounded-3xl bg-primary p-8 text-center md:px-20 md:py-20">
                 <svg
                     className="absolute bottom-0 left-1/2 z-0 w-[60vw] -translate-x-1/2 translate-y-1/2 blur-[64px]"
                     viewBox="153.612 180.152 176.49 33.212"
@@ -12,7 +12,7 @@ export default function Banner({ title, description }) {
                     <ellipse
                         style={{
                             stroke: "rgba(112, 103, 255, 0.3)",
-                            fill: "rgba(112, 103, 255, 0.3)",
+                            fill: "rgba(255, 255, 255, 0.3)",
                             strokeWidth: "0px",
                         }}
                         cx="241.857"

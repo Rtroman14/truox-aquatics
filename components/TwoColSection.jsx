@@ -23,10 +23,7 @@ export default function TwoColSection({
                     <p className="mt-3 text-slate-600 [text-wrap:balance]">{description}</p>
 
                     <div className="mt-6 flex items-center gap-4">
-                        <Button
-                            asChild
-                            size="lg"
-                            className="bg-black text-sm text-white hover:!bg-black/90 sm:text-base">
+                        <Button asChild size="lg" className="text-sm sm:text-base">
                             <Link href={learnMoreHref}>Learn More</Link>
                         </Button>
                     </div>
@@ -56,10 +53,7 @@ export default function TwoColSection({
                     <p className="mt-3 text-slate-600 [text-wrap:balance]">{description}</p>
 
                     <div className="mt-6 flex items-center gap-4">
-                        <Button
-                            asChild
-                            size="lg"
-                            className="bg-black text-sm text-white hover:!bg-black/90 sm:text-base">
+                        <Button asChild size="lg" className="text-sm sm:text-base">
                             <Link href={learnMoreHref}>Learn More</Link>
                         </Button>
                     </div>
