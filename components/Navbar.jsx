@@ -28,7 +28,7 @@ const links = [
         href: "/remediation",
     },
     {
-        title: "Water/Air Quality",
+        title: "Wate & Air Quality",
         href: "/water-and-air-quality",
     },
 ];
@@ -54,13 +54,21 @@ export default function Navbar({ customer }) {
     }, []);
 
     let headerStyles = "fixed top-0 z-50 w-full border-b border-transparent transition-all";
+    let linkStyles =
+        "focus-visible:shadow-outline-indigo flex rounded-full py-1 text-sm antialiased transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 lg:px-3";
     if (pathname !== "/") {
-        headerStyles = `${headerStyles} border-b-slate-700 bg-[#111827]/90 py-3 backdrop-blur-sm`;
+        // headerStyles = `${headerStyles} border-b-slate-700 bg-[#111827]/90 py-3 backdrop-blur-sm`;
+        headerStyles = `${headerStyles} bg-white/90 py-3 backdrop-blur-sm shadow`;
+
+        linkStyles = `${linkStyles} text-slate-900`;
     } else {
         if (isScrolledTop) {
             headerStyles = `${headerStyles} bg-transparent py-5`;
+            linkStyles = `${linkStyles} text-slate-100`;
         } else {
-            headerStyles = `${headerStyles} border-b-slate-700 bg-[#111827]/90 py-3 backdrop-blur-sm`;
+            headerStyles = `${headerStyles} bg-white/90 py-3 backdrop-blur-sm shadow`;
+            linkStyles = `${linkStyles} text-slate-900`;
+            // headerStyles = `${headerStyles} border-b-slate-700 bg-[#111827]/90 py-3 backdrop-blur-sm`;
         }
     }
 
@@ -121,7 +129,8 @@ export default function Navbar({ customer }) {
                                 <li key={link.title}>
                                     <Link
                                         href={link.href}
-                                        className="focus-visible:shadow-outline-indigo flex rounded-full py-2 text-sm text-gray-100 antialiased transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 lg:px-3">
+                                        // className="focus-visible:shadow-outline-indigo flex rounded-full py-2 text-sm text-black antialiased transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 lg:px-3">
+                                        className={linkStyles}>
                                         {link.title}
                                     </Link>
                                 </li>

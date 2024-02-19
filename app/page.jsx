@@ -1,5 +1,7 @@
 // import Hero from "@/components/Hero.dark";
-import HeroLight from "@/components/Hero.light";
+// import HeroLight from "@/components/Hero.light";
+// import Hero from "@/components/Hero.light copy";
+import Hero from "@/components/Hero.water.drop";
 import TwoColSection from "@/components/TwoColSection";
 import Banner from "@/components/Banner";
 import MitigationSection from "@/components/MitigationSection";
@@ -9,7 +11,7 @@ export default async function Home() {
         <>
             {/* <Hero /> */}
 
-            <HeroLight />
+            <Hero />
 
             <section className="grid gap-24 py-20 sm:gap-36 sm:py-36">
                 <TwoColSection
