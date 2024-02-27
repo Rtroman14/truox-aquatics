@@ -63,6 +63,8 @@ export default function SignUpForm() {
         } catch (error) {
             console.error(error);
 
+            form.setError("password", { message: error.message });
+
             return {
                 success: error,
                 message: error.message,
