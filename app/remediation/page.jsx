@@ -121,7 +121,7 @@ export default function Remediation() {
 
             <section className="container">
                 <h2 className="text-4xl text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
-                    Mitigating Liability
+                    Cryptolyte® Integrated System
                 </h2>
 
                 <div>
@@ -138,10 +138,10 @@ export default function Remediation() {
                     {integratedSystems.map((el) => (
                         <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
                             <div className="flex items-center gap-2 [text-wrap:balance]">
-                                {el.icon}
+                                <div>{el.icon}</div>
                                 <h3 className="text-xl">{el.title}</h3>
                             </div>
-                            <p className="text-slate-600 [text-wrap:balance]">{el.description}</p>
+                            <p className="text-slate-600">{el.description}</p>
                         </div>
                     ))}
                 </div>

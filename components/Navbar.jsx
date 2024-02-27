@@ -31,6 +31,14 @@ const links = [
         title: "Wate & Air Quality",
         href: "/water-and-air-quality",
     },
+    {
+        title: "Training Videos",
+        href: "/training-videos",
+    },
+    {
+        title: "CDC Links",
+        href: "/cdc-links",
+    },
 ];
 
 export default function Navbar({ customer }) {
