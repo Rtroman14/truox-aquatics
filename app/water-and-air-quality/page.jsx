@@ -116,7 +116,7 @@ export default function WaterAndAirQuality() {
                 </h2>
 
                 <div className="flex flex-col justify-center py-12">
-                    <div className="grid grid-cols-2 gap-8 w-3/4 mx-auto">
+                    <div className="grid sm:grid-cols-2 gap-8 sm:w-3/4 mx-auto">
                         <div className="space-y-2">
                             <picture className="drop-shadow-xl">
                                 <Image
@@ -145,7 +145,7 @@ export default function WaterAndAirQuality() {
                     </div>
                 </div>
 
-                <div className="w-1/2 mx-auto">
+                <div className="sm:w-1/2 mx-auto">
                     <picture className="drop-shadow-xl">
                         <Image
                             className="rounded-xl"
@@ -221,7 +221,7 @@ export default function WaterAndAirQuality() {
                     <Carousel>
                         <CarouselContent>
                             {breatheEzCharts.map(({ title, src }, index) => (
-                                <CarouselItem key={index} className="basis-1/2">
+                                <CarouselItem key={index} className="md:basis-1/2">
                                     <div>
                                         <h4 className="text-2xl font-semibold leading-none tracking-tight w-full text-center">
                                             {title}
