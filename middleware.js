@@ -1,75 +1,36 @@
-import { createServerClient } from "@supabase/ssr";
 import { NextResponse } from "next/server";
+import { updateSession } from "@/lib/supabase/middleware";
+
+const protectedRoutes = ["/training-videos"];
 
 export const config = {
-    matcher: ["/training-videos/:path*", "/training-videos"],
+    matcher: [
+        // "/chatbots/:path*",
+        // "/chatbots",
+        // "/settings",
+        "/((?!_next/static|_next/image|_next/data|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+        // "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    ],
 };
 
 export async function middleware(req) {
     const requestHeaders = new Headers(req.headers);
 
-    let response = NextResponse.next({
-        request: {
-            headers: req.headers,
-        },
-    });
-
-    const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-        {
-            cookies: {
-                get(name) {
-                    return req.cookies.get(name)?.value;
-                },
-                set(name, value, options) {
-                    req.cookies.set({
-                        name,
-                        value,
-                        ...options,
-                    });
-                    response = NextResponse.next({
-                        request: {
-                            headers: req.headers,
-                        },
-                    });
-                    response.cookies.set({
-                        name,
-                        value,
-                        ...options,
-                    });
-                },
-                remove(name, options) {
-                    req.cookies.set({
-                        name,
-                        value: "",
-                        ...options,
-                    });
-                    response = NextResponse.next({
-                        request: {
-                            headers: req.headers,
-                        },
-                    });
-                    response.cookies.set({
-                        name,
-                        value: "",
-                        ...options,
-                    });
-                },
-            },
-        }
-    );
-
     const {
         data: { user },
-    } = await supabase.auth.getUser();
+    } = await updateSession(req);
 
-    if (!user) {
-        if (req.nextUrl.pathname === "/") {
-            return NextResponse.next();
+    const trainingVideoRoute = new RegExp(protectedRoutes[0]);
+
+    // * check if route is protected
+    if (trainingVideoRoute.test(req.nextUrl.pathname)) {
+        if (!user) {
+            if (req.nextUrl.pathname === "/") {
+                return NextResponse.next();
+            }
+
+            return NextResponse.redirect(new URL("/login", req.url));
         }
-
-        return NextResponse.redirect(new URL("/login", req.url));
     }
 
     return NextResponse.next({

@@ -1,9 +1,256 @@
+import Image from "next/image";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import Banner from "@/components/Banner";
+
+const breatheEzCharts = [
+    {
+        title: "Chloroform",
+        src: "/images/chloroform.png",
+    },
+    {
+        title: "Cyanogen Chloride",
+        src: "/images/cyanogen-chloride.png",
+    },
+    {
+        title: "Trichloramine",
+        src: "/images/trichloramine.png",
+    },
+    {
+        title: "Urea",
+        src: "/images/urea.png",
+    },
+];
+
 export default function WaterAndAirQuality() {
     return (
-        <div>
-            <div>
-                <h1>Indoor Water & Air Quality</h1>
-            </div>
-        </div>
+        <>
+            <section className="relative grid mt-[62px]">
+                <Image
+                    className="absolute"
+                    src="/images/water-splash.png"
+                    alt="Water drop hitting water"
+                    fill
+                    sizes="100vw"
+                    style={{
+                        objectFit: "cover",
+                    }}
+                />
+                <div className="absolute h-full w-full backdrop-blur-sm"></div>
+
+                <h1 className="z-10 text-center m-44 text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-7xl">
+                    <span className="bg-gradient-to-b from-slate-600 to-slate-950 bg-clip-text text-transparent">
+                        Indoor Water And Air Quality
+                    </span>
+                </h1>
+            </section>
+
+            <section className="pt-20 sm:pt-28 container">
+                <div className="grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
+                    <div className="col-span-6 place-items-center justify-self-center md:justify-self-start">
+                        <div className="max-w-lg">
+                            <h2 className="text-4xl mb-6 font-semibold leading-none md:tracking-tight lg:text-[53px]">
+                                Formation of DBPs
+                            </h2>
+                            <p className="mt-3 text-slate-600">
+                                Chlorine is a very effective disinfectant for the treatment of
+                                recreational water. However when chlorine reacts with organic based
+                                contaminants added to the pool water by swimmers (e.g. urea, enzymes
+                                in saliva etc.), undesirable reactions occur resulting in the
+                                formation of volatile chlorinated disinfection byproducts (DBP).
+                            </p>
+                            <ul className="mt-6 grid gap-y-3 text-left">
+                                {[
+                                    "Respiratory discomfort",
+                                    "Irritation of the sinus, nose and eyes",
+                                    "Corrosion of equipment",
+                                    "Increased energy cost associated with excess outside air exchange",
+                                ].map((el) => (
+                                    <li
+                                        key={el}
+                                        className="flex items-center gap-3 text-neutral-800">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            className="w-5 h-5 text-red-600">
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                                            />
+                                        </svg>
+
+                                        <span className="text-sm">{el}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="col-span-6 grid place-items-center">
+                        <picture className="drop-shadow-xl">
+                            <Image
+                                className="rounded-xl"
+                                src="/images/chlorine.png"
+                                alt=""
+                                width={900}
+                                height={900}
+                            />
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-20 sm:pt-28 container">
+                <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                    Cost of DBPs
+                </h2>
+
+                <div className="flex flex-col justify-center py-12">
+                    <div className="grid grid-cols-2 gap-8 w-3/4 mx-auto">
+                        <div className="space-y-2">
+                            <picture className="drop-shadow-xl">
+                                <Image
+                                    className="rounded-xl"
+                                    src="/images/correded-dehumidifier.png"
+                                    alt="before-cryptolyte"
+                                    width={900}
+                                    height={900}
+                                />
+                            </picture>
+                            <p className="text-center">Corroded Dehumidifier</p>
+                        </div>
+                        <div className="space-y-2">
+                            <picture className="drop-shadow-xl">
+                                <Image
+                                    className="rounded-xl"
+                                    src="/images/correded-air-handler.png"
+                                    alt="after-cryptolyte"
+                                    width={900}
+                                    height={900}
+                                />
+                            </picture>
+
+                            <p className="text-center">Corroded Air Handler</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="w-1/2 mx-auto">
+                    <picture className="drop-shadow-xl">
+                        <Image
+                            className="rounded-xl"
+                            src="/images/chloramine-induced-heating-costs.png"
+                            alt="after-cryptolyte"
+                            width={900}
+                            height={900}
+                        />
+                    </picture>
+                </div>
+            </section>
+
+            <Banner
+                title="Lets Have A Conversation"
+                description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+            />
+
+            <section className="pt-20 sm:pt-20 container">
+                <h2 className="text-4xl mb-14 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                    Mitigating DBPs
+                </h2>
+
+                <div className="grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
+                    <div className="col-span-6 place-items-center justify-self-center md:justify-self-start">
+                        <div className="max-w-lg">
+                            <h3 className="text-4xl mb-6 font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[38px]">
+                                Breathe EZ's Immediate Impact
+                            </h3>
+                            <p className="mt-3 text-slate-600 [text-wrap:balance]">
+                                The graph illustrates the before and after effect of Breathe EZ on
+                                trichloramine concentration. NOTE on 1/31 at 7am the still elevated
+                                trichloramine concentration from the prior days. After addition of
+                                the Breathe EZ treatment, by 11am of the SAME DAY, the trichloramine
+                                concentration was virtually eliminated. In fact comparing
+                                trichloramine concentration at the same time of day (i.e. likely
+                                same bather loading) the 1/31 at 11am concentration is 10x lower
+                                than the 1/30 at 11am measurements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="col-span-6 grid place-items-center">
+                        <picture className="drop-shadow-xl">
+                            <Image
+                                className="rounded-xl"
+                                src="/images/university-study-trichloramine.png"
+                                alt=""
+                                width={900}
+                                height={900}
+                            />
+                        </picture>
+                    </div>
+                </div>
+
+                <div className="w-10/12 my-24 mx-auto">
+                    <div className="mb-12">
+                        <h3 className="text-4xl mb-2 font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[38px] text-center">
+                            Data Before & After Breath EZ
+                        </h3>
+
+                        <div className="flex justify-center gap-8">
+                            <div className="flex items-center gap-2">
+                                <div className="rounded h-4 w-4 bg-[#A6CBE2]"></div>
+                                <span>Before Filter</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="rounded h-4 w-4 bg-[#0287F9]"></div>
+                                <span>After Filter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Carousel>
+                        <CarouselContent>
+                            {breatheEzCharts.map(({ title, src }, index) => (
+                                <CarouselItem key={index} className="basis-1/2">
+                                    <div>
+                                        <h4 className="text-2xl font-semibold leading-none tracking-tight w-full text-center">
+                                            {title}
+                                        </h4>
+                                        <div className="flex items-center justify-center p-4">
+                                            <picture className="drop-shadow-xl">
+                                                <Image
+                                                    className="rounded-xl"
+                                                    src={src}
+                                                    alt=""
+                                                    width={900}
+                                                    height={900}
+                                                />
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+
+                    <p className="mt-3 text-slate-600 [text-wrap:balance] text-center">
+                        Other DBP and precursors (i.e. Urea) the following days (right of RED line)
+                        after implementation of Breath EZ.
+                    </p>
+                </div>
+            </section>
+        </>
     );
 }

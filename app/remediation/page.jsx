@@ -1,48 +1,50 @@
 import Image from "next/image";
 import { CheckBadgeIcon, DocumentCheckIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 
+import Banner from "@/components/Banner";
+
 const integratedSystems = [
     {
         icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
         title: "Kills >99.9% Cryptosporidium in <30 minutes",
         description:
-            "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            "Cryptolyte® swiftly eradicates over 99.9% of cryptosporidium, ensuring a rapid return to safe and enjoyable pool use within 30 minutes.",
     },
     {
         icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
         title: "Penetrates, Removes & Prevents Biofilms",
         description:
-            "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            "Our advanced Cryptolyte® treatment digs deep to eliminate biofilms, cleanses surfaces thoroughly, and offers a protective barrier to prevent future growth and proliferation.",
     },
     {
         icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
         title: "Controls, Confirms & Documents Remediation",
         description:
-            "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            "Cryptolyte® offers daily evening, continuous 24/7, and fecal incident remediation with pinpoint accuracy, backed by comprehensive documentation.",
     },
     {
         icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
         title: "Certified ANSI/NSF 50 for use in Swimming Pools",
         description:
-            "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            "With Cryptolyte® receiving ANSI/NSF 50 certification, it’s officially recognized for maintaining clean, safe water in swimming pools, upholding the industry's top safety standards.",
     },
     {
         icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
         title: "Certified ANSI/NSF 60 for use in Drinking Water",
         description:
-            "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            "Cryptolyte® also boasts ANSI/NSF 60 certification, providing assurance that your drinking water is treated with a proven, secure solution.",
     },
     {
         icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
         title: "Superior Indoor Water & Air Quality",
         description:
-            "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            "By targeting and reducing waterborne contaminants, Cryptolyte® significantly improves water transparency and enhances the quality of indoor air for a healthier swimming experience.",
     },
 ];
 
 export default function Remediation() {
     return (
-        <div className="mt-[62px]">
+        <div className="mt-[78px]">
             <div className="relative grid">
                 <Image
                     className="absolute"
@@ -63,8 +65,8 @@ export default function Remediation() {
                 </h1>
             </div>
 
-            <section className="py-20 sm:py-36 container">
-                <h2 className="text-4xl text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+            <section className="py-20 sm:py-28 container">
+                <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                     Cryptolyte® Chemical Treatment
                 </h2>
 
@@ -119,8 +121,13 @@ export default function Remediation() {
                 </div>
             </section>
 
-            <section className="container">
-                <h2 className="text-4xl text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+            <Banner
+                title="Lets Have A Conversation"
+                description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+            />
+
+            <section className="container py-20 sm:py-28">
+                <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                     Cryptolyte® Integrated System
                 </h2>
 
@@ -137,7 +144,7 @@ export default function Remediation() {
                 <div className="grid grid-cols-3 justify-center mt-20 gap-4 gap-y-10">
                     {integratedSystems.map((el) => (
                         <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
-                            <div className="flex items-center gap-2 [text-wrap:balance]">
+                            <div className="flex items-center gap-2">
                                 <div>{el.icon}</div>
                                 <h3 className="text-xl">{el.title}</h3>
                             </div>

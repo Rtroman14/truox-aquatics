@@ -1,10 +1,9 @@
 import Image from "next/image";
-import TwoColSection from "@/components/TwoColSection";
 
 export default function RecreationalWaterIllness() {
     return (
-        <div className="mt-[62px]">
-            <div className="relative grid">
+        <>
+            <section className="relative grid mt-[62px]">
                 <Image
                     className="absolute"
                     src="/images/water-splash.png"
@@ -22,7 +21,7 @@ export default function RecreationalWaterIllness() {
                         Recreational Water Illness (RWI)
                     </span>
                 </h1>
-            </div>
+            </section>
 
             <section className="grid gap-24 bg-background py-20 sm:gap-36 sm:py-36 ">
                 <div className="container grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
@@ -125,6 +124,6 @@ export default function RecreationalWaterIllness() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
 }

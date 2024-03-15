@@ -25,8 +25,8 @@ export default function MitigationSection() {
                         <h3 className="text-xl">EPA Approved</h3>
                     </div>
                     <p className="text-slate-600 [text-wrap:balance]">
-                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+                        We adhere to EPA standards, ensuring our water treatments meet legal and
+                        safety requirements, safeguarding both public health and your business.
                     </p>
                 </div>
                 <div className="grid gap-3">
@@ -35,8 +35,8 @@ export default function MitigationSection() {
                         <h3 className="text-xl">Remediation Management</h3>
                     </div>
                     <p className="text-slate-600 [text-wrap:balance]">
-                        Controls, Confirms & Documents Remediation, quis nostrum exercitationem
-                        ullam corporis suscipit laboriosam, nisi ut aliquid ex consequatur.
+                        Our management system quickly targets and corrects water quality issues,
+                        providing reliable and comprehensive remediation services.
                     </p>
                 </div>
                 <div className="grid gap-3">
@@ -45,8 +45,8 @@ export default function MitigationSection() {
                         <h3 className="text-xl">Water Safety Assurance</h3>
                     </div>
                     <p className="text-slate-600 [text-wrap:balance]">
-                        Guarantees the supply of safe water for owners and management. Assures
-                        customers of water quality and safety. nisi ut aliquid ex consequatur.
+                        Our stringent testing and safety measures ensure superior water conditions,
+                        minimizing risk and enhancing user confidence.
                     </p>
                 </div>
             </div>
