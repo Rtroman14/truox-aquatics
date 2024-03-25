@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CheckBadgeIcon, DocumentCheckIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
+import PageHero from "@/components/PageHero";
 
 import Banner from "@/components/Banner";
 
@@ -45,25 +46,7 @@ const integratedSystems = [
 export default function Remediation() {
     return (
         <div className="mt-[78px]">
-            <div className="relative grid">
-                <Image
-                    className="absolute"
-                    src="/images/water-splash.png"
-                    alt="Water drop hitting water"
-                    fill
-                    sizes="100vw"
-                    style={{
-                        objectFit: "cover",
-                    }}
-                />
-                <div className="absolute h-full w-full backdrop-blur-sm"></div>
-
-                <h1 className="z-10 text-center m-44 text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-7xl">
-                    <span className="bg-gradient-to-b from-slate-600 to-slate-950 bg-clip-text text-transparent">
-                        Remediation
-                    </span>
-                </h1>
-            </div>
+            <PageHero title="Remediation" />
 
             <section className="py-20 sm:py-28 container">
                 <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">

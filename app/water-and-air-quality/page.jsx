@@ -6,6 +6,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+import PageHero from "@/components/PageHero";
 
 import Banner from "@/components/Banner";
 
@@ -30,26 +31,8 @@ const breatheEzCharts = [
 
 export default function WaterAndAirQuality() {
     return (
-        <>
-            <section className="relative grid mt-[62px]">
-                <Image
-                    className="absolute"
-                    src="/images/water-splash.png"
-                    alt="Water drop hitting water"
-                    fill
-                    sizes="100vw"
-                    style={{
-                        objectFit: "cover",
-                    }}
-                />
-                <div className="absolute h-full w-full backdrop-blur-sm"></div>
-
-                <h1 className="z-10 text-center m-44 text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-7xl">
-                    <span className="bg-gradient-to-b from-slate-600 to-slate-950 bg-clip-text text-transparent">
-                        Indoor Water And Air Quality
-                    </span>
-                </h1>
-            </section>
+        <div className="mt-[78px]">
+            <PageHero title="Water and Air Quality" />
 
             <section className="pt-20 sm:pt-28 container">
                 <div className="grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
@@ -251,6 +234,6 @@ export default function WaterAndAirQuality() {
                     </p>
                 </div>
             </section>
-        </>
+        </div>
     );
 }

@@ -64,6 +64,7 @@ export default function Navbar({ customer }) {
     let headerStyles = "fixed top-0 z-50 w-full border-b border-transparent transition-all";
     let linkStyles =
         "focus-visible:shadow-outline-indigo flex rounded-full py-1 text-sm antialiased transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 lg:px-3";
+
     if (pathname !== "/") {
         // headerStyles = `${headerStyles} border-b-slate-700 bg-[#111827]/90 py-3 backdrop-blur-sm`;
         headerStyles = `${headerStyles} bg-white/90 py-3 backdrop-blur-sm shadow`;

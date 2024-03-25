@@ -1,27 +1,10 @@
 import Image from "next/image";
+import PageHero from "@/components/PageHero";
 
 export default function RecreationalWaterIllness() {
     return (
-        <>
-            <section className="relative grid mt-[62px]">
-                <Image
-                    className="absolute"
-                    src="/images/water-splash.png"
-                    alt="Water drop hitting water"
-                    fill
-                    sizes="100vw"
-                    style={{
-                        objectFit: "cover",
-                    }}
-                />
-                <div className="absolute h-full w-full backdrop-blur-sm"></div>
-
-                <h1 className="z-10 text-center m-44 text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-7xl">
-                    <span className="bg-gradient-to-b from-slate-600 to-slate-950 bg-clip-text text-transparent">
-                        Recreational Water Illness (RWI)
-                    </span>
-                </h1>
-            </section>
+        <div className="mt-[78px]">
+            <PageHero title="Recreational Water Illness" />
 
             <section className="grid gap-24 bg-background py-20 sm:gap-36 sm:py-36 ">
                 <div className="container grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
@@ -124,6 +107,6 @@ export default function RecreationalWaterIllness() {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 }
