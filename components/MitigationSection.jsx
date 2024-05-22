@@ -8,7 +8,7 @@ export default function MitigationSection() {
             </h2>
 
             <div>
-                <p className="mt-3 text-slate-600 [text-wrap:balance] text-center">
+                <p className="mt-3 text-slate-600 [text-wrap:balance] text-center italic">
                     “Pool Water remediation, confirmation and documentation give our customers the
                     proof they need to defuse accusations in a climate where even a negative review
                     can go viral online and damage a business’s reputation.”

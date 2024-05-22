@@ -1,3 +1,4 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={inter.className}>
                 <Navbar />
-                <main>{children}</main>
+                <main>
+                    <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+                </main>
                 <Footer />
             </body>
         </html>

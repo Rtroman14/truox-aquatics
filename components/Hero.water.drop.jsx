@@ -43,7 +43,8 @@ export default function HeroLight() {
                         <Button
                             asChild
                             size="lg"
-                            className="bg-white text-sm text-black hover:!bg-white/90 sm:text-base">
+                            className="bg-white text-sm text-black hover:!bg-white/90 sm:text-base"
+                        >
                             <Link href="/signup">Book Meeting</Link>
                         </Button>
                     </div>
