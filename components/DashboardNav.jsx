@@ -28,8 +28,13 @@ const tabs = [
         icon: <SparklesIcon className="mr-2 h-5 w-5" />,
         children: [
             {
-                title: "Existing System Upgrade",
-                slug: "existing-system-upgrade",
+                title: "Existing System Upgrade (Vert)",
+                slug: "existing-system-upgrade-1",
+                icon: <GlobeAltIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "Existing System Upgrade (Horiz)",
+                slug: "existing-system-upgrade-2",
                 icon: <GlobeAltIcon className="mr-2 h-5 w-5" />,
             },
             {
