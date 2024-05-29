@@ -26,9 +26,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-export default function Dashboard() {
+import DashboardNav from "@/components/DashboardNav";
+
+export default function Layout({ children }) {
     return (
-        <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] mt-24">
+        <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
             <div className="hidden border-r bg-muted/40 md:block">
                 <div className="flex h-full max-h-screen flex-col gap-2">
                     <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
@@ -37,48 +39,9 @@ export default function Dashboard() {
                             <span className="">Cryptolyte</span>
                         </Link>
                     </div>
-                    <div className="flex-1">
-                        <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-                            <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                            >
-                                <Home className="h-4 w-4" />
-                                Dashboard
-                            </Link>
-                            <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                            >
-                                <ShoppingCart className="h-4 w-4" />
-                                Orders
-                                <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                                    6
-                                </Badge>
-                            </Link>
-                            <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-                            >
-                                <Package className="h-4 w-4" />
-                                Products{" "}
-                            </Link>
-                            <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                            >
-                                <Users className="h-4 w-4" />
-                                Customers
-                            </Link>
-                            <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                            >
-                                <LineChart className="h-4 w-4" />
-                                Analytics
-                            </Link>
-                        </nav>
-                    </div>
+                    <aside className="flex-1">
+                        <DashboardNav />
+                    </aside>
                 </div>
             </div>
             <div className="flex flex-col">
@@ -156,18 +119,7 @@ export default function Dashboard() {
                             </div>
                         </SheetContent>
                     </Sheet>
-                    <div className="w-full flex-1">
-                        <form>
-                            <div className="relative">
-                                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                                <Input
-                                    type="search"
-                                    placeholder="Search products..."
-                                    className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
-                                />
-                            </div>
-                        </form>
-                    </div>
+                    <div className="w-full flex-1"></div>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="secondary" size="icon" className="rounded-full">
@@ -190,18 +142,10 @@ export default function Dashboard() {
                         <h1 className="text-lg font-semibold md:text-2xl">Inventory</h1>
                     </div>
                     <div
-                        className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm"
+                        className="items-center justify-center rounded-lg border border-dashed shadow-sm dark:bg-dot-white/[0.2] bg-dot-black/[0.2]"
                         x-chunk="dashboard-02-chunk-1"
                     >
-                        <div className="flex flex-col items-center gap-1 text-center">
-                            <h3 className="text-2xl font-bold tracking-tight">
-                                You have no products
-                            </h3>
-                            <p className="text-sm text-muted-foreground">
-                                You can start selling as soon as you add a product.
-                            </p>
-                            <Button className="mt-4">Add Product</Button>
-                        </div>
+                        {children}
                     </div>
                 </main>
             </div>

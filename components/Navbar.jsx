@@ -32,8 +32,8 @@ const links = [
         href: "/water-and-air-quality",
     },
     {
-        title: "Training Videos",
-        href: "/training-videos",
+        title: "Resources",
+        href: "/resources",
     },
     {
         title: "CDC Links",

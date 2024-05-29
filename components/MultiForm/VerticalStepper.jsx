@@ -81,7 +81,7 @@ export default function VerticalLinearStepper() {
     }, [maxClFeedRate, poolVol]);
 
     return (
-        <Box sx={{ maxWidth: 400 }}>
+        <Box>
             <Stepper activeStep={activeStep} orientation="vertical">
                 <Step>
                     <StepLabel optional={null}>Distributor Input Data</StepLabel>

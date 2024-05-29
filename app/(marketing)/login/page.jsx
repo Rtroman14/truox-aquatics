@@ -16,7 +16,7 @@ export default async function LogInPage() {
     } = await supabase.auth.getUser();
 
     if (user) {
-        redirect("/training-videos");
+        // redirect("/training-videos");
     }
 
     return (
