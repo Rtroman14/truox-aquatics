@@ -18,14 +18,20 @@ import {
     PaintBrushIcon,
     UserIcon,
     UsersIcon,
+    VideoCameraIcon,
+    CheckIcon,
+    WrenchScrewdriverIcon,
+    Cog6ToothIcon,
+    CogIcon,
 } from "@heroicons/react/24/outline";
+
 import { usePathname } from "next/navigation";
 
 const tabs = [
     {
         title: "System Sizing & Controller Configuration",
         slug: "system-sizing-controller-configuration",
-        icon: <SparklesIcon className="mr-2 h-5 w-5" />,
+        icon: <CogIcon className="mr-2 h-5 w-5" />,
         children: [
             {
                 title: "Existing System Upgrade (Vert)",
@@ -42,23 +48,18 @@ const tabs = [
                 slug: "new-system",
                 icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
             },
-            {
-                title: "Training Videos",
-                slug: "training-videos",
-                icon: <PencilSquareIcon className="mr-2 h-5 w-5" />,
-            },
         ],
     },
     {
-        title: "Pre-Proposal Check list",
-        slug: "pre-proposal-check-list",
-        icon: <PaintBrushIcon className="mr-2 h-5 w-5" />,
+        title: "Pre-Proposal Checklist",
+        slug: "pre-proposal-checklist",
+        icon: <CheckIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
-        title: "Pre-Installation check list",
-        slug: "pre-insulation-check-list",
-        icon: <PaintBrushIcon className="mr-2 h-5 w-5" />,
+        title: "Pre-Installation Checklist",
+        slug: "pre-installation-checklist",
+        icon: <CheckIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
@@ -77,19 +78,19 @@ const tabs = [
     {
         title: "Calibration Methods",
         slug: "calibration-methods",
-        icon: <UsersIcon className="mr-2 h-5 w-5" />,
+        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Maintenance Schedule",
         slug: "maintenance-schedule",
-        icon: <UsersIcon className="mr-2 h-5 w-5" />,
+        icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Training Videos",
         slug: "training-videos",
-        icon: <PencilSquareIcon className="mr-2 h-5 w-5" />,
+        icon: <VideoCameraIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
 ];
