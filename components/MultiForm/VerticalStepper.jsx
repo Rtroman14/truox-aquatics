@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
@@ -74,8 +73,8 @@ export default function VerticalLinearStepper() {
     }, [maxClFeedRate, poolVol]);
 
     return (
-        <Box>
-            <Stepper activeStep={activeStep} orientation="vertical">
+        <div>
+            <Stepper activeStep={activeStep} orientation="vertical" className="mb-24">
                 <Step>
                     <StepLabel optional={null}>Distributor Input Data</StepLabel>
                     <StepContent>
@@ -414,6 +413,6 @@ export default function VerticalLinearStepper() {
                     </Button>
                 </Paper>
             )}
-        </Box>
+        </div>
     );
 }

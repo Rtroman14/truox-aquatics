@@ -105,8 +105,8 @@ export default function HorizontalLinearStepper() {
     }, [maxClFeedRate, poolVol]);
 
     return (
-        <Box sx={{ width: "100%" }}>
-            <Stepper activeStep={activeStep}>
+        <div className="w-full">
+            <Stepper activeStep={activeStep} className="mb-24">
                 {steps.map((label, index) => {
                     const stepProps = {};
                     const labelProps = {};
@@ -135,7 +135,7 @@ export default function HorizontalLinearStepper() {
                 </>
             ) : (
                 <>
-                    <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                    {/* <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
                         <Button
                             variant="secondary"
                             size="sm"
@@ -149,7 +149,7 @@ export default function HorizontalLinearStepper() {
                         <Button size="sm" onClick={handleNext}>
                             {activeStep === steps.length - 1 ? "Finish" : "Next"}
                         </Button>
-                    </Box>
+                    </Box> */}
 
                     <div className="flex justify-center">
                         {activeStep === 0 ? (
@@ -461,6 +461,6 @@ export default function HorizontalLinearStepper() {
                     </div>
                 </>
             )}
-        </Box>
+        </div>
     );
 }
