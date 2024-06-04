@@ -34,13 +34,8 @@ const tabs = [
         icon: <CogIcon className="mr-2 h-5 w-5" />,
         children: [
             {
-                title: "Existing System Upgrade (Vert)",
-                slug: "existing-system-upgrade-1",
-                icon: <GlobeAltIcon className="mr-2 h-5 w-5" />,
-            },
-            {
-                title: "Existing System Upgrade (Horiz)",
-                slug: "existing-system-upgrade-2",
+                title: "Existing System Upgrade",
+                slug: "existing-system-upgrade",
                 icon: <GlobeAltIcon className="mr-2 h-5 w-5" />,
             },
             {
