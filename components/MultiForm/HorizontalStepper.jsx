@@ -506,7 +506,143 @@ export default function HorizontalLinearStepper() {
                                     <div className="hidden">
                                         <ComponentToPrint ref={componentRef}>
                                             <div className="h-screen">
-                                                <h3 className="text-2xl font-semibold mb-12 text-center">
+                                                <div className="mb-12 w-max">
+                                                    <h3 className="text-xl font-semibold mb-3">
+                                                        Feeder System Sizing
+                                                    </h3>
+
+                                                    <div className="space-y-2">
+                                                        <div>
+                                                            Maximum Chlorine Feed Rate ={" "}
+                                                            <strong className="underline underline-offset-2">
+                                                                {maxClFeedRate}
+                                                            </strong>{" "}
+                                                            lbs/day as Cl<sub>2</sub>
+                                                        </div>
+
+                                                        <div>
+                                                            Pool Volume ={" "}
+                                                            <strong className="underline underline-offset-2">
+                                                                {poolVol}
+                                                            </strong>{" "}
+                                                            Gal
+                                                        </div>
+
+                                                        <div>
+                                                            Cryptolyte® Feed Rate ={" "}
+                                                            <strong className="underline underline-offset-2">
+                                                                {cryptolyteFeedRate}
+                                                            </strong>{" "}
+                                                            gal/day
+                                                        </div>
+
+                                                        <div>
+                                                            Minimum Booster Pump ={" "}
+                                                            <strong className="underline underline-offset-2">
+                                                                {minBoosterPump}
+                                                            </strong>{" "}
+                                                            GPM
+                                                        </div>
+
+                                                        <div>
+                                                            <div>
+                                                                Muriatic Acid Feed Rate ={" "}
+                                                                <strong className="underline underline-offset-2">
+                                                                    {muriaticAcidFeetRate.toFixed(
+                                                                        2
+                                                                    )}
+                                                                </strong>{" "}
+                                                                GPM (Suggested Start Up) [31.45% HCI
+                                                                Undiluted]
+                                                            </div>
+
+                                                            <div className="relative py-2">
+                                                                <div className="absolute inset-0 flex items-center">
+                                                                    <span className="w-full border-t"></span>
+                                                                </div>
+                                                                <div className="relative flex justify-center text-xs uppercase">
+                                                                    <span className="bg-white px-2 text-muted-foreground">
+                                                                        Or
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div>
+                                                                Sodium Bisulfate Acid Feed Rate ={" "}
+                                                                <strong className="underline underline-offset-2">
+                                                                    {sodiumBisulfateAcidFeetRate.toFixed(
+                                                                        2
+                                                                    )}
+                                                                </strong>{" "}
+                                                                lbs/day (Suggested Start Up) [93%
+                                                                Sodium Bisulfate]
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <Separator className="my-6" />
+
+                                                <div>
+                                                    <h3 className="text-xl font-semibold mb-3">
+                                                        Performance & Controller Configuration
+                                                    </h3>
+
+                                                    <div className="space-y-2">
+                                                        <div>
+                                                            Pool Dynamic ={" "}
+                                                            <strong className="underline underline-offset-2">
+                                                                {poolDynamic.toFixed(2)}
+                                                            </strong>{" "}
+                                                            ClO<sub>2</sub> ppm/min
+                                                        </div>
+
+                                                        <div>
+                                                            TBP SPAN ={" "}
+                                                            <strong className="underline underline-offset-2">
+                                                                {tbpSpan.toFixed(2)}
+                                                            </strong>{" "}
+                                                            <span className="text-xs">
+                                                                (4.99 Max Value)
+                                                            </span>{" "}
+                                                            <span className="text-green-500">
+                                                                Automatically Amend Maintenance Mode
+                                                                & Continuous Mode TBP SPAN Value
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="h-screen">
+                                                <div className="w-full flex justify-end">
+                                                    <Card className="w-max">
+                                                        <CardHeader>
+                                                            <CardTitle>Legend</CardTitle>
+                                                        </CardHeader>
+                                                        <CardContent className="grid gap-2">
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-4 h-4 rounded-sm bg-blue-500" />
+                                                                <div className="flex-1">
+                                                                    Default Value
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-4 h-4 rounded-sm bg-gray-500" />
+                                                                <div className="flex-1">
+                                                                    Calculated Value
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-4 h-4 rounded-sm bg-green-500" />
+                                                                <div className="flex-1">
+                                                                    Additional Tips
+                                                                </div>
+                                                            </div>
+                                                        </CardContent>
+                                                    </Card>
+                                                </div>
+
+                                                <h3 className="text-3xl font-semibold mb-12 text-center">
                                                     pH Configuration
                                                 </h3>
 
@@ -545,11 +681,28 @@ export default function HorizontalLinearStepper() {
                                                             <span>TBP Span</span>
                                                             <ul className="list-disc pl-8">
                                                                 <li>
-                                                                    Default value -0.2{" "}
+                                                                    Default value - 0.2{" "}
                                                                     <span className="text-blue-500">
-                                                                        2.0
-                                                                    </span>
+                                                                        Set to 2.0
+                                                                    </span>{" "}
                                                                 </li>
+
+                                                                <ul className="list-disc pl-8">
+                                                                    <li>
+                                                                        If you dilute your acid,
+                                                                        determine your TBP Span by
+                                                                        multiplying 0.2 by your
+                                                                        WATER dilution factor.
+                                                                    </li>
+                                                                    <li>
+                                                                        Example: you currently
+                                                                        dilute your Muriatic Acid
+                                                                        (HCl) by 9:1 Water to Acid
+                                                                        respectfully. Then your new
+                                                                        TBP Span will be 0.2 x 9 =
+                                                                        1.8
+                                                                    </li>
+                                                                </ul>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -605,30 +758,35 @@ export default function HorizontalLinearStepper() {
                                                         </li>
                                                     </ul>
 
-                                                    <div className="!mt-12">
-                                                        <h4 className="text-lg font-semibold mb-2">
-                                                            pH TBP Span Optimization
-                                                        </h4>
-
-                                                        <div className="space-y-3">
-                                                            <p>
-                                                                If you dilute your acid, determine
-                                                                your TBP Span by multiplying 0.2 by
-                                                                your WATER dilution factor.
-                                                            </p>
-                                                            <p>
-                                                                Example: you currently dilute your
-                                                                Muriatic Acid (HCl) by 9:1 Water to
-                                                                Acid respectfully. Then your new TBP
-                                                                Span will be 0.2 x 9 = 1.8
-                                                            </p>
-                                                        </div>
-                                                    </div>
+                                                    {/* <Card className="!mt-12 w-max">
+                                                        <CardHeader>
+                                                            <CardTitle className="text-xl">
+                                                                pH TBP Span Optimization
+                                                            </CardTitle>
+                                                        </CardHeader>
+                                                        <CardContent>
+                                                            <div className="space-y-3">
+                                                                <p>
+                                                                    If you dilute your acid,
+                                                                    determine your TBP Span by
+                                                                    multiplying 0.2 by your WATER
+                                                                    dilution factor.
+                                                                </p>
+                                                                <p>
+                                                                    Example: you currently dilute
+                                                                    your Muriatic Acid (HCl) by 9:1
+                                                                    Water to Acid respectfully. Then
+                                                                    your new TBP Span will be 0.2 x
+                                                                    9 = 1.8
+                                                                </p>
+                                                            </div>
+                                                        </CardContent>
+                                                    </Card> */}
                                                 </div>
                                             </div>
 
                                             <div className="h-screen">
-                                                <h3 className="text-2xl font-semibold mb-12 text-center">
+                                                <h3 className="text-3xl font-semibold mb-12 text-center">
                                                     Chlorine Confirguration
                                                 </h3>
 
@@ -763,7 +921,7 @@ export default function HorizontalLinearStepper() {
                                             </div>
 
                                             <div className="h-screen">
-                                                <h3 className="text-2xl font-semibold mb-12 text-center">
+                                                <h3 className="text-3xl font-semibold mb-12 text-center">
                                                     Maintenance Mode Configuration
                                                 </h3>
 
@@ -914,14 +1072,10 @@ export default function HorizontalLinearStepper() {
                                                                     <span className="text-blue-500">
                                                                         4.99
                                                                     </span>{" "}
-                                                                    <span className="text-red-700">
-                                                                        Adjust using Configuration
-                                                                        Report
-                                                                    </span>
                                                                 </li>
                                                                 <li>
                                                                     Calculated value –{" "}
-                                                                    <span className="text-blue-500">
+                                                                    <span className="text-gray-500">
                                                                         {tbpSpan.toFixed(2)}
                                                                     </span>
                                                                 </li>
@@ -932,7 +1086,7 @@ export default function HorizontalLinearStepper() {
                                             </div>
 
                                             <div className="h-screen">
-                                                <h3 className="text-2xl font-semibold mb-12 text-center">
+                                                <h3 className="text-3xl font-semibold mb-12 text-center">
                                                     Continuous Mode Configuration
                                                 </h3>
 
@@ -1055,14 +1209,10 @@ export default function HorizontalLinearStepper() {
                                                                     <span className="text-blue-500">
                                                                         4.99
                                                                     </span>{" "}
-                                                                    <span className="text-red-700">
-                                                                        Adjust using Configuration
-                                                                        Report
-                                                                    </span>
                                                                 </li>
                                                                 <li>
                                                                     Calculated value -{" "}
-                                                                    <span className="text-blue-500">
+                                                                    <span className="text-gray-500">
                                                                         {tbpSpan.toFixed(2)}
                                                                     </span>
                                                                 </li>
