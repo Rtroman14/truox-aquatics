@@ -102,9 +102,6 @@ export default function DashboardNav() {
         slug
     );
 
-    console.log(`setToExpand -->`, setToExpand);
-    console.log(`slug -->`, slug);
-
     const [expand, setExpand] = useState(setToExpand);
 
     const tabSlugs = tabs.map((tab) => tab.slug);
