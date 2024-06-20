@@ -21,15 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
+import PerformanceExpectationsTable from "@/components/PerformanceExpectationsTable";
 
 const steps = ["Distributor Input Data", "Print & Save"];
 
@@ -102,73 +94,6 @@ export default function NewSystemForm() {
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
-
-    const performanceData = [
-        {
-            clO2: "0.02",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "3hr/5hr",
-            rapidEvening: "8hr",
-        },
-        {
-            clO2: "0.03",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "2.5hr/4.5hr",
-            rapidEvening: "6hr",
-        },
-        {
-            clO2: "0.05",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "1.5hr/2.5hr",
-            rapidEvening: "5hr",
-        },
-        {
-            clO2: "0.10",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "45min/1.5hr",
-            rapidEvening: "4.5hr",
-        },
-        {
-            clO2: "0.25",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "35min/50min",
-            rapidEvening: "3.5hr",
-        },
-        {
-            clO2: "0.30",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "<30min/45min",
-            rapidEvening: "3.5hr",
-        },
-        {
-            clO2: "0.40",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "<35min",
-            rapidEvening: "3hr",
-        },
-        {
-            clO2: "0.50",
-            startupRem: "√",
-            dailyMaint: "√",
-            continuous: "√",
-            rapidIndoorOutdoor: "<30min",
-            rapidEvening: "3hr",
-        },
-    ];
 
     return (
         <div className="w-full">
@@ -317,7 +242,7 @@ export default function NewSystemForm() {
                                                 <strong className="underline underline-offset-2">
                                                     {sodiumBisulfateAcidFeetRate.toFixed(2)}
                                                 </strong>{" "}
-                                                lbs/day
+                                                lbs/min
                                             </div>
                                         </div>
                                     </div>
@@ -346,7 +271,7 @@ export default function NewSystemForm() {
                                         </div>
                                     </div>
 
-                                    <div className="hidden">
+                                    <div className="hiddenn border">
                                         <ComponentToPrint ref={componentRef}>
                                             <div className="h-screen">
                                                 <div className="mb-12 w-max">
@@ -409,7 +334,7 @@ export default function NewSystemForm() {
                                                                         2
                                                                     )}
                                                                 </strong>{" "}
-                                                                lbs/day (Suggested Start Up) [93%
+                                                                lbs/min (Suggested Start Up) [93%
                                                                 Sodium Bisulfate]
                                                             </div>
                                                         </div>
@@ -450,6 +375,28 @@ export default function NewSystemForm() {
                                             </div>
 
                                             <div className="h-screen">
+                                                <div className="w-full flex justify-end">
+                                                    <Card className="w-max">
+                                                        <CardHeader>
+                                                            <CardTitle>Legend</CardTitle>
+                                                        </CardHeader>
+                                                        <CardContent className="grid gap-2">
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-4 h-4 rounded-sm bg-blue-500" />
+                                                                <div className="flex-1">
+                                                                    SELECT or SET POINT VALUE
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-4 h-4 rounded-sm bg-black" />
+                                                                <div className="flex-1">
+                                                                    EXISTING DEFAULT VALUE
+                                                                </div>
+                                                            </div>
+                                                        </CardContent>
+                                                    </Card>
+                                                </div>
+
                                                 <h3 className="text-2xl font-semibold mb-12 text-center">
                                                     pH Configuration
                                                 </h3>
@@ -495,13 +442,13 @@ export default function NewSystemForm() {
                                                                     </span>
                                                                 </li>
                                                                 <ul className="list-disc pl-8">
-                                                                    <li>
+                                                                    <li className="text-green-500">
                                                                         If you dilute your acid,
                                                                         determine your TBP Span by
                                                                         multiplying 0.2 by your
                                                                         WATER dilution factor.
                                                                     </li>
-                                                                    <li>
+                                                                    <li className="text-green-500">
                                                                         Example: you currently
                                                                         dilute your Muriatic Acid
                                                                         (HCl) by 9:1 Water to Acid
@@ -564,26 +511,6 @@ export default function NewSystemForm() {
                                                             </ul>
                                                         </li>
                                                     </ul>
-
-                                                    <div className="!mt-12">
-                                                        <h4 className="text-lg font-semibold mb-2">
-                                                            pH TBP Span Optimization
-                                                        </h4>
-
-                                                        <div className="space-y-3">
-                                                            <p>
-                                                                If you dilute your acid, determine
-                                                                your TBP Span by multiplying 0.2 by
-                                                                your WATER dilution factor.
-                                                            </p>
-                                                            <p>
-                                                                Example: you currently dilute your
-                                                                Muriatic Acid (HCl) by 9:1 Water to
-                                                                Acid respectfully. Then your new TBP
-                                                                Span will be 0.2 x 9 = 1.8
-                                                            </p>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
 
@@ -1044,61 +971,7 @@ export default function NewSystemForm() {
                             </Card>
                         ) : null}
 
-                        <Card>
-                            <Table>
-                                <TableCaption>Performance Expectations</TableCaption>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead className="text-center">Pool Dynamic</TableHead>
-                                        <TableHead className="text-center">Startup</TableHead>
-                                        <TableHead className="text-center">Daily</TableHead>
-                                        <TableHead className="text-center">Continuous</TableHead>
-                                        <TableHead className="text-center">
-                                            Rapid Recovery
-                                        </TableHead>
-                                        <TableHead className="text-center">Startup</TableHead>
-                                    </TableRow>
-                                    <TableRow>
-                                        <TableHead className="text-center">
-                                            CIO₂ (ppm/min)
-                                        </TableHead>
-                                        <TableHead className="text-center">Remediation</TableHead>
-                                        <TableHead className="text-center">Maintenance</TableHead>
-                                        <TableHead className="text-center">24/7</TableHead>
-                                        <TableHead className="text-center">
-                                            Shock (INDOOR/OUTDOOR)
-                                        </TableHead>
-                                        <TableHead className="text-center">
-                                            Remediation (EVENING)
-                                        </TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {performanceData.map((data) => (
-                                        <TableRow key={data.clO2}>
-                                            <TableCell className="text-center">
-                                                {data.clO2}
-                                            </TableCell>
-                                            <TableCell className="text-center">
-                                                {data.startupRem}
-                                            </TableCell>
-                                            <TableCell className="text-center">
-                                                {data.dailyMaint}
-                                            </TableCell>
-                                            <TableCell className="text-center">
-                                                {data.continuous}
-                                            </TableCell>
-                                            <TableCell className="text-center">
-                                                {data.rapidIndoorOutdoor}
-                                            </TableCell>
-                                            <TableCell className="text-center">
-                                                {data.rapidEvening}
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </Card>
+                        <PerformanceExpectationsTable />
                     </div>
                 </>
             )}
