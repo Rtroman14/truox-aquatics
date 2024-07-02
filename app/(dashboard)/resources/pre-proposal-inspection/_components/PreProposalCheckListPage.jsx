@@ -1,13 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
-import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Typography from "@mui/material/Typography";
 import {
     Card,
     CardContent,
@@ -162,6 +160,22 @@ export default function PreProposalCheckListPage() {
                                 ))}
                             </div>
                         </div>
+
+                        <div className="space-y-4">
+                            <div className="grid grid-cols-1 gap-3">
+                                {existingList.slice(8).map((el) => (
+                                    <div
+                                        key={el.toLowerCase().split(" ").join("-")}
+                                        className="flex items-center space-x-2"
+                                    >
+                                        <Checkbox id={el.toLowerCase().split(" ").join("-")} />
+                                        <Label htmlFor={el.toLowerCase().split(" ").join("-")}>
+                                            {el}
+                                        </Label>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -301,13 +315,17 @@ export default function PreProposalCheckListPage() {
                             Back
                         </Button>
                     ) : null}
-                    <Button size="sm" onClick={handleNext}>
+                    <Button
+                        size="sm"
+                        onClick={handleNext}
+                        disabled={activeStep === steps.length - 1}
+                    >
                         Next
                     </Button>
                 </div>
             </div>
 
-            {activeStep === steps.length ? (
+            {/* {activeStep === steps.length ? (
                 <>
                     <Typography sx={{ mt: 2, mb: 1 }}>
                         All steps completed - you&apos;re finished
@@ -317,15 +335,15 @@ export default function PreProposalCheckListPage() {
                         <Button onClick={handleReset}>Reset</Button>
                     </Box>
                 </>
-            ) : (
-                <>
-                    <div className="flex flex-col justify-center items-center gap-32">
-                        {steps.map((step, index) =>
-                            activeStep === index ? <div key={index}>{step.component}</div> : null
-                        )}
-                    </div>
-                </>
-            )}
+            ) : ( */}
+            <>
+                <div className="flex flex-col justify-center items-center gap-32">
+                    {steps.map((step, index) =>
+                        activeStep === index ? <div key={index}>{step.component}</div> : null
+                    )}
+                </div>
+            </>
+            {/* )} */}
         </div>
     );
 }

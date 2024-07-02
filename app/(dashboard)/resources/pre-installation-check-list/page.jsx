@@ -1,7 +1,11 @@
-export default function PreInstallationCheckList() {
+import PreInstallationCheckList from "./_components/PreInstallationCheckList";
+
+export default function PreInstallationCheckListPage() {
     return (
-        <div>
-            <h1>Pre-Installation Check List</h1>
+        <div className="grid min-h-screen grid-cols-1">
+            <div className="flex flex-col items-center p-8">
+                <PreInstallationCheckList />
+            </div>
         </div>
     );
 }
