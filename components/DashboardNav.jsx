@@ -39,40 +39,62 @@ const tabs = [
                 icon: <GlobeAltIcon className="mr-2 h-5 w-5" />,
             },
             {
-                title: "New System",
+                title: "New System (Spec)",
                 slug: "new-system",
+                icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "Training Videos (How to)",
+                slug: "training-videos",
                 icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
             },
         ],
     },
     {
-        title: "Pre-Proposal Checklist",
-        slug: "pre-proposal-checklist",
+        title: "Pre-Proposal Inspection",
+        slug: "pre-proposal-inspection",
         icon: <CheckIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
-        title: "Pre-Installation Checklist",
-        slug: "pre-installation-checklist",
+        title: "Pre-Installation Check List",
+        slug: "pre-installation-check-list",
         icon: <CheckIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
-        title: "Installation Diagrams",
-        slug: "installation-diagrams",
+        title: "Installation",
+        slug: "installation",
         icon: <ChatBubbleBottomCenterTextIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
-
     {
-        title: "Troubleshooting Flowchart",
-        slug: "troubleshooting-flowchart",
+        title: "Sensor Commissioning",
+        slug: "sensor-commissioning",
         icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
-        title: "Calibration Methods",
-        slug: "calibration-methods",
+        title: "Startup Configuration Settings",
+        slug: "startup-configuration-settings",
+        icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Startup Troubleshooting",
+        slug: "startup-troubleshooting",
+        icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Startup Calibration",
+        slug: "startup-calibration",
+        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Neutralization – Post Shock Treatment",
+        slug: "neutralization–post-shock-treatment",
         icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
@@ -80,12 +102,6 @@ const tabs = [
         title: "Maintenance Schedule",
         slug: "maintenance-schedule",
         icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
-        children: [],
-    },
-    {
-        title: "Training Videos",
-        slug: "training-videos",
-        icon: <VideoCameraIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
 ];
@@ -117,11 +133,11 @@ export default function DashboardNav() {
         <nav className="w-full" aria-label="Sidebar">
             <div className="h-full overflow-y-auto p-0 py-2 sm:px-3">
                 <ul className="space-y-1 text-sm font-medium ">
-                    {tabs.map((tab) => {
+                    {tabs.map((tab, index) => {
                         if (!tab.children.length) {
                             return (
                                 <Link
-                                    key={tab.slug}
+                                    key={`${tab.slug}-${index}`}
                                     href={`/resources/${tab.slug}`}
                                     className={
                                         activeTab === tab.slug ? selectedClass : defaultClass
@@ -135,7 +151,7 @@ export default function DashboardNav() {
                         }
 
                         return (
-                            <li key={tab.slug}>
+                            <li key={`${tab.slug}-${index}`}>
                                 <div
                                     onClick={() => setExpand(!expand)}
                                     className={`${
@@ -155,8 +171,8 @@ export default function DashboardNav() {
                                     </div>
                                 </div>
                                 <ul className={expand ? "" : "hidden"}>
-                                    {tab.children.map((child) => (
-                                        <li key={child.slug}>
+                                    {tab.children.map((child, index) => (
+                                        <li key={`${child.slug}-${index}`}>
                                             {child.title ===
                                             "System Sizing & Controller Configuration" ? (
                                                 <div
