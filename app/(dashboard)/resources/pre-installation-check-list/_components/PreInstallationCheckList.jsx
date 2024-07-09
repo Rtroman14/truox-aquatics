@@ -86,7 +86,7 @@ export default function PreInstallationCheckList() {
                         <li className="flex items-start space-x-2">
                             <Checkbox id="Check available number of Relays" />
                             <Label className="leading-5" htmlFor="Check available number of Relays">
-                                Check available number of Relays
+                                <strong>Check available number of Relays</strong>
                             </Label>
                         </li>
                         <li>

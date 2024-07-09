@@ -160,22 +160,6 @@ export default function PreProposalCheckListPage() {
                                 ))}
                             </div>
                         </div>
-
-                        <div className="space-y-4">
-                            <div className="grid grid-cols-1 gap-3">
-                                {existingList.slice(8).map((el) => (
-                                    <div
-                                        key={el.toLowerCase().split(" ").join("-")}
-                                        className="flex items-center space-x-2"
-                                    >
-                                        <Checkbox id={el.toLowerCase().split(" ").join("-")} />
-                                        <Label htmlFor={el.toLowerCase().split(" ").join("-")}>
-                                            {el}
-                                        </Label>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
                     </div>
                 </div>
 

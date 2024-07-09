@@ -208,19 +208,19 @@ export default function Comparison() {
                             </TableHeader>
                             <TableBody>
                                 {performanceData.map((data) => (
-                                    <TableRow key={data.clO2}>
+                                    <TableRow key={data.name}>
                                         <TableCell className="text-center">{data.name}</TableCell>
-                                        <TableCell className="">
+                                        <TableCell>
                                             <div className="flex justify-center">
                                                 <span>{data.cryptoLyte}</span>
                                             </div>
                                         </TableCell>
-                                        <TableCell className="">
+                                        <TableCell>
                                             <div className="flex justify-center">
                                                 <span>{data.uv}</span>
                                             </div>
                                         </TableCell>
-                                        <TableCell className="">
+                                        <TableCell>
                                             <div className="flex justify-center">
                                                 <span>{data.ozone}</span>
                                             </div>
@@ -230,7 +230,7 @@ export default function Comparison() {
                                                 <span>{data.cl2Shock}</span>
                                             </div>
                                         </TableCell>
-                                        <TableCell className="">
+                                        <TableCell>
                                             <div className="flex justify-center">
                                                 <span>{data.filterAids}</span>
                                             </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
@@ -19,38 +18,47 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-    { chlorineResistance: "chrome", value: 0.5, fill: "var(--color-chrome)" },
-    { chlorineResistance: "safari", value: 2, fill: "var(--color-safari)" },
-    { chlorineResistance: "firefox", value: 4, fill: "var(--color-firefox)" },
-    { chlorineResistance: "edge", value: 6, fill: "var(--color-edge)" },
-    { chlorineResistance: "other", value: 60, fill: "var(--color-other)" },
+    { chlorineResistance: "cryptosporidium", value: 60, fill: "var(--color-cryptosporidium)" },
+    { chlorineResistance: "giardia", value: 6.5, fill: "var(--color-giardia)" },
+    {
+        chlorineResistance: "pseudomonas-aeruginosa",
+        value: 4,
+        fill: "var(--color-pseudomonas-aeruginosa)",
+    },
+    { chlorineResistance: "legionella", value: 2, fill: "var(--color-legionella)" },
+    {
+        chlorineResistance: "enterococcus-faecium",
+        value: 0.5,
+        fill: "var(--color-enterococcus-faecium)",
+    },
+    { chlorineResistance: "e-coli", value: 0.5, fill: "var(--color-e-coli)" },
 ];
 
 const chartConfig = {
     value: {
         label: "Value",
     },
-    chrome: {
+    "e-coli": {
         label: "E. coli",
         color: "#93c5fd",
     },
-    safari: {
+    "enterococcus-faecium": {
         label: "Enterococcus faecium",
         color: "#60a5fa",
     },
-    firefox: {
+    legionella: {
         label: "Legionella",
         color: "#3b82f6",
     },
-    edge: {
+    "pseudomonas-aeruginosa": {
         label: "Pseudomonas aeruginosa",
         color: "#2563eb",
     },
-    other: {
+    giardia: {
         label: "Giardia",
         color: "#1d4ed8",
     },
-    other: {
+    cryptosporidium: {
         label: "Cryptosporidium",
         color: "#1e40af",
     },

@@ -1,7 +1,7 @@
-export default function TrainingVideos() {
+export default function StartupCalibration() {
     return (
         <div>
-            <h1>TrainingVideos</h1>
+            <h1>Startup Calibration</h1>
         </div>
     );
 }
