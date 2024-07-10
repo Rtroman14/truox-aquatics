@@ -7,8 +7,12 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import PageHero from "@/components/PageHero";
-
 import Banner from "@/components/Banner";
+
+export const metadata = {
+    title: "CryptoLyte | Indoor Water and Air Quality",
+    description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
+};
 
 const breatheEzCharts = [
     {
@@ -31,8 +35,8 @@ const breatheEzCharts = [
 
 export default function WaterAndAirQuality() {
     return (
-        <div className="mt-[78px]">
-            <PageHero title="Water and Air Quality" />
+        <div className="mt-[70px]">
+            <PageHero title="Indoor Water and Air Quality" />
 
             <section className="pt-20 sm:pt-28 container">
                 <div className="grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
@@ -57,14 +61,16 @@ export default function WaterAndAirQuality() {
                                 ].map((el) => (
                                     <li
                                         key={el}
-                                        className="flex items-center gap-3 text-neutral-800">
+                                        className="flex items-center gap-3 text-neutral-800"
+                                    >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             stroke-width="1.5"
                                             stroke="currentColor"
-                                            className="w-5 h-5 text-red-600">
+                                            className="w-5 h-5 text-red-600"
+                                        >
                                             <path
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"

@@ -1,9 +1,14 @@
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 
+export const metadata = {
+    title: "CryptoLyte | Recreational Water Illness",
+    description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
+};
+
 export default function RecreationalWaterIllness() {
     return (
-        <div className="mt-[78px]">
+        <div className="mt-[70px]">
             <PageHero title="Recreational Water Illness" />
 
             <section className="grid gap-24 bg-background py-20 sm:gap-36 sm:py-36 ">

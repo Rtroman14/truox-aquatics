@@ -18,14 +18,18 @@ import {
     PaintBrushIcon,
     UserIcon,
     UsersIcon,
-    VideoCameraIcon,
     CheckIcon,
     WrenchScrewdriverIcon,
     Cog6ToothIcon,
     CogIcon,
+    VideoCameraIcon,
+    WrenchIcon,
+    BoltIcon,
 } from "@heroicons/react/24/outline";
-
+// import { SquareCheck } from "lucide-react";
 import { usePathname } from "next/navigation";
+
+// console.log(`SquareCheck -->`, SquareCheck);
 
 const tabs = [
     {
@@ -46,7 +50,7 @@ const tabs = [
             {
                 title: "Training Videos (How to)",
                 slug: "training-videos",
-                icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
+                icon: <VideoCameraIcon className="mr-2 h-5 w-5" />,
             },
         ],
     },
@@ -65,25 +69,25 @@ const tabs = [
     {
         title: "Installation",
         slug: "installation",
-        icon: <ChatBubbleBottomCenterTextIcon className="mr-2 h-5 w-5" />,
+        icon: <WrenchIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Sensor Commissioning",
         slug: "sensor-commissioning",
-        icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />,
+        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Startup Configuration Settings",
         slug: "startup-configuration-settings",
-        icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />,
+        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Startup Troubleshooting",
         slug: "startup-troubleshooting",
-        icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />,
+        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
@@ -95,7 +99,7 @@ const tabs = [
     {
         title: "Neutralization – Post Shock Treatment",
         slug: "neutralization–post-shock-treatment",
-        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+        icon: <BoltIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
@@ -112,7 +116,7 @@ const defaultClass =
 
 export default function DashboardNav() {
     const pathname = usePathname();
-    const slug = pathname.split("resources").pop();
+    const slug = pathname.split("dashboard").pop();
 
     const setToExpand = ["/existing-system-upgrade", "/new-system", "/training-videos"].includes(
         slug
@@ -138,7 +142,7 @@ export default function DashboardNav() {
                             return (
                                 <Link
                                     key={`${tab.slug}-${index}`}
-                                    href={`/resources/${tab.slug}`}
+                                    href={`/dashboard/${tab.slug}`}
                                     className={
                                         activeTab === tab.slug ? selectedClass : defaultClass
                                     }
@@ -187,7 +191,7 @@ export default function DashboardNav() {
                                                 </div>
                                             ) : (
                                                 <Link
-                                                    href={`/resources/${child.slug}`}
+                                                    href={`/dashboard/${child.slug}`}
                                                     className={`${
                                                         slug.includes(child.slug)
                                                             ? selectedClass

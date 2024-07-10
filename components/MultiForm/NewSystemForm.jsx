@@ -271,7 +271,7 @@ export default function NewSystemForm() {
                                         </div>
                                     </div>
 
-                                    <div className="hiddenn border">
+                                    <div className="hidden">
                                         <ComponentToPrint ref={componentRef}>
                                             <div className="h-screen">
                                                 <div className="mb-12 w-max">

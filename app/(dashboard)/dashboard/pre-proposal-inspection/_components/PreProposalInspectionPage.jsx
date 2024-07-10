@@ -19,7 +19,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 
-export default function PreProposalCheckListPage() {
+export default function PreProposalInspectionPage() {
     const [activeStep, setActiveStep] = useState(0);
     const [skipped, setSkipped] = useState(new Set());
 
@@ -94,6 +94,14 @@ export default function PreProposalCheckListPage() {
                     </div>
                 </div>
             </CardContent>
+
+            <CardFooter>
+                <div className="flex justify-between w-full">
+                    <Button size="sm" variant="secondary" onClick={handleBack}>
+                        Back
+                    </Button>
+                </div>
+            </CardFooter>
         </Card>
     );
 
@@ -116,6 +124,13 @@ export default function PreProposalCheckListPage() {
                     it does not contact them as a result of poor water flow.
                 </p>
             </CardContent>
+            <CardFooter>
+                <div className="flex justify-end w-full">
+                    <Button size="sm" onClick={handleNext}>
+                        Next
+                    </Button>
+                </div>
+            </CardFooter>
         </Card>
     );
 
@@ -186,6 +201,18 @@ export default function PreProposalCheckListPage() {
                     </div>
                 </div>
             </CardContent>
+            <CardFooter>
+                <div className="flex justify-between w-full">
+                    {activeStep !== 0 ? (
+                        <Button size="sm" variant="secondary" onClick={handleBack}>
+                            Back
+                        </Button>
+                    ) : null}
+                    <Button size="sm" onClick={handleNext}>
+                        Next
+                    </Button>
+                </div>
+            </CardFooter>
         </Card>
     );
 
@@ -204,6 +231,18 @@ export default function PreProposalCheckListPage() {
                     ))}
                 </div>
             </CardContent>
+            <CardFooter>
+                <div className="flex justify-between w-full">
+                    {activeStep !== 0 ? (
+                        <Button size="sm" variant="secondary" onClick={handleBack}>
+                            Back
+                        </Button>
+                    ) : null}
+                    <Button size="sm" onClick={handleNext}>
+                        Next
+                    </Button>
+                </div>
+            </CardFooter>
         </Card>
     );
 
@@ -293,7 +332,7 @@ export default function PreProposalCheckListPage() {
                     })}
                 </Stepper>
 
-                <div className={`flex ${activeStep === 0 ? "justify-end" : "justify-between"}`}>
+                {/* <div className={`flex ${activeStep === 0 ? "justify-end" : "justify-between"}`}>
                     {activeStep !== 0 ? (
                         <Button size="sm" variant="secondary" onClick={handleBack}>
                             Back
@@ -306,7 +345,7 @@ export default function PreProposalCheckListPage() {
                     >
                         Next
                     </Button>
-                </div>
+                </div> */}
             </div>
 
             {/* {activeStep === steps.length ? (

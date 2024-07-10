@@ -28,7 +28,7 @@ const links = [
         href: "/remediation",
     },
     {
-        title: "Wate & Air Quality",
+        title: "Water & Air Quality",
         href: "/water-and-air-quality",
     },
     {

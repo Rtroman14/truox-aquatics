@@ -19,9 +19,9 @@ export default function HeroLight() {
 
             <div className="container z-20 flex flex-col items-center justify-center">
                 <div className="grid gap-5">
-                    <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-7xl">
+                    <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-8xl">
                         <span className="bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent">
-                            Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte
+                            Kills 99.9% Cryptosporidium {"<"}30min
                         </span>
                     </h1>
                     {/* <h1 className="text-center text-4xl font-semibold leading-none tracking-tight text-white sm:text-6xl md:text-7xl">

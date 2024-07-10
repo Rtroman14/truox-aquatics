@@ -1,10 +1,10 @@
-import PreProposalCheckListPage from "./_components/PreProposalCheckListPage";
+import PreProposalInspectionPage from "./_components/PreProposalInspectionPage";
 
 export default function PreProposalCheckList() {
     return (
         <div className="grid min-h-screen grid-cols-1">
             <div className="flex flex-col items-center p-8">
-                <PreProposalCheckListPage />
+                <PreProposalInspectionPage />
             </div>
         </div>
     );

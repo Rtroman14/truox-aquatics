@@ -4,6 +4,11 @@ import PageHero from "@/components/PageHero";
 
 import Banner from "@/components/Banner";
 
+export const metadata = {
+    title: "CryptoLyte | Remediating RWI",
+    description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
+};
+
 const integratedSystems = [
     {
         icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
@@ -45,8 +50,8 @@ const integratedSystems = [
 
 export default function Remediation() {
     return (
-        <div className="mt-[78px]">
-            <PageHero title="Remediation" />
+        <div className="mt-[70px]">
+            <PageHero title="Remediating RWI" />
 
             <section className="py-20 sm:py-28 container">
                 <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">

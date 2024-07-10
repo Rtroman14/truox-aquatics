@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 
-import PageHero from "@/components/PageHero";
 import {
     Card,
     CardContent,
@@ -22,9 +19,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 
-import ChlorineResistanceChart from "@/components/ChlorineResistanceChart";
-
-export default function Comparison() {
+export default function ComparisonTable() {
     const checkIcon = (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -166,86 +161,72 @@ export default function Comparison() {
     ];
 
     return (
-        <div className="mt-[78px]">
-            <PageHero title="Comparison Table" />
-
-            <section className="py-20 sm:py-28 container">
-                {/* <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
-                    Comparison Table
-                </h2> */}
-
-                <Card>
-                    {/* <CardHeader>
+        <Card>
+            {/* <CardHeader>
                         <CardTitle className="text-center text-muted-foreground">
                             Performance Expectations
                         </CardTitle>
                     </CardHeader> */}
-                    <CardContent className="p-0 m-0">
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead></TableHead>
-                                    <TableHead className="text-center">
-                                        <div className="flex flex-col justify-center items-center">
-                                            <span>
-                                                <Image
-                                                    src="/images/logo.png"
-                                                    alt="Picture of the logo"
-                                                    width={130}
-                                                    height={130}
-                                                />
-                                            </span>
-                                            <span className="text-green-500">EPA Approved</span>
-                                        </div>
-                                    </TableHead>
-                                    <TableHead className="text-center">UV</TableHead>
-                                    <TableHead className="text-center">Ozone</TableHead>
-                                    <TableHead className="text-center">
-                                        Cl<sub>2</sub> Shock
-                                    </TableHead>
-                                    <TableHead className="text-center">Filter Aids</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {performanceData.map((data) => (
-                                    <TableRow key={data.name}>
-                                        <TableCell className="text-center">{data.name}</TableCell>
-                                        <TableCell>
-                                            <div className="flex justify-center">
-                                                <span>{data.cryptoLyte}</span>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex justify-center">
-                                                <span>{data.uv}</span>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex justify-center">
-                                                <span>{data.ozone}</span>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell className=" ">
-                                            <div className="flex justify-center">
-                                                <span>{data.cl2Shock}</span>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex justify-center">
-                                                <span>{data.filterAids}</span>
-                                            </div>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </CardContent>
-                </Card>
-
-                <div>
-                    <ChlorineResistanceChart />
-                </div>
-            </section>
-        </div>
+            <CardContent className="p-0 m-0">
+                <Table>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHead></TableHead>
+                            <TableHead className="text-center">
+                                <div className="flex flex-col justify-center items-center">
+                                    <span>
+                                        <Image
+                                            src="/images/logo.png"
+                                            alt="Picture of the logo"
+                                            width={130}
+                                            height={130}
+                                        />
+                                    </span>
+                                    <span className="text-green-500">EPA Approved</span>
+                                </div>
+                            </TableHead>
+                            <TableHead className="text-center">UV</TableHead>
+                            <TableHead className="text-center">Ozone</TableHead>
+                            <TableHead className="text-center">
+                                Cl<sub>2</sub> Shock
+                            </TableHead>
+                            <TableHead className="text-center">Filter Aids</TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {performanceData.map((data) => (
+                            <TableRow key={data.name}>
+                                <TableCell className="text-center">{data.name}</TableCell>
+                                <TableCell>
+                                    <div className="flex justify-center">
+                                        <span>{data.cryptoLyte}</span>
+                                    </div>
+                                </TableCell>
+                                <TableCell>
+                                    <div className="flex justify-center">
+                                        <span>{data.uv}</span>
+                                    </div>
+                                </TableCell>
+                                <TableCell>
+                                    <div className="flex justify-center">
+                                        <span>{data.ozone}</span>
+                                    </div>
+                                </TableCell>
+                                <TableCell className=" ">
+                                    <div className="flex justify-center">
+                                        <span>{data.cl2Shock}</span>
+                                    </div>
+                                </TableCell>
+                                <TableCell>
+                                    <div className="flex justify-center">
+                                        <span>{data.filterAids}</span>
+                                    </div>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </CardContent>
+        </Card>
     );
 }

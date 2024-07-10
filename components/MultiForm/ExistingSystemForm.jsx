@@ -130,13 +130,13 @@ export default function ExistingSystemForm() {
                             <Card className="w-[400px]">
                                 <CardHeader>
                                     <CardTitle>Distributor Input Data</CardTitle>
-                                    <CardDescription>
+                                    {/* <CardDescription>
                                         Cryptolyte Feed-rate based on MAXIMUM{" "}
                                         <span>
                                             Cl<sub>2</sub>
                                         </span>{" "}
                                         Output
-                                    </CardDescription>
+                                    </CardDescription> */}
                                 </CardHeader>
                                 <CardContent>
                                     <form>
@@ -429,7 +429,7 @@ export default function ExistingSystemForm() {
                                         </div>
                                     </div>
 
-                                    <div className="hiddenn border">
+                                    <div className="hidden">
                                         <ComponentToPrint ref={componentRef}>
                                             <div className="h-screen">
                                                 <div className="mb-12 w-max">
