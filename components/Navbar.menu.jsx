@@ -205,7 +205,7 @@ export default function Navbar({ customer }) {
                     <nav className="astronav-items astronav-toggle mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
                         <NavigationMenu delayDuration={100}>
                             <NavigationMenuList>
-                                {menuItems.map((item) =>
+                                {menuItems.map((item, index) =>
                                     item.children.length ? (
                                         <NavigationMenuItem key={item.name}>
                                             <NavigationMenuTrigger
@@ -222,6 +222,7 @@ export default function Navbar({ customer }) {
                                                 <ul className="grid gap-3 p-3 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                                     {item.children.map((child) => (
                                                         <ListItem
+                                                            key={child.href}
                                                             href={child.href}
                                                             title={child.title}
                                                         >
@@ -232,7 +233,7 @@ export default function Navbar({ customer }) {
                                             </NavigationMenuContent>
                                         </NavigationMenuItem>
                                     ) : (
-                                        <NavigationMenuItem>
+                                        <NavigationMenuItem key={item.name}>
                                             <Link href={item.href} legacyBehavior passHref>
                                                 <NavigationMenuLink
                                                     className={cn(
