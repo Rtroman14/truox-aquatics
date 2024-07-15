@@ -99,6 +99,12 @@ const menuItems = [
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             },
+            {
+                title: "FAQs",
+                href: "/faqs",
+                description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            },
         ],
     },
     {
