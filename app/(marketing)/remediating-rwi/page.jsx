@@ -76,25 +76,29 @@ export default function Remediation() {
                             <picture className="drop-shadow-xl">
                                 <Image
                                     className="rounded-xl"
-                                    src="/images/before-cryptolyte.png"
+                                    src="/images/crypto-before.jpg"
                                     alt="before-cryptolyte"
                                     width={900}
                                     height={900}
                                 />
                             </picture>
-                            <p>Before Cryptolyte® Cryptosporidium oocyst 1000x Epifluorescence</p>
+                            <p className="text-sm">
+                                Before Cryptolyte® Cryptosporidium oocyst 1000x Epifluorescence
+                            </p>
                         </div>
                         <div className="space-y-2">
                             <picture className="drop-shadow-xl">
                                 <Image
                                     className="rounded-xl"
-                                    src="/images/after-cryptolyte.png"
+                                    src="/images/crypto-after.jpg"
                                     alt="after-cryptolyte"
                                     width={900}
                                     height={900}
                                 />
                             </picture>
-                            <p>After Cryptolyte® Remnants of Crypto oocyst 1000x Epifluorescence</p>
+                            <p className="text-sm">
+                                After Cryptolyte® Remnants of Crypto oocyst 1000x Epifluorescence
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ export default async function Layout({ children }) {
     return (
         <>
             <Navbar />
-            <main>{children}</main>
+            {children}
             <Footer />
         </>
     );

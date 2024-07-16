@@ -516,7 +516,7 @@ export default function NewSystemForm() {
 
                                             <div className="h-screen">
                                                 <h3 className="text-2xl font-semibold mb-12 text-center">
-                                                    Chlorine Confirguration
+                                                    Chlorine Configuration
                                                 </h3>
 
                                                 <div className="space-y-3">
