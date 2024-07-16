@@ -274,42 +274,41 @@ export default function RecreationalWaterIllness() {
                             <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                                 Biofilm Evolution
                             </h2>
-                            <p className="mt-5 text-slate-600">
-                                <ol className="ml-6 list-decimal list-outside space-y-1">
-                                    <li>
-                                        Low solubility organics (body oils, lotions etc.) adsorb
-                                        onto the piping forming a barrier film.
-                                    </li>
-                                    <li>
-                                        Reduced ORP allows bacteria to survive longer allowing
-                                        adsorption & absorption.
-                                    </li>
-                                    <li>
-                                        Barrier film provides a protective shelter from the chlorine
-                                        in a warm and nutrient rich environment.
-                                    </li>
-                                    <li>
-                                        Adaptive bacteria then form biofilms under which the
-                                        bacteria thrive and propagate.
-                                    </li>
-                                    <li>
-                                        Protected from the chlorine, encapsulated colonies are
-                                        Chlorine Resistant.
-                                    </li>
-                                    <li>
-                                        Literally hundreds of different species of bacteria can
-                                        thrive within the biofilm.
-                                    </li>
-                                    <li>
-                                        Detached bacteria (5) are returned to the pool where they
-                                        are ingested, resulting in infection.
-                                    </li>
-                                </ol>
-                            </p>
+
+                            <ol className="ml-6 list-decimal list-outside space-y-1 mt-5 text-slate-600">
+                                <li>
+                                    Low solubility organics (body oils, lotions etc.) adsorb onto
+                                    the piping forming a barrier film.
+                                </li>
+                                <li>
+                                    Reduced ORP allows bacteria to survive longer allowing
+                                    adsorption & absorption.
+                                </li>
+                                <li>
+                                    Barrier film provides a protective shelter from the chlorine in
+                                    a warm and nutrient rich environment.
+                                </li>
+                                <li>
+                                    Adaptive bacteria then form biofilms under which the bacteria
+                                    thrive and propagate.
+                                </li>
+                                <li>
+                                    Protected from the chlorine, encapsulated colonies are Chlorine
+                                    Resistant.
+                                </li>
+                                <li>
+                                    Literally hundreds of different species of bacteria can thrive
+                                    within the biofilm.
+                                </li>
+                                <li>
+                                    Detached bacteria (5) are returned to the pool where they are
+                                    ingested, resulting in infection.
+                                </li>
+                            </ol>
                         </div>
                     </div>
 
-                    <div className="col-span-6 grid place-items-center">
+                    <div className="col-span-6 grid place-items-center mr-12">
                         {/* <picture className="drop-shadow-xl">
                             <Image
                                 className="rounded-xl"
@@ -323,7 +322,7 @@ export default function RecreationalWaterIllness() {
                         <Carousel>
                             <CarouselContent>
                                 {biofilmImages.map(({ src, alt }) => (
-                                    <CarouselItem key={alt} className="md:basis-1">
+                                    <CarouselItem key={alt}>
                                         <div className="flex items-center justify-center p-4">
                                             <picture className="drop-shadow-xl">
                                                 <Image
