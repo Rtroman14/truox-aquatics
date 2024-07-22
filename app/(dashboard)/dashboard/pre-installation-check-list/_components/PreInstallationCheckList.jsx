@@ -84,6 +84,12 @@ export default function PreInstallationCheckList() {
                             </ul>
                         </li>
                         <li className="flex items-start space-x-2">
+                            <Checkbox id="FREE CHLORINE SENSOR RECOMMENDED" />
+                            <Label className="leading-5" htmlFor="FREE CHLORINE SENSOR RECOMMENDED">
+                                <strong>FREE CHLORINE SENSOR RECOMMENDED</strong>
+                            </Label>
+                        </li>
+                        <li className="flex items-start space-x-2">
                             <Checkbox id="Check available number of Relays" />
                             <Label className="leading-5" htmlFor="Check available number of Relays">
                                 <strong>Check available number of Relays</strong>

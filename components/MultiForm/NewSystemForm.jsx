@@ -312,7 +312,7 @@ export default function NewSystemForm() {
                                                                         2
                                                                     )}
                                                                 </strong>{" "}
-                                                                GPM (Suggested Start Up) [31.45% HCI
+                                                                GPD (Suggested Start Up) [31.45% HCI
                                                                 Undiluted]
                                                             </div>
 
@@ -334,7 +334,7 @@ export default function NewSystemForm() {
                                                                         2
                                                                     )}
                                                                 </strong>{" "}
-                                                                lbs/min (Suggested Start Up) [93%
+                                                                lbs/day (Suggested Start Up) [93%
                                                                 Sodium Bisulfate]
                                                             </div>
                                                         </div>

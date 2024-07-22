@@ -24,6 +24,17 @@ const biofilmImages = [
     },
 ];
 
+const cryptosporidiumImages = [
+    {
+        src: "/images/etiology-treated-water.png",
+        alt: "Etiology treated water",
+    },
+    {
+        src: "/images/crypto-hatching.png",
+        alt: "Crypto Hatching",
+    },
+];
+
 // export default function RecreationalWaterIllness() {
 //     return (
 //         <div className="mt-[70px]">
@@ -309,16 +320,6 @@ export default function RecreationalWaterIllness() {
                     </div>
 
                     <div className="col-span-6 grid place-items-center mr-12">
-                        {/* <picture className="drop-shadow-xl">
-                            <Image
-                                className="rounded-xl"
-                                src="/images/biofilm-evolution.png"
-                                alt="Evolution of biofilm"
-                                width={900}
-                                height={900}
-                            />
-                        </picture> */}
-
                         <Carousel>
                             <CarouselContent>
                                 {biofilmImages.map(({ src, alt }) => (
@@ -340,6 +341,66 @@ export default function RecreationalWaterIllness() {
                             <CarouselPrevious />
                             <CarouselNext />
                         </Carousel>
+                    </div>
+                </section>
+
+                <Banner
+                    title="Lets Have A Conversation"
+                    description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                />
+
+                <section className="container grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
+                    <div className="col-span-6 grid place-items-center mr-12">
+                        <Carousel>
+                            <CarouselContent>
+                                {cryptosporidiumImages.map(({ src, alt }) => (
+                                    <CarouselItem key={alt}>
+                                        <div className="flex items-center justify-center p-4">
+                                            <picture className="drop-shadow-xl">
+                                                <Image
+                                                    className="rounded-xl"
+                                                    src={src}
+                                                    alt={alt}
+                                                    width={900}
+                                                    height={900}
+                                                />
+                                            </picture>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
+                    </div>
+
+                    <div className="col-span-6 place-items-center justify-self-center md:justify-self-start">
+                        <div className="max-w-lg">
+                            <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                                Cryptosporidium
+                            </h2>
+
+                            <ul className="ml-6 list-disc list-outside space-y-1 mt-5 text-slate-600">
+                                <li className=" space-y-1">
+                                    <strong>Cryptosporidium</strong> is the leading cause of RWI.
+                                </li>
+                                <li className=" space-y-1">
+                                    Cryptosporidium is introduced into the pool water by someone
+                                    infected by the parasite.
+                                </li>
+                                <li className=" space-y-1">
+                                    Cryptosporidium oocyst comprise a multi-layer membrane.
+                                </li>
+                                <li className=" space-y-1">
+                                    The sporozoites residing inside are highly protected -{" "}
+                                    <strong>Chlorine Resistant.</strong>
+                                </li>
+                                <li className=" space-y-1">
+                                    Cryptosporidium can survive & infect bathers for over a week
+                                    with typical chlorine concentrations. .
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
             </div>

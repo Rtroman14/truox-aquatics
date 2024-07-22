@@ -193,148 +193,6 @@ export default function ExistingSystemForm() {
                             </Card>
                         ) : null}
 
-                        {/* {activeStep === 1 ? (
-                            <Card className="w-max">
-                                <CardHeader>
-                                    <CardTitle>Proprietary Calculations</CardTitle>
-                                    <CardDescription>
-                                        Feed-rate based on{" "}
-                                        <span>
-                                            Cl<sub>2</sub>
-                                        </span>{" "}
-                                        and Booster Pump Flow Rate
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <div>
-                                        <div className="space-y-2">
-                                            <div>
-                                                A.{" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {maxClFeedRate}
-                                                </strong>
-                                                <span>
-                                                    <Badge variant="secondary">
-                                                        lbs/day as Cl<sub>2</sub>
-                                                    </Badge>
-                                                </span>
-                                                x 0.75 = Cryptolyte® Feed Rate{" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {cryptolyteFeedRate}
-                                                </strong>
-                                                <Badge variant="secondary">gal/day</Badge>
-                                            </div>
-
-                                            <div className="pl-5">
-                                                <strong>Cryptolyte® Feed Rate</strong>{" "}
-                                                {cryptolyteFeedRate} + 10 ={" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {minBoosterPump.toFixed(0)}
-                                                </strong>{" "}
-                                                <Badge variant="secondary">
-                                                    Min Booster Pump GPM
-                                                </Badge>
-                                            </div>
-
-                                            <div className="pl-5">
-                                                <strong>Cryptolyte® Feed Rate</strong>{" "}
-                                                {cryptolyteFeedRate} x 593.14 ={" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {pd1.toFixed(2)}
-                                                </strong>{" "}
-                                                <Badge variant="secondary">PD1</Badge>
-                                            </div>
-                                        </div>
-
-                                        <Separator className="my-4" />
-
-                                        <div className="space-y-2">
-                                            <div>
-                                                B.{" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {poolVol}
-                                                </strong>
-                                                <span> Pool Volume</span>
-                                                <span>
-                                                    <Badge variant="secondary">Gal</Badge>
-                                                </span>
-                                                x 3.785 ={" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {pd2.toFixed(2)}
-                                                </strong>
-                                                <Badge variant="secondary">PD2</Badge>
-                                            </div>
-
-                                            <div className="pl-5">
-                                                PD1 ÷ PD2 ={" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {poolDynamic.toFixed(6)}
-                                                </strong>{" "}
-                                                <Badge variant="secondary">
-                                                    Cl0 <sub className="mr-1">2</sub> ppm/min
-                                                </Badge>
-                                            </div>
-
-                                            <div className="pl-5">
-                                                <strong>
-                                                    Pool Dynamic{" "}
-                                                    <span className="underline underline-offset-2">
-                                                        {poolDynamic.toFixed(6)}
-                                                    </span>
-                                                </strong>{" "}
-                                                <Badge variant="secondary">
-                                                    Cl0 <sub className="mr-1">2</sub> ppm/min
-                                                </Badge>{" "}
-                                                = TBP SPAN{" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {tbpSpan.toFixed(2)}{" "}
-                                                </strong>
-                                                <span className="text-xs">(4.99 Max Value)</span>
-                                            </div>
-
-                                            <div className="pl-5">
-                                                <strong>
-                                                    Cryptolyte® Feed Rate{" "}
-                                                    <span className="underline underline-offset-2">
-                                                        {cryptolyteFeedRate.toFixed(2)}
-                                                    </span>
-                                                </strong>
-                                                <Badge variant="secondary">gal/day</Badge> x 0.65 =
-                                                Muriatic Acid Feed Rate{" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {muriaticAcidFeetRate.toFixed(2)}{" "}
-                                                </strong>
-                                                <Badge variant="secondary">GPM</Badge>
-                                            </div>
-
-                                            <div className="pl-5">
-                                                <strong>
-                                                    Cryptolyte® Feed Rate{" "}
-                                                    <span className="underline underline-offset-2">
-                                                        {cryptolyteFeedRate.toFixed(2)}
-                                                    </span>
-                                                </strong>
-                                                <Badge variant="secondary">gal/day</Badge> x 0.86 =
-                                                Sodium Bisulfate Acid Feed Rate{" "}
-                                                <strong className="underline underline-offset-2">
-                                                    {sodiumBisulfateAcidFeetRate.toFixed(2)}
-                                                </strong>{" "}
-                                                <Badge variant="secondary">lbs/day</Badge>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                                <CardFooter className="flex justify-between">
-                                    <Button size="sm" onClick={handleBack} variant="secondary">
-                                        Back
-                                    </Button>
-                                    <Button size="sm" onClick={handleNext}>
-                                        Next
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        ) : null} */}
-
                         {activeStep === 1 ? (
                             <Card className="w-max">
                                 <CardContent className="pt-6">
@@ -478,7 +336,7 @@ export default function ExistingSystemForm() {
                                                                         2
                                                                     )}
                                                                 </strong>{" "}
-                                                                GPM (Suggested Start Up) [31.45% HCI
+                                                                GPD (Suggested Start Up) [31.45% HCI
                                                                 Undiluted]
                                                             </div>
 
@@ -500,7 +358,7 @@ export default function ExistingSystemForm() {
                                                                         2
                                                                     )}
                                                                 </strong>{" "}
-                                                                lbs/min (Suggested Start Up) [93%
+                                                                lbs/day (Suggested Start Up) [93%
                                                                 Sodium Bisulfate]
                                                             </div>
                                                         </div>

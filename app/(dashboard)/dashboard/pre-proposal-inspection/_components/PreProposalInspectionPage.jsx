@@ -80,10 +80,12 @@ export default function PreProposalInspectionPage() {
                         </div>
                         <div>
                             <div className="grid place-items-center">
-                                <h3 className="text-xl font-semibold">Chlorine Installation</h3>
+                                <h3 className="text-xl font-semibold">
+                                    Chlorine (Alternative) Installation
+                                </h3>
                                 <picture>
                                     <Image
-                                        src="/images/chlorine-installation.png"
+                                        src="/images/chlorine-alternative-installation.png"
                                         alt="chlorine-installation"
                                         width={900}
                                         height={900}
@@ -254,6 +256,7 @@ export default function PreProposalInspectionPage() {
         "Cryptolyte Feed System",
         "Neutralizer Feed System (Optional)",
         "pH Sample tap/valve",
+        "FREE CHLORINE SENSOR RECOMMENDED",
     ];
 
     const existingNumberOfRelaysList = [
@@ -284,8 +287,13 @@ export default function PreProposalInspectionPage() {
 
     const steps = [
         {
-            title: "Water Flow into Gutter/Skimmer System",
-            component: <WaterFlowSystem title="Water Flow into Gutter/Skimmer System" step={0} />,
+            title: "Ensure proper water flow into Gutter/Skimmer system",
+            component: (
+                <WaterFlowSystem
+                    title="Ensure proper water flow into Gutter/Skimmer system"
+                    step={0}
+                />
+            ),
         },
         {
             title: "Basic Installation Requirements",

@@ -60,8 +60,8 @@ export default function InstallationDiagrams() {
                     </h3>
                     <picture>
                         <Image
-                            src="/images/chlorine-installation.png"
-                            alt="pulsar-installation"
+                            src="/images/chlorine-alternative-installation-installation.png"
+                            alt="Chlorine Installation diagram"
                             width={900}
                             height={900}
                         />
