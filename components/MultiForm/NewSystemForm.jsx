@@ -223,7 +223,7 @@ export default function NewSystemForm() {
                                                 <strong className="underline underline-offset-2">
                                                     {muriaticAcidFeetRate.toFixed(2)}
                                                 </strong>{" "}
-                                                GPM
+                                                GPD
                                             </div>
 
                                             <div className="relative py-2">
@@ -242,7 +242,7 @@ export default function NewSystemForm() {
                                                 <strong className="underline underline-offset-2">
                                                     {sodiumBisulfateAcidFeetRate.toFixed(2)}
                                                 </strong>{" "}
-                                                lbs/min
+                                                lbs/day
                                             </div>
                                         </div>
                                     </div>
