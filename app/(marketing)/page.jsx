@@ -23,13 +23,21 @@ export default async function Home() {
                 />
 
                 <TwoColSection
+                    title="Mitigating RWI"
+                    description="Cryptolyte® is a state-of-the-art solution for mitigating Recreational Water Illnesses (RWI). It rapidly oxidizes contaminants like Urea and targets chlorine-resistant pathogens such as Cryptosporidium. Cryptolyte® significantly reduces trichloramine levels, disrupts resistant pathogen membranes, and combats biofilms and bacteria, ensuring a healthier and safer swimming environment without relying on circulation rates."
+                    imageSrc="/images/trichlor-chart.png"
+                    imageAlt=""
+                    learnMoreHref="/remediation"
+                    isReversed
+                />
+                {/* <TwoColSection
                     title="Remediation"
                     description="Introducing Cryptolyte®, a patented, EPA Registered pool disinfectant, ensuring rapid elimination of chlorine-resistant Cryptosporidium and other pathogens. Its integration with current systems guarantees a safe and clean swimming experience with less chemical usage. Certified for both pools and drinking water, Cryptolyte® is the new standard in water remediation."
                     imageSrc="/images/placeholder.jpeg"
                     imageAlt=""
                     learnMoreHref="/remediation"
                     isReversed
-                />
+                /> */}
             </section>
 
             <Banner

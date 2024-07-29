@@ -33,7 +33,7 @@ import { usePathname } from "next/navigation";
 
 const tabs = [
     {
-        title: "System Sizing & Controller Configuration",
+        title: "Cryptolyte System Sizing & Controller Configuration",
         slug: "system-sizing-controller-configuration",
         icon: <CogIcon className="mr-2 h-5 w-5" />,
         children: [
@@ -67,10 +67,33 @@ const tabs = [
         children: [],
     },
     {
-        title: "Installation",
+        title: "Installation Diagrams",
         slug: "installation",
         icon: <WrenchIcon className="mr-2 h-5 w-5" />,
         children: [],
+    },
+    {
+        title: "Pre-Startup Check List",
+        slug: "installation",
+        icon: <WrenchIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Cl02 Sensor Calibration & Maintenance",
+        slug: "installation",
+        icon: <WrenchIcon className="mr-2 h-5 w-5" />,
+        children: [
+            {
+                title: "Calibration",
+                slug: "startup-calibration",
+                icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "Maintenance",
+                slug: "new-system",
+                icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
+            },
+        ],
     },
     {
         title: "Sensor Commissioning",
@@ -87,12 +110,6 @@ const tabs = [
     {
         title: "Startup Troubleshooting",
         slug: "startup-troubleshooting",
-        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
-        children: [],
-    },
-    {
-        title: "Startup Calibration",
-        slug: "startup-calibration",
         icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },

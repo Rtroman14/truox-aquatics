@@ -15,7 +15,8 @@ export default function TwoColSection({
             <div
                 className={`col-span-6 hidden place-items-center justify-self-center md:justify-self-start ${
                     isReversed ? "" : "md:grid"
-                }`}>
+                }`}
+            >
                 <div className="max-w-lg">
                     <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                         {title}
@@ -23,7 +24,7 @@ export default function TwoColSection({
                     <p className="mt-3 text-slate-600 [text-wrap:balance]">{description}</p>
 
                     <div className="mt-6 flex items-center gap-4">
-                        <Button asChild size="lg" className="text-sm sm:text-base">
+                        <Button asChild>
                             <Link href={learnMoreHref}>Learn More</Link>
                         </Button>
                     </div>
@@ -45,7 +46,8 @@ export default function TwoColSection({
             <div
                 className={`col-span-6 grid place-items-center justify-self-center md:justify-self-start ${
                     isReversed ? "" : "md:hidden"
-                }`}>
+                }`}
+            >
                 <div className="max-w-lg">
                     <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] lg:text-[53px]">
                         {title}
@@ -53,7 +55,7 @@ export default function TwoColSection({
                     <p className="mt-3 text-slate-600 [text-wrap:balance]">{description}</p>
 
                     <div className="mt-6 flex items-center gap-4">
-                        <Button asChild size="lg" className="text-sm sm:text-base">
+                        <Button asChild>
                             <Link href={learnMoreHref}>Learn More</Link>
                         </Button>
                     </div>

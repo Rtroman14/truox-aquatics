@@ -4,16 +4,17 @@ export default function MitigationSection() {
     return (
         <section className="py-20 sm:py-36 container">
             <h2 className="text-4xl text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
-                Mitigating Liability
+                Mitigating Risk
             </h2>
 
             <div>
                 <p className="mt-3 text-slate-600 [text-wrap:balance] text-center italic">
-                    “Pool Water remediation, confirmation and documentation give our customers the
-                    proof they need to defuse accusations in a climate where even a negative review
-                    can go viral online and damage a business’s reputation.”
+                    “Controlling, Confirming & Documenting pool water remediation of Chlorine
+                    Resistant Pathogens gives our customers the proof they need to defuse
+                    accusations in a climate where even a negative review can go viral online and
+                    damage a business’s reputation.”
                 </p>
-                <p className="mt-3 text-slate-600 [text-wrap:balance] text-center">
+                <p className="mt-3 text-slate-600 [text-wrap:balance] text-center font-bold">
                     Alvaro Mendoza, CEO, Aquafinity Jupiter, Fl
                 </p>
             </div>
