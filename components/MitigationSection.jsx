@@ -1,4 +1,6 @@
 import { CheckBadgeIcon, DocumentCheckIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function MitigationSection() {
     return (
@@ -17,6 +19,12 @@ export default function MitigationSection() {
                 <p className="mt-3 text-slate-600 [text-wrap:balance] text-center font-bold">
                     Alvaro Mendoza, CEO, Aquafinity Jupiter, Fl
                 </p>
+
+                {/* <div className="w-full flex justify-center mt-8">
+                    <Button asChild size="sm">
+                        <Link href="/risk-mitigation">Learn More</Link>
+                    </Button>
+                </div> */}
             </div>
 
             <div className="grid grid-cols-3 justify-center mt-20 gap-4">
@@ -29,6 +37,11 @@ export default function MitigationSection() {
                         We adhere to EPA standards, ensuring our water treatments meet legal and
                         safety requirements, safeguarding both public health and your business.
                     </p>
+                    <div>
+                        <Button asChild size="sm">
+                            <Link href="/risk-mitigation">Learn More</Link>
+                        </Button>
+                    </div>
                 </div>
                 <div className="grid gap-3">
                     <div className="flex items-center gap-2">
@@ -39,6 +52,11 @@ export default function MitigationSection() {
                         Our management system quickly targets and corrects water quality issues,
                         providing reliable and comprehensive remediation services.
                     </p>
+                    <div>
+                        <Button asChild size="sm">
+                            <Link href="/risk-mitigation">Learn More</Link>
+                        </Button>
+                    </div>
                 </div>
                 <div className="grid gap-3">
                     <div className="flex items-center gap-2">
@@ -49,6 +67,11 @@ export default function MitigationSection() {
                         Our stringent testing and safety measures ensure superior water conditions,
                         minimizing risk and enhancing user confidence.
                     </p>
+                    <div>
+                        <Button asChild size="sm">
+                            <Link href="/risk-mitigation">Learn More</Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </section>

@@ -8,6 +8,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+import { CheckBadgeIcon, DocumentCheckIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 
 export const metadata = {
     title: "CryptoLyte | Risk Mitigation",
@@ -35,26 +36,78 @@ const cryptosporidiumImages = [
     },
 ];
 
+const integratedSystems = [
+    {
+        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
+        title: "Kills 99.9% Cryptosporidium < 30 minutes",
+        description:
+            "Cryptolyte® swiftly eradicates over 99.9% of cryptosporidium, ensuring a rapid return to safe and enjoyable pool use within 30 minutes.",
+    },
+    {
+        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
+        title: "Penetrates, Removes & Prevents Biofilms",
+        description:
+            "Our advanced Cryptolyte® treatment digs deep to eliminate biofilms, cleanses surfaces thoroughly, and offers a protective barrier to prevent future growth and proliferation.",
+    },
+    {
+        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
+        title: "Controls, Confirms & Documents Remediation",
+        description:
+            "Cryptolyte® offers daily evening, continuous 24/7, and fecal incident remediation with pinpoint accuracy, backed by comprehensive documentation.",
+    },
+    {
+        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
+        title: "Certified ANSI/NSF 50 for use in Swimming Pools",
+        description:
+            "With Cryptolyte® receiving ANSI/NSF 50 certification, it’s officially recognized for maintaining clean, safe water in swimming pools, upholding the industry's top safety standards.",
+    },
+    {
+        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
+        title: "Certified ANSI/NSF 60 for use in Drinking Water",
+        description:
+            "Cryptolyte® also boasts ANSI/NSF 60 certification, providing assurance that your drinking water is treated with a proven, secure solution.",
+    },
+    {
+        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
+        title: "Superior Indoor Water & Air Quality",
+        description:
+            "By targeting and reducing waterborne contaminants, Cryptolyte® significantly improves water transparency and enhances the quality of indoor air for a healthier swimming experience.",
+    },
+];
+
 export default function RiskMitigation() {
     return (
         <div className="mt-[70px]">
             <PageHero title="Risk Mitigation" />
 
             <div className="space-y-20 my-20">
-                <section className="w-full flex justify-center">
-                    <div className="max-w-lg">
-                        <h2 className="text-4xl text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
-                            Mitigating Risks
-                        </h2>
-                        <p className="mt-5 text-slate-600 [text-wrap:balance] text-center italic">
+                <section className="container py-20 sm:py-28">
+                    <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                        Mitigating Risks
+                    </h2>
+
+                    <div>
+                        <p className="mt-3 text-slate-600 [text-wrap:balance] text-center italic">
                             “Controlling, Confirming & Documenting pool water remediation of
                             Chlorine Resistant Pathogens gives our customers the proof they need to
                             defuse accusations in a climate where even a negative review can go
                             viral online and damage a business’s reputation.”
                         </p>
-                        <p className="mt-3 text-slate-600 [text-wrap:balance] text-center font-bold">
+                        <p className="mt-3 [text-wrap:balance] text-center font-semibold">
                             Alvaro Mendoza, CEO, Aquafinity Jupiter, FL
                         </p>
+                    </div>
+
+                    <div className="grid grid-cols-3 justify-center mt-20 gap-4 gap-y-10">
+                        {integratedSystems.map((el) => (
+                            <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
+                                <div className="flex items-center gap-2">
+                                    <div>{el.icon}</div>
+                                    <h3 className="text-xl">{el.title}</h3>
+                                </div>
+                                <p className="text-slate-600">{el.description}</p>
+                            </div>
+                        ))}
                     </div>
                 </section>
 

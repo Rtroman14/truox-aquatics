@@ -5,6 +5,7 @@ import Hero from "@/components/Hero.water.drop";
 import TwoColSection from "@/components/TwoColSection";
 import Banner from "@/components/Banner";
 import MitigationSection from "@/components/MitigationSection";
+// import { SocialProof } from "@/components/SocialProof";
 
 export default async function Home() {
     return (
@@ -12,6 +13,10 @@ export default async function Home() {
             {/* <Hero /> */}
 
             <Hero />
+
+            {/* <section>
+                <SocialProof />
+            </section> */}
 
             <section className="grid gap-24 py-20 sm:gap-36 sm:py-36">
                 <TwoColSection
@@ -27,7 +32,7 @@ export default async function Home() {
                     description="Cryptolyte® is a state-of-the-art solution for mitigating Recreational Water Illnesses (RWI). It rapidly oxidizes contaminants like Urea and targets chlorine-resistant pathogens such as Cryptosporidium. Cryptolyte® significantly reduces trichloramine levels, disrupts resistant pathogen membranes, and combats biofilms and bacteria, ensuring a healthier and safer swimming environment without relying on circulation rates."
                     imageSrc="/images/trichlor-chart.png"
                     imageAlt=""
-                    learnMoreHref="/remediation"
+                    learnMoreHref="/remediating-rwi"
                     isReversed
                 />
                 {/* <TwoColSection

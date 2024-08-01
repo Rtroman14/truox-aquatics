@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CheckBadgeIcon, DocumentCheckIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 import PageHero from "@/components/PageHero";
 
 import Banner from "@/components/Banner";
@@ -8,45 +7,6 @@ export const metadata = {
     title: "CryptoLyte | Remediating RWI",
     description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
 };
-
-const integratedSystems = [
-    {
-        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
-        title: "Kills 99.9% Cryptosporidium < 30 minutes",
-        description:
-            "Cryptolyte® swiftly eradicates over 99.9% of cryptosporidium, ensuring a rapid return to safe and enjoyable pool use within 30 minutes.",
-    },
-    {
-        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
-        title: "Penetrates, Removes & Prevents Biofilms",
-        description:
-            "Our advanced Cryptolyte® treatment digs deep to eliminate biofilms, cleanses surfaces thoroughly, and offers a protective barrier to prevent future growth and proliferation.",
-    },
-    {
-        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
-        title: "Controls, Confirms & Documents Remediation",
-        description:
-            "Cryptolyte® offers daily evening, continuous 24/7, and fecal incident remediation with pinpoint accuracy, backed by comprehensive documentation.",
-    },
-    {
-        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
-        title: "Certified ANSI/NSF 50 for use in Swimming Pools",
-        description:
-            "With Cryptolyte® receiving ANSI/NSF 50 certification, it’s officially recognized for maintaining clean, safe water in swimming pools, upholding the industry's top safety standards.",
-    },
-    {
-        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
-        title: "Certified ANSI/NSF 60 for use in Drinking Water",
-        description:
-            "Cryptolyte® also boasts ANSI/NSF 60 certification, providing assurance that your drinking water is treated with a proven, secure solution.",
-    },
-    {
-        icon: <CheckBadgeIcon className="h-6 w-6 text-primary" />,
-        title: "Superior Indoor Water & Air Quality",
-        description:
-            "By targeting and reducing waterborne contaminants, Cryptolyte® significantly improves water transparency and enhances the quality of indoor air for a healthier swimming experience.",
-    },
-];
 
 export default function Remediation() {
     return (
@@ -145,10 +105,9 @@ export default function Remediation() {
                             bather loading (time of day) throughout the remainder of the study.
                             <br />
                             <br />
-                            <span className="text-blue-500 font-semibold">Cryptolyte®</span>{" "}
-                            accelerates oxidation of the organic contaminants contributed by
-                            swimmers and existing DBPs thereby inhibiting accumulation. Oxidation
-                            Potential (ORP) remains elevated.
+                            <strong>Cryptolyte®</strong> accelerates oxidation of the organic
+                            contaminants contributed by swimmers and existing DBPs thereby
+                            inhibiting accumulation. Oxidation Potential (ORP) remains elevated.
                         </p>
                     </div>
                 </div>
@@ -179,7 +138,7 @@ export default function Remediation() {
                             />
                         </picture>
                         <p className="text-slate-600 text-sm text-center [text-wrap:balance]">
-                            <strong>Fig. 1</strong>
+                            <strong>Fig. 2</strong>
                         </p>
                     </div>
                 </div>
@@ -201,6 +160,11 @@ export default function Remediation() {
                     </div>
                 </div> */}
             </section>
+
+            <Banner
+                title="Lets Have A Conversation"
+                description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+            />
 
             <section className="py-20 sm:py-28 container">
                 <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
@@ -261,12 +225,11 @@ export default function Remediation() {
                 <div className="lg:w-3/4 mx-auto">
                     <p className="text-slate-800 [text-wrap:balance] text-center">
                         The same powerful effects are exerted on{" "}
-                        <strong>Biofilms & Bacteria</strong> throughout the
-                        <strong>ENTIRE</strong> water & circulating system. The Rate of Remediation
-                        is <strong>NOT</strong> determined by Circulation Rate like side-stream
-                        treatments (e.g. UV, Ozone).{" "}
+                        <strong>Biofilms & Bacteria</strong> throughout the <strong>ENTIRE</strong>{" "}
+                        water & circulating system. The Rate of Remediation is <strong>NOT</strong>{" "}
+                        determined by Circulation Rate like side-stream treatments (e.g. UV, Ozone).{" "}
                         <span className="text-blue-500 font-semibold">Cryptolyte®</span> provides{" "}
-                        <strong>Controlled, Confirmed & Documented Remediation</strong> of
+                        <strong>Controlled, Confirmed & Documented Remediation</strong> of{" "}
                         <strong>Chlorine Resistant Pathogens</strong>.
                     </p>
                     {/* <p className="text-slate-800 [text-wrap:balance] text-center">
@@ -287,41 +250,6 @@ export default function Remediation() {
                             height={800}
                         />
                     </picture>
-                </div>
-            </section>
-
-            <Banner
-                title="Lets Have A Conversation"
-                description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-            />
-
-            <section className="container py-20 sm:py-28">
-                <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
-                    Risk Mitigation
-                </h2>
-
-                <div>
-                    <p className="mt-3 text-slate-600 [text-wrap:balance] text-center italic">
-                        “Controlling, Confirming & Documenting pool water remediation of Chlorine
-                        Resistant Pathogens gives our customers the proof they need to defuse
-                        accusations in a climate where even a negative review can go viral online
-                        and damage a business’s reputation.”
-                    </p>
-                    <p className="mt-3 [text-wrap:balance] text-center font-semibold">
-                        Alvaro Mendoza, CEO, Aquafinity Jupiter, FL
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-3 justify-center mt-20 gap-4 gap-y-10">
-                    {integratedSystems.map((el) => (
-                        <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
-                            <div className="flex items-center gap-2">
-                                <div>{el.icon}</div>
-                                <h3 className="text-xl">{el.title}</h3>
-                            </div>
-                            <p className="text-slate-600">{el.description}</p>
-                        </div>
-                    ))}
                 </div>
             </section>
         </div>

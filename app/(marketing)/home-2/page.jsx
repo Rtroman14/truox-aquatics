@@ -12,19 +12,27 @@ export default async function Home() {
                 <TwoColSection
                     title="Recreational Water Illness (RWI)"
                     description="Recreational Water Illness (RWI) is a term for infections caused by germs spread by swimming in contaminated water. Even well-treated pools can have RWIs, due to micro-organisms and byproducts from the interaction of chlorine with bather-introduced substances like sweat, body oils, and lotions. These contaminants reduce the chlorine's effectiveness and can create a shield on surfaces where bacteria hide and multiply. It's essential to maintain proper pool hygiene to protect against RWIs."
-                    imageSrc="/images/etiology.png"
+                    imageSrc="/images/recreational-water-outbreaks-chart.png"
                     imageAlt=""
                     learnMoreHref="/recreational-water-illness"
                 />
 
                 <TwoColSection
+                    title="Mitigating RWI"
+                    description="Cryptolyte® is a state-of-the-art solution for mitigating Recreational Water Illnesses (RWI). It rapidly oxidizes contaminants like Urea and targets chlorine-resistant pathogens such as Cryptosporidium. Cryptolyte® significantly reduces trichloramine levels, disrupts resistant pathogen membranes, and combats biofilms and bacteria, ensuring a healthier and safer swimming environment without relying on circulation rates."
+                    imageSrc="/images/trichlor-chart.png"
+                    imageAlt=""
+                    learnMoreHref="/remediating-rwi"
+                    isReversed
+                />
+                {/* <TwoColSection
                     title="Remediation"
                     description="Introducing Cryptolyte®, a patented, EPA Registered pool disinfectant, ensuring rapid elimination of chlorine-resistant Cryptosporidium and other pathogens. Its integration with current systems guarantees a safe and clean swimming experience with less chemical usage. Certified for both pools and drinking water, Cryptolyte® is the new standard in water remediation."
                     imageSrc="/images/placeholder.jpeg"
                     imageAlt=""
                     learnMoreHref="/remediation"
                     isReversed
-                />
+                /> */}
             </section>
 
             <Banner
