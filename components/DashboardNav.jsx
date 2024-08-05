@@ -28,6 +28,7 @@ import {
 } from "@heroicons/react/24/outline";
 // import { SquareCheck } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 // console.log(`SquareCheck -->`, SquareCheck);
 
@@ -68,13 +69,13 @@ const tabs = [
     },
     {
         title: "Installation Diagrams",
-        slug: "installation",
+        slug: "installation-diagrams",
         icon: <WrenchIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Pre-Startup Check List",
-        slug: "installation",
+        slug: "pre-startup-check-list",
         icon: <WrenchIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
@@ -160,9 +161,9 @@ export default function DashboardNav() {
                                 <Link
                                     key={`${tab.slug}-${index}`}
                                     href={`/dashboard/${tab.slug}`}
-                                    className={
+                                    className={cn(
                                         activeTab === tab.slug ? selectedClass : defaultClass
-                                    }
+                                    )}
                                     onClick={() => setActiveTab(tab.slug)}
                                 >
                                     <span>{tab.icon}</span>
@@ -175,9 +176,10 @@ export default function DashboardNav() {
                             <li key={`${tab.slug}-${index}`}>
                                 <div
                                     onClick={() => setExpand(!expand)}
-                                    className={`${
+                                    className={cn(
+                                        "flex cursor-pointer justify-between",
                                         activeTab === tab.slug ? selectedClass : defaultClass
-                                    } flex cursor-pointer justify-between`}
+                                    )}
                                 >
                                     <div className="flex items-center">
                                         <span>{tab.icon}</span>
@@ -197,11 +199,12 @@ export default function DashboardNav() {
                                             {child.title ===
                                             "System Sizing & Controller Configuration" ? (
                                                 <div
-                                                    className={`${
+                                                    className={cn(
+                                                        "ml-6 mt-1 cursor-pointer",
                                                         slug.includes(child.slug)
                                                             ? selectedClass
                                                             : defaultClass
-                                                    } ml-6 mt-1 cursor-pointer`}
+                                                    )}
                                                 >
                                                     <span>{child.icon}</span>
                                                     <span>{child.title}</span>
@@ -209,11 +212,12 @@ export default function DashboardNav() {
                                             ) : (
                                                 <Link
                                                     href={`/dashboard/${child.slug}`}
-                                                    className={`${
+                                                    className={cn(
+                                                        "ml-6 mt-1",
                                                         slug.includes(child.slug)
                                                             ? selectedClass
                                                             : defaultClass
-                                                    } ml-6 mt-1`}
+                                                    )}
                                                     onClick={() => setActiveTab(tab.slug)}
                                                 >
                                                     <span>{child.icon}</span>

@@ -84,6 +84,7 @@ export default function NewSystemForm() {
         const minBoosterPumpVal = cryptolyteFeedRate / 19;
         setMinBoosterPump(minBoosterPumpVal);
 
+        console.log(`cryptolyteFeedRateVal -->`, cryptolyteFeedRateVal);
         setMuriaticAcidFeedRate(cryptolyteFeedRateVal * 0.65);
 
         setSodiumBisulfateAcidFeedRate(cryptolyteFeedRateVal * 0.86);
@@ -814,7 +815,8 @@ export default function NewSystemForm() {
                                                 </div>
                                             </div>
 
-                                            <div className="h-screen">
+                                            {/* <div className="h-screen h-[calc(100vh-10px)"> */}
+                                            <div className="h-min">
                                                 <h3 className="text-2xl font-semibold mb-12 text-center">
                                                     Continuous Mode Configuration
                                                 </h3>

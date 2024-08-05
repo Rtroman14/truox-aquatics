@@ -89,8 +89,8 @@ export default function ExistingSystemForm() {
 
         setTbpSpan((pd1Val / pd2Val) * 10);
 
-        setMuriaticAcidFeedRate((cryptoLyteFeedRateVal / 10) * 0.65);
-        setSodiumBisulfateAcidFeedRate((cryptoLyteFeedRateVal / 10) * 0.86);
+        setMuriaticAcidFeedRate(cryptoLyteFeedRateVal * 0.65);
+        setSodiumBisulfateAcidFeedRate(cryptoLyteFeedRateVal * 0.86);
     }, [maxClFeedRate, poolVol]);
 
     const handlePrint = useReactToPrint({

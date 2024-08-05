@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function StartupConfigurationPage() {
     return (
@@ -8,7 +8,14 @@ export default function StartupConfigurationPage() {
                     <CardHeader>
                         <CardTitle>Startup Configuration</CardTitle>
                     </CardHeader>
-                    <CardContent className="ml-4">
+                    <CardContent className="ml-4 space-y-6">
+                        <p>
+                            <strong>NOTE:</strong> The Shock Cycle is used to perform the “Startup
+                            Remediation”. So the Shock Configuration will be programmed to perform
+                            the Startup Remediation. After completion of the Startup Remediation,
+                            the Shock Cycle needs to be reconfigured back to the normal Shock Cycle
+                            settings.
+                        </p>
                         <ul className="grid grid-cols-1 gap-3 list-disc">
                             <li className="space-y-1">
                                 <span>Shock Duration</span>
@@ -39,7 +46,13 @@ export default function StartupConfigurationPage() {
                                     </li>
                                     <li>
                                         <span>Default value - 3 hr</span>{" "}
-                                        <span className="text-blue-600">Set to 8hr</span>
+                                        <span className="text-blue-600">Reset to 3hr</span>
+                                    </li>
+                                    <li>
+                                        <span className="text-blue-600">
+                                            (Can set the Timeout based off the Pool Dynamic Chart if
+                                            desired)
+                                        </span>
                                     </li>
                                 </ul>
                             </li>
@@ -52,7 +65,9 @@ export default function StartupConfigurationPage() {
                                     </li>
                                     <li>
                                         <span>Default value - 160CT</span>{" "}
-                                        <span className="text-blue-600">Set to 1500</span>
+                                        <span className="text-green-600">
+                                            (Reset to 160 after Startup)
+                                        </span>
                                     </li>
                                 </ul>
                             </li>
