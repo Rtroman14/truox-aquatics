@@ -205,6 +205,7 @@ export default function Remediation() {
                                 Before Cryptolyte® Cryptosporidium oocyst 1000x Epifluorescence
                             </p>
                         </div>
+
                         <div className="space-y-2">
                             <picture className="drop-shadow-lg">
                                 <Image
