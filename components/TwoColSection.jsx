@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function TwoColSection({
     title,
@@ -13,9 +14,10 @@ export default function TwoColSection({
     return (
         <div className="container grid gap-8 sm:gap-16 md:grid-cols-12">
             <div
-                className={`col-span-6 hidden place-items-center justify-self-center md:justify-self-start ${
+                className={cn(
+                    "col-span-6 hidden place-items-center justify-self-center md:justify-self-start",
                     isReversed ? "" : "md:grid"
-                }`}
+                )}
             >
                 <div className="max-w-lg">
                     <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
@@ -44,9 +46,10 @@ export default function TwoColSection({
             </div>
 
             <div
-                className={`col-span-6 grid place-items-center justify-self-center md:justify-self-start ${
+                className={cn(
+                    "col-span-6 grid place-items-center justify-self-center md:justify-self-start",
                     isReversed ? "" : "md:hidden"
-                }`}
+                )}
             >
                 <div className="max-w-lg">
                     <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] lg:text-[53px]">

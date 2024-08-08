@@ -9,6 +9,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CheckBadgeIcon, DocumentCheckIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
+import AlvaroQuote from "@/components/AlvaroQuote";
 
 export const metadata = {
     title: "CryptoLyte | Risk Mitigation",
@@ -80,34 +81,48 @@ export default function RiskMitigation() {
         <div className="mt-[70px]">
             <PageHero title="Risk Mitigation" />
 
-            <div className="space-y-20 my-20">
+            <div className="space-y-20 my-16">
                 <section className="container py-20 sm:py-28">
-                    <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                    <h2 className="text-4xl mb-12 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                         Mitigating Risks
                     </h2>
 
-                    <div>
-                        <p className="mt-3 text-slate-600 [text-wrap:balance] text-center italic">
-                            “Controlling, Confirming & Documenting pool water remediation of
-                            Chlorine Resistant Pathogens gives our customers the proof they need to
-                            defuse accusations in a climate where even a negative review can go
-                            viral online and damage a business’s reputation.”
-                        </p>
-                        <p className="mt-3 [text-wrap:balance] text-center font-semibold">
-                            Alvaro Mendoza, CEO, Aquafinity Jupiter, FL
-                        </p>
-                    </div>
+                    <div className="grid grid-cols-2 gap-4 place-items-center">
+                        <AlvaroQuote />
 
-                    <div className="grid grid-cols-3 justify-center mt-20 gap-4 gap-y-10">
-                        {integratedSystems.map((el) => (
-                            <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
-                                <div className="flex items-center gap-2">
-                                    <div>{el.icon}</div>
-                                    <h3 className="text-xl">{el.title}</h3>
+                        {/* <div className="grid grid-cols-1 justify-center gap-4"> */}
+                        <div className="grid grid-cols-2 justify-center mt-20 gap-4 gap-y-10">
+                            {integratedSystems.map((el) => (
+                                <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
+                                    <div className="flex items-center gap-2">
+                                        <div>{el.icon}</div>
+                                        <h3 className="text-xl">{el.title}</h3>
+                                    </div>
+                                    {/* <p className="text-slate-600">{el.description}</p> */}
                                 </div>
-                                <p className="text-slate-600">{el.description}</p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="container ">
+                    <h2 className="text-4xl mb-12 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                        Mitigating Risks
+                    </h2>
+
+                    <div className="grid grid-cols-1 gap-4 place-items-center">
+                        <AlvaroQuote />
+
+                        <div className="grid grid-cols-3 justify-center mt-20 gap-4 gap-y-10 max-w-screen-lg">
+                            {integratedSystems.map((el) => (
+                                <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
+                                    <div className="flex items-center gap-2">
+                                        <div>{el.icon}</div>
+                                        <h3 className="text-xl">{el.title}</h3>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
 

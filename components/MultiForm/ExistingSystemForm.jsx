@@ -709,11 +709,10 @@ export default function ExistingSystemForm() {
                                                             <span>Mode</span>
                                                             <ul className="list-disc pl-8">
                                                                 <li>
-                                                                    Maintenance or{" "}
                                                                     <span className="text-blue-500">
-                                                                        Continuous
+                                                                        Maintenance
                                                                     </span>{" "}
-                                                                    mode.
+                                                                    or Continuous mode.
                                                                 </li>
                                                                 <li>
                                                                     Determines whether the system
@@ -994,6 +993,107 @@ export default function ExistingSystemForm() {
                                                                         {tbpSpan.toFixed(2)}
                                                                     </span>
                                                                 </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div className="h-min">
+                                                <h3 className="text-3xl font-semibold mb-12 text-center">
+                                                    Startup Configuration
+                                                </h3>
+
+                                                <div className="space-y-3">
+                                                    <ul className="list-disc">
+                                                        <li>
+                                                            <span>Shock Duration</span>
+                                                            <ul className="list-disc pl-8">
+                                                                <li>
+                                                                    Initial feed duration in shock
+                                                                    cycle before switching to TBP
+                                                                    control.
+                                                                </li>
+                                                                <li>Default value - 0s</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                    <ul className="list-disc">
+                                                        <li>
+                                                            <span>Shock Set Point</span>
+                                                            <ul className="list-disc pl-8">
+                                                                <li>
+                                                                    ClO<sub>2</sub> setpoint that
+                                                                    Cryptolyte will control to in
+                                                                    shock cycle
+                                                                </li>
+                                                                <li>Default value - 9.0ppm</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                    <ul className="list-disc">
+                                                        <li>
+                                                            <span>Shock Timeout</span>
+                                                            <ul className="list-disc pl-8">
+                                                                <li>
+                                                                    Maximum time allowed to complete
+                                                                    remediation before triggering
+                                                                    alarm in shock cycle
+                                                                </li>
+                                                                <li>
+                                                                    Default value - 3 hr{" "}
+                                                                    <span className="text-blue-500">
+                                                                        Set to 6hr
+                                                                    </span>
+                                                                </li>
+                                                                <li className="text-[#1FB55C]">
+                                                                    Upon completion of the Startup
+                                                                    Remediation, Reset the Default
+                                                                    to 3hr
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                    <ul className="list-disc">
+                                                        <li>
+                                                            <span>Shock CT Set Point</span>
+                                                            <ul className="list-disc pl-8">
+                                                                <li>
+                                                                    CT setpoint for tracking when a
+                                                                    remediation has been
+                                                                    successfully completed in shock
+                                                                    cycle
+                                                                </li>
+                                                                <li>
+                                                                    Default value - 160CT{" "}
+                                                                    <span className="text-blue-500">
+                                                                        Set to 800
+                                                                    </span>
+                                                                </li>
+                                                                <li className="text-[#1FB55C]">
+                                                                    Upon completion of the Startup
+                                                                    Remediation, Reset the Default
+                                                                    to 160
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                    <ul className="list-disc">
+                                                        <li>
+                                                            <span>Shock TBP Span</span>
+                                                            <ul className="list-disc pl-8">
+                                                                <li>
+                                                                    Offset from Shock Setpoint for
+                                                                    which proportional control will
+                                                                    be engaged. If outside this
+                                                                    span, then the feed will be
+                                                                    fully on.
+                                                                </li>
+                                                                <li>Default value – 0.2ppm</li>
                                                             </ul>
                                                         </li>
                                                     </ul>

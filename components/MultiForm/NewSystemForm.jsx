@@ -661,11 +661,10 @@ export default function NewSystemForm() {
                                                             <span>Mode</span>
                                                             <ul className="list-disc pl-8">
                                                                 <li>
-                                                                    Maintenance or{" "}
                                                                     <span className="text-blue-500">
-                                                                        Continuous
+                                                                        Maintenance
                                                                     </span>{" "}
-                                                                    mode.
+                                                                    or Continuous mode.
                                                                 </li>
                                                                 <li>
                                                                     Determines whether the system

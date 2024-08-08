@@ -105,6 +105,12 @@ const menuItems = [
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             },
+            {
+                title: "Studies",
+                href: "/faqs",
+                description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            },
         ],
     },
     {
@@ -216,10 +222,7 @@ export default function Navbar({ customer }) {
                                         <NavigationMenuItem key={item.name}>
                                             <NavigationMenuTrigger
                                                 className={cn(
-                                                    "data-[active]:!bg-transparent data-[state=open]:!bg-transparent bg-transparent text-white hover:bg-transparent",
-                                                    isTopHome
-                                                        ? "text-white hover:text-white/80"
-                                                        : "text-black hover:text-primary"
+                                                    "data-[active]:!bg-transparent data-[state=open]:!bg-transparent bg-transparent text-black hover:bg-transparent"
                                                 )}
                                             >
                                                 {item.name}
@@ -243,10 +246,7 @@ export default function Navbar({ customer }) {
                                             <Link href={item.href} legacyBehavior passHref>
                                                 <NavigationMenuLink
                                                     className={cn(
-                                                        `${navigationMenuTriggerStyle()} data-[active]:!bg-transparent data-[state=open]:!bg-transparent bg-transparent hover:bg-transparent`,
-                                                        isTopHome
-                                                            ? "text-white hover:text-white/80"
-                                                            : "text-black hover:text-primary"
+                                                        `${navigationMenuTriggerStyle()} data-[active]:!bg-transparent data-[state=open]:!bg-transparent bg-transparent hover:bg-transparent text-black`
                                                     )}
                                                 >
                                                     {item.name}
