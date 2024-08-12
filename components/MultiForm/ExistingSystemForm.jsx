@@ -416,6 +416,12 @@ export default function ExistingSystemForm() {
                                                                     EXISTING DEFAULT VALUE
                                                                 </div>
                                                             </div>
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-4 h-4 rounded-sm bg-green-500" />
+                                                                <div className="flex-1">
+                                                                    ADDITIONAL INFORMATION
+                                                                </div>
+                                                            </div>
                                                         </CardContent>
                                                     </Card>
                                                 </div>

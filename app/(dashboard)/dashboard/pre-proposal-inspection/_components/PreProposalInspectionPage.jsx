@@ -249,7 +249,7 @@ export default function PreProposalInspectionPage() {
     );
 
     const basicInstallationRequirementsList = [
-        'Booster Pump (1.5" PVC Pipe) (i.e. Pulsar® Type System)',
+        'Booster Pump (1.5" or Larger PVC Pipe) (i.e. Pulsar® Type System)',
         "Static Mixer or Venturi",
         "Chlorine Feed System",
         "Acid Feed System",

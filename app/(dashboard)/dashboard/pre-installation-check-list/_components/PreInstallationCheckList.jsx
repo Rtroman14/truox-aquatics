@@ -28,14 +28,14 @@ export default function PreInstallationCheckList() {
                             </Label>
                         </li>
                         <li className="flex items-start space-x-2">
-                            <Checkbox id="Palin Kemio Disinfectant Test Kit" />
+                            <Checkbox id="Palin Kemio Disinfectant Test Kit (or Truox approved ClO2 test kit)" />
                             <Label
                                 className="leading-5"
-                                htmlFor="Palin Kemio Disinfectant Test Kit"
+                                htmlFor="Palin Kemio Disinfectant Test Kit (or Truox approved ClO2 test kit)"
                             >
                                 <strong>
-                                    Palin Kemio Disinfectant Test Kit/Chlorine Dioxide
-                                    sensors/Standards Kit
+                                    Palin Kemio Disinfectant Test Kit (or Truox approved ClO2 test
+                                    kit)/Chlorine Dioxide sensors/Standards Kit
                                 </strong>
                             </Label>
                         </li>
@@ -154,12 +154,12 @@ export default function PreInstallationCheckList() {
                             <Checkbox id="Acid Setup" />
                             <Label className="leading-5" htmlFor="Acid Setup">
                                 <strong>Acid Setup</strong> – You will use 31% Muriatic Acid
-                                (UNDILUTED) or Sodium Bisulfate. Follow CONFIGURATION
-                                recommendations for proper setup. Startup feed-rate should be ~65%
-                                of the Cryptolyte® Feed-rate using muriatic acid (if Cryptolyte
-                                feed-rate is 85gpd, start with 55gpd Acid), then adjust as needed by
-                                sampling off the sample point post injection point to achieve pH
-                                3.0-4.0.
+                                (UNDILUTED) or Sodium Bisulfate. Consult Truox for CO2 pH Control
+                                Systems. Follow CONFIGURATION recommendations for proper setup.
+                                Startup feed-rate should be ~65% of the Cryptolyte® Feed-rate using
+                                muriatic acid (if Cryptolyte feed-rate is 85gpd, start with 55gpd
+                                Acid), then adjust as needed by sampling off the sample point post
+                                injection point to achieve pH 3.0-4.0.
                             </Label>
                         </li>
                         <li className="flex items-start space-x-2">

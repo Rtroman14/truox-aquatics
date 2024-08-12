@@ -74,12 +74,6 @@ const tabs = [
         children: [],
     },
     {
-        title: "Pre-Startup Check List",
-        slug: "pre-startup-check-list",
-        icon: <WrenchIcon className="mr-2 h-5 w-5" />,
-        children: [],
-    },
-    {
         title: "Cl02 Sensor Calibration & Maintenance",
         slug: "installation",
         icon: <WrenchIcon className="mr-2 h-5 w-5" />,
