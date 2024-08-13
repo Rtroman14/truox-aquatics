@@ -40,6 +40,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.2",
     "react-pdf": "^9.1.0",
+    "react-qr-code": "^2.0.15",
     "react-to-print": "^2.15.1",
     "recharts": "^2.12.7",
     "tailwind-merge": "^2.3.0",

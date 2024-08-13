@@ -223,13 +223,14 @@ export default function RecreationalWaterIllness() {
                                 Kids Hospitalized in Pool Outbreak
                             </h2>
                             <p className="mt-5 text-slate-600 [text-wrap:balance]">
-                                The CDC issued a new report on May 20, chronicling a recent bacteria
-                                outbreak from a swimming community pool. According to the report,
-                                the Pennsylvania Department of Health (PADOH) received multiple
-                                complaints of gastrointestinal illness on June 7, 2021, from patrons
-                                who had visited and swam at a community pool on May 31 that year.
-                                The agency identified 15 cases of E. coli infection among children
-                                ages 4 to 14, with nine confirmed cases and six probable cases.
+                                The CDC issued a new report on May 20, chronicling a 
+                                <span className="underline">recent bacteria outbreak</span> from a
+                                swimming community pool. According to the report, the Pennsylvania
+                                Department of Health (PADOH) received multiple complaints of
+                                gastrointestinal illness on June 7, 2021, from patrons who had
+                                visited and swam at a community pool on May 31 that year. The agency
+                                identified 15 cases of E. coli infection among children ages 4 to
+                                14, with nine confirmed cases and six probable cases.
                             </p>
                             <p className="mt-5 text-slate-600 italic">
                                 "Some of the children who tested positive for E. coli also tested
@@ -304,8 +305,8 @@ export default function RecreationalWaterIllness() {
                                     thrive and propagate.
                                 </li>
                                 <li>
-                                    Protected from the chlorine, encapsulated colonies are Chlorine
-                                    Resistant.
+                                    Protected from the chlorine,{" "}
+                                    <strong>encapsulated colonies are Chlorine Resistant.</strong>
                                 </li>
                                 <li>
                                     Literally hundreds of different species of bacteria can thrive

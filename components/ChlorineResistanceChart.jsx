@@ -18,20 +18,20 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-    { chlorineResistance: "cryptosporidium", value: 60, fill: "var(--color-cryptosporidium)" },
-    { chlorineResistance: "giardia", value: 6.5, fill: "var(--color-giardia)" },
-    {
-        chlorineResistance: "pseudomonas-aeruginosa",
-        value: 4,
-        fill: "var(--color-pseudomonas-aeruginosa)",
-    },
-    { chlorineResistance: "legionella", value: 2, fill: "var(--color-legionella)" },
+    { chlorineResistance: "e-coli", value: 0.1, fill: "var(--color-e-coli)" },
     {
         chlorineResistance: "enterococcus-faecium",
-        value: 0.5,
+        value: 0.1,
         fill: "var(--color-enterococcus-faecium)",
     },
-    { chlorineResistance: "e-coli", value: 0.5, fill: "var(--color-e-coli)" },
+    { chlorineResistance: "legionella", value: 0.5, fill: "var(--color-legionella)" },
+    {
+        chlorineResistance: "pseudomonas-aeruginosa",
+        value: 2,
+        fill: "var(--color-pseudomonas-aeruginosa)",
+    },
+    { chlorineResistance: "giardia", value: 3, fill: "var(--color-giardia)" },
+    { chlorineResistance: "cryptosporidium", value: 30, fill: "var(--color-cryptosporidium)" },
 ];
 
 const chartConfig = {

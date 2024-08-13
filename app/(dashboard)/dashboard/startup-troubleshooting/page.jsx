@@ -9,9 +9,9 @@ export default function StartupTroubleshootingPage() {
             <div className="flex flex-col items-center p-8">
                 <StartupTroubleshooting />
             </div>
-            <div className="flex flex-col items-center p-8">
+            {/* <div className="flex flex-col items-center p-8">
                 <StartupNeutralization />
-            </div>
+            </div> */}
             <div className="flex flex-col items-center p-8">
                 <ShockNeutralization />
             </div>

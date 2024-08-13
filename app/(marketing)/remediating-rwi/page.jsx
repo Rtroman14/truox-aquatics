@@ -245,7 +245,7 @@ export default function Remediation() {
                     <picture className="drop-shadow-lg">
                         <Image
                             className="rounded-xl"
-                            src="/images/placeholder.jpeg"
+                            src="/images/relative-chlorine-resistance.png"
                             alt="after-cryptolyte"
                             width={800}
                             height={800}
