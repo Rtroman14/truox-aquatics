@@ -1,13 +1,8 @@
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Banner from "@/components/Banner";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
+import epaLogo from "../../../public/images/EPA_logo.svg";
+
 import { CheckBadgeIcon, DocumentCheckIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 import AlvaroQuote from "@/components/AlvaroQuote";
 
@@ -82,7 +77,7 @@ export default function RiskMitigation() {
             <PageHero title="Risk Mitigation" />
 
             <div className="space-y-20 my-16">
-                <section className="container py-20 sm:py-28">
+                {/* <section className="container py-20 sm:py-28">
                     <h2 className="text-4xl mb-12 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                         Mitigating Risks
                     </h2>
@@ -90,7 +85,6 @@ export default function RiskMitigation() {
                     <div className="grid grid-cols-2 gap-4 place-items-center">
                         <AlvaroQuote />
 
-                        {/* <div className="grid grid-cols-1 justify-center gap-4"> */}
                         <div className="grid grid-cols-2 justify-center mt-20 gap-4 gap-y-10">
                             {integratedSystems.map((el) => (
                                 <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
@@ -98,12 +92,11 @@ export default function RiskMitigation() {
                                         <div>{el.icon}</div>
                                         <h3 className="text-xl">{el.title}</h3>
                                     </div>
-                                    {/* <p className="text-slate-600">{el.description}</p> */}
                                 </div>
                             ))}
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 <section className="container ">
                     <h2 className="text-4xl mb-12 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
@@ -114,6 +107,17 @@ export default function RiskMitigation() {
                         <AlvaroQuote />
 
                         <div className="grid grid-cols-3 justify-center mt-20 gap-4 gap-y-10 max-w-screen-lg">
+                            <div className="mx-auto col-span-3">
+                                <Image
+                                    priority
+                                    src={epaLogo}
+                                    alt="EPA Approved"
+                                    className="fill-black"
+                                    height={200}
+                                    width={200}
+                                />
+                            </div>
+
                             {integratedSystems.map((el) => (
                                 <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
                                     <div className="flex items-center gap-2">
@@ -126,7 +130,7 @@ export default function RiskMitigation() {
                     </div>
                 </section>
 
-                <section className="w-full flex justify-center">
+                {/* <section className="w-full flex justify-center">
                     <div className="max-w-lg">
                         <h2 className="text-4xl text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                             EPA Approved
@@ -146,7 +150,7 @@ export default function RiskMitigation() {
                             </li>
                         </ul>
                     </div>
-                </section>
+                </section> */}
             </div>
         </div>
     );

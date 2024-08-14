@@ -1,18 +1,27 @@
 // import Image from "next/image";
 
-export default function PageHero({ title }) {
+export default function PageHero({ title, subheading = "" }) {
     return (
         <div className="relative grid bg-primary">
-            <h1 className="z-10 text-center p-36 text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-7xl">
-                <span className="bg-gradient-to-b from-white to-white bg-clip-text text-transparent">
-                    {title}
-                </span>
-            </h1>
+            <div className="z-10 p-36 space-y-5">
+                <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-7xl">
+                    <span className="bg-gradient-to-b from-white to-white bg-clip-text text-transparent">
+                        {title}
+                    </span>
+                </h1>
+
+                {subheading ? (
+                    <p className="z-10 text-center tracking-tight text-white [text-wrap:balance] text-xl">
+                        {subheading}
+                    </p>
+                ) : null}
+            </div>
 
             <svg
                 className="absolute bottom left-1/4 z-0 w-[30vw] -translate-x-1/2 translate-y-1/2 blur-[64px]"
                 viewBox="153.612 180.152 176.49 33.212"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+            >
                 <ellipse
                     style={{
                         stroke: "rgba(112, 103, 255, 0.3)",
@@ -30,7 +39,8 @@ export default function PageHero({ title }) {
             <svg
                 className="absolute bottom-0 left-3/4 z-0 w-[30vw] -translate-x-1/2 translate-y-1/2 blur-[64px]"
                 viewBox="153.612 180.152 176.49 33.212"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+            >
                 <ellipse
                     style={{
                         stroke: "rgba(112, 103, 255, 0.3)",

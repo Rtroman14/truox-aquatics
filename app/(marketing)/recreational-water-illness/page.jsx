@@ -148,7 +148,10 @@ const cryptosporidiumImages = [
 export default function RecreationalWaterIllness() {
     return (
         <div className="mt-[70px]">
-            <PageHero title="Recreational Water Illness (RWI)" />
+            <PageHero
+                title="Recreational Water Illness (RWI)"
+                subheading="Underlining causes of Recreation Water Illness..."
+            />
 
             <div className="space-y-20 my-20">
                 <section className="container grid gap-8 sm:gap-16 md:grid-cols-12 items-center">

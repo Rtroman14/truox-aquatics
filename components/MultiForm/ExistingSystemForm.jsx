@@ -87,7 +87,8 @@ export default function ExistingSystemForm() {
         setPd2(pd2Val);
         setPoolDynamic(pd1Val / pd2Val);
 
-        setTbpSpan((pd1Val / pd2Val) * 10);
+        // setTbpSpan((pd1Val / pd2Val) * 10);
+        setTbpSpan(Math.min((pd1Val / pd2Val) * 10, 4.99));
 
         setMuriaticAcidFeedRate(cryptoLyteFeedRateVal * 0.65);
         setSodiumBisulfateAcidFeedRate(cryptoLyteFeedRateVal * 0.86);

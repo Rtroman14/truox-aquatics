@@ -41,12 +41,12 @@ const tabs = [
                 icon: <GlobeAltIcon className="mr-2 h-5 w-5" />,
             },
             {
-                title: "New System (Spec)",
-                slug: "new-system",
+                title: "New System Spec",
+                slug: "new-system-spec",
                 icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
             },
             {
-                title: "Training Videos (How to)",
+                title: "Tutorial - Sizing & Configuring",
                 slug: "training-videos",
                 icon: <VideoCameraIcon className="mr-2 h-5 w-5" />,
             },
@@ -81,15 +81,15 @@ const tabs = [
                 icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
             },
             {
-                title: "Calibration Requirements",
-                slug: "calibration-requirements",
+                title: "Calibration",
+                slug: "calibration",
                 icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
             },
-            {
-                title: "Calibration Procedure & Kemio Instructions",
-                slug: "calibration-procedure",
-                icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
-            },
+            // {
+            //     title: "Calibration Procedure & Kemio Instructions",
+            //     slug: "calibration-procedure",
+            //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+            // },
             {
                 title: "Troubleshooting",
                 slug: "troubleshooting",
@@ -102,18 +102,18 @@ const tabs = [
             },
         ],
     },
-    {
-        title: "Sensor Commissioning",
-        slug: "sensor-commissioning",
-        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
-        children: [],
-    },
-    {
-        title: "Startup Configuration Settings",
-        slug: "startup-configuration-settings",
-        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
-        children: [],
-    },
+    // {
+    //     title: "Sensor Commissioning",
+    //     slug: "sensor-commissioning",
+    //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
+    // {
+    //     title: "Startup Configuration Settings",
+    //     slug: "startup-configuration-settings",
+    //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
     {
         title: "Startup Optimization & Troubleshooting",
         slug: "startup-troubleshooting",
@@ -121,17 +121,29 @@ const tabs = [
         children: [],
     },
     {
-        title: "Neutralization – Post Shock Treatment",
-        slug: "neutralization–post-shock-treatment",
-        icon: <BoltIcon className="mr-2 h-5 w-5" />,
+        title: "Startup Neutralization (Dechlor)",
+        slug: "startup-neutralization",
+        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
-        title: "Maintenance Schedule",
-        slug: "maintenance-schedule",
-        icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
+        title: "Shock (Fecal) Neutralization (Dechlor)",
+        slug: "shock-neutralization",
+        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
+    // {
+    //     title: "Neutralization – Post Shock Treatment",
+    //     slug: "neutralization–post-shock-treatment",
+    //     icon: <BoltIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
+    // {
+    //     title: "Maintenance Schedule",
+    //     slug: "maintenance-schedule",
+    //     icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
 ];
 
 const selectedClass = "group flex items-center rounded p-2 bg-primary/20 text-primary";

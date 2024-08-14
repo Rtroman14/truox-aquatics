@@ -89,7 +89,7 @@ export default function NewSystemForm() {
 
         setSodiumBisulfateAcidFeedRate(cryptolyteFeedRateVal * 0.86);
 
-        setTbpSpan(poolDynamic * 10);
+        setTbpSpan(Math.min(poolDynamic * 10, 4.99));
     }, [poolDynamic, poolVol]);
 
     const handlePrint = useReactToPrint({
