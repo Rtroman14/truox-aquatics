@@ -11,7 +11,6 @@ export default function FAQsPage() {
     return (
         <div className="mt-[70px]">
             <PageHero title="FAQs" />
-
             <section className="py-20 sm:py-28 container">
                 <FAQs />
             </section>
