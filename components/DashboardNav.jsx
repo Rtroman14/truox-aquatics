@@ -25,6 +25,17 @@ import {
     VideoCameraIcon,
     WrenchIcon,
     BoltIcon,
+    ArrowPathIcon,
+    ClipboardDocumentListIcon,
+    MagnifyingGlassIcon,
+    DocumentCheckIcon,
+    CpuChipIcon,
+    CheckCircleIcon,
+    AdjustmentsVerticalIcon,
+    ExclamationCircleIcon,
+    BeakerIcon,
+    ExclamationTriangleIcon,
+    ClipboardDocumentCheckIcon,
 } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -38,12 +49,12 @@ const tabs = [
             {
                 title: "Existing System Upgrade",
                 slug: "existing-system-upgrade",
-                icon: <GlobeAltIcon className="mr-2 h-5 w-5" />,
+                icon: <ArrowPathIcon className="mr-2 h-5 w-5" />,
             },
             {
                 title: "New System Spec",
                 slug: "new-system-spec",
-                icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
+                icon: <ClipboardDocumentListIcon className="mr-2 h-5 w-5" />,
             },
             {
                 title: "Tutorial - Sizing & Configuring",
@@ -55,35 +66,35 @@ const tabs = [
     {
         title: "Pre-Proposal Inspection",
         slug: "pre-proposal-inspection",
-        icon: <CheckIcon className="mr-2 h-5 w-5" />,
+        icon: <MagnifyingGlassIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Pre-Installation Check List",
         slug: "pre-installation-check-list",
-        icon: <CheckIcon className="mr-2 h-5 w-5" />,
+        icon: <DocumentCheckIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Installation Diagrams",
         slug: "installation-diagrams",
-        icon: <WrenchIcon className="mr-2 h-5 w-5" />,
+        icon: <ClipboardDocumentCheckIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Cl02 Sensor",
         slug: "installation",
-        icon: <WrenchIcon className="mr-2 h-5 w-5" />,
+        icon: <CpuChipIcon className="mr-2 h-5 w-5" />,
         children: [
             {
                 title: "Commissioning",
                 slug: "commissioning",
-                icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+                icon: <CheckCircleIcon className="mr-2 h-5 w-5" />,
             },
             {
                 title: "Calibration",
                 slug: "calibration",
-                icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+                icon: <AdjustmentsVerticalIcon className="mr-2 h-5 w-5" />,
             },
             // {
             //     title: "Calibration Procedure & Kemio Instructions",
@@ -93,12 +104,12 @@ const tabs = [
             {
                 title: "Troubleshooting",
                 slug: "troubleshooting",
-                icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+                icon: <ExclamationCircleIcon className="mr-2 h-5 w-5" />,
             },
             {
                 title: "Maintenance",
                 slug: "maintenance",
-                icon: <DocumentTextIcon className="mr-2 h-5 w-5" />,
+                icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
             },
         ],
     },
@@ -117,19 +128,19 @@ const tabs = [
     {
         title: "Startup Optimization & Troubleshooting",
         slug: "startup-troubleshooting",
-        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+        icon: <BoltIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Startup Neutralization (Dechlor)",
         slug: "startup-neutralization",
-        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+        icon: <BeakerIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     {
         title: "Shock (Fecal) Neutralization (Dechlor)",
         slug: "shock-neutralization",
-        icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+        icon: <ExclamationTriangleIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
     // {

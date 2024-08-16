@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import BookMeetingBtn from "@/components/BookMeetingBtn";
 
 export default function Banner({ title, description }) {
     return (
@@ -8,7 +7,8 @@ export default function Banner({ title, description }) {
                 <svg
                     className="absolute bottom-0 left-1/2 z-0 w-[60vw] -translate-x-1/2 translate-y-1/2 blur-[64px]"
                     viewBox="153.612 180.152 176.49 33.212"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                >
                     <ellipse
                         style={{
                             stroke: "rgba(112, 103, 255, 0.3)",
@@ -29,12 +29,7 @@ export default function Banner({ title, description }) {
                     </h2>
                     <p className="mt-4 text-lg text-white/70 md:text-xl">{description}</p>
                     <div className="mt-5 flex justify-center">
-                        <Button
-                            asChild
-                            size="lg"
-                            className="bg-white text-sm text-home-primary hover:bg-white/90 sm:text-base">
-                            <Link href="#">Book Meeting</Link>
-                        </Button>
+                        <BookMeetingBtn variant="white" />
                     </div>
                 </div>
             </div>

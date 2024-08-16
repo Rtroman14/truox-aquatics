@@ -150,7 +150,7 @@ export default function RecreationalWaterIllness() {
         <div className="mt-[70px]">
             <PageHero
                 title="Recreational Water Illness (RWI)"
-                subheading="Underlining causes of Recreation Water Illness..."
+                subheading="Underlining causes of Recreational Water Illness"
             />
 
             <div className="space-y-20 my-20">

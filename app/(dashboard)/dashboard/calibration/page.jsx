@@ -12,8 +12,8 @@ export default function CalibrationPage() {
                     <TabsTrigger value="kemio-test" className="flex-1">
                         Kemio Test Instructions
                     </TabsTrigger>
-                    <TabsTrigger value="calibration-2" className="flex-1">
-                        Calibration 2
+                    <TabsTrigger value="calibration-pool-water-measurement" className="flex-1">
+                        Calibration / Pool Water Measurement
                     </TabsTrigger>
                 </TabsList>
                 <TabsContent value="calibration" className="h-full">
@@ -36,7 +36,7 @@ export default function CalibrationPage() {
                         ></iframe>
                     </div>
                 </TabsContent>
-                <TabsContent value="calibration-2" className="h-full">
+                <TabsContent value="calibration-pool-water-measurement" className="h-full">
                     <div className="flex flex-col items-center p-8 h-full">
                         <Card className="min-w-[400px]">
                             <CardHeader>

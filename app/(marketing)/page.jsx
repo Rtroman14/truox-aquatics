@@ -1,11 +1,9 @@
-// import Hero from "@/components/Hero.dark";
-// import HeroLight from "@/components/Hero.light";
-// import Hero from "@/components/Hero.light copy";
-import Hero from "@/components/Hero.water.drop";
+import Hero from "@/components/Hero";
 import TwoColSection from "@/components/TwoColSection";
 import Banner from "@/components/Banner";
 import MitigationSection from "@/components/MitigationSection";
 // import { SocialProof } from "@/components/SocialProof";
+import ComparisonTable from "@/components/ComparisonTable";
 
 export default async function Home() {
     return (
@@ -59,6 +57,14 @@ export default async function Home() {
                 imageAlt=""
                 learnMoreHref="/water-and-air-quality"
             />
+
+            <section className="py-20 sm:py-28 container">
+                <h2 className="text-4xl font-semibold text-center mb-8 leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                    Comparison Chart
+                </h2>
+
+                <ComparisonTable />
+            </section>
         </>
     );
 }

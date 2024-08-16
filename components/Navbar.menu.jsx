@@ -106,8 +106,8 @@ const menuItems = [
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             },
             {
-                title: "Studies",
-                href: "/faqs",
+                title: "Downloads",
+                href: "/downloads",
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             },

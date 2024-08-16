@@ -145,16 +145,16 @@ export default function ComparisonTable() {
             cryptoLyte: (
                 <span className="text-green-500 font-semibold text-lg">Offset by Savings</span>
             ),
-            uv: <span className="text-red-500 font-semibold text-xl">High</span>,
-            ozone: <span className="text-red-500 font-semibold text-xl">High</span>,
+            uv: <span className="text-red-500 font-semibold text-xl">Mod/High</span>,
+            ozone: <span className="text-red-500 font-semibold text-xl">mod/High</span>,
             cl2Shock: <span className="text-green-500 font-semibold text-xl">Low</span>,
             filterAids: <span className="text-green-500 font-semibold text-xl">Low</span>,
         },
         {
             name: "Patented Technology",
             cryptoLyte: checkIcon,
-            uv: questionIcon,
-            ozone: questionIcon,
+            uv: xMarkIcon,
+            ozone: xMarkIcon,
             cl2Shock: xMarkIcon,
             filterAids: xMarkIcon,
         },
