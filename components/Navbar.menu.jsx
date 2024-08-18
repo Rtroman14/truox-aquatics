@@ -31,28 +31,69 @@ import Logo from "./Logo";
 
 const links = [
     {
-        title: "RWI",
+        title: "Recreational Water Illness (RWI)",
         href: "/recreational-water-illness",
     },
     {
-        title: "Remediation",
-        href: "/remediation",
+        title: "Risk Mitigation",
+        href: "/risk-mitigation",
     },
     {
-        title: "Water & Air Quality",
-        href: "/water-and-air-quality",
+        title: "Remediating RWI",
+        href: "/remediating-rwi",
     },
     {
-        title: "Resources",
-        href: "/resources",
+        title: "Indoor Air & Water Quality",
+        href: "/indoor-water-and-air-quality",
     },
     {
-        title: "CDC Links",
-        href: "/cdc-links",
+        title: "Videos",
+        href: "/videos",
+    },
+    {
+        title: "Blog",
+        href: "/blog",
+    },
+    {
+        title: "FAQs",
+        href: "/faqs",
+    },
+    {
+        title: "Downloads",
+        href: "/downloads",
+    },
+
+    {
+        title: "Distributor Portal",
+        href: "/dashboard",
     },
 ];
 
 const menuItems = [
+    // {
+    //     name: "Home",
+    //     href: "#",
+    //     children: [
+    //         {
+    //             title: "Home",
+    //             href: "/",
+    //             description:
+    //                 "",
+    //         },
+    //         {
+    //             title: "Home-2",
+    //             href: "/home-2",
+    //             description:
+    //                 "",
+    //         },
+    //         {
+    //             title: "Home-3",
+    //             href: "/home-3",
+    //             description:
+    //                 "",
+    //         },
+    //     ],
+    // },
     {
         name: "Information",
         href: "#",
@@ -60,26 +101,22 @@ const menuItems = [
             {
                 title: "Recreational Water Illness (RWI)",
                 href: "/recreational-water-illness",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
             {
                 title: "Risk Mitigation",
                 href: "/risk-mitigation",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
             {
                 title: "Remediating RWI",
                 href: "/remediating-rwi",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
             {
                 title: "Indoor Air & Water Quality",
                 href: "/indoor-water-and-air-quality",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
         ],
     },
@@ -90,26 +127,22 @@ const menuItems = [
             {
                 title: "Videos",
                 href: "/videos",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
             {
                 title: "Blog",
                 href: "/blog",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
             {
                 title: "FAQs",
                 href: "/faqs",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
             {
                 title: "Downloads",
                 href: "/downloads",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "",
             },
         ],
     },
@@ -149,7 +182,8 @@ export default function Navbar({ customer }) {
 
     let headerStyles = "fixed top-0 z-50 w-full border-b border-transparent transition-all";
 
-    if (isScrolledTop && pathname === "/") {
+    if (isScrolledTop && ["/", "/home-2", "/home-3"].includes(pathname)) {
+        // if (isScrolledTop && pathname === "/") {
         isTopHome = true;
     } else {
         isTopHome = false;
@@ -169,7 +203,7 @@ export default function Navbar({ customer }) {
                         <div className="block text-white lg:hidden">
                             <Sheet>
                                 <SheetTrigger asChild>
-                                    <Bars3Icon className="h-7 w-7 cursor-pointer text-slate-400 duration-200 hover:scale-110" />
+                                    <Bars3Icon className="h-7 w-7 cursor-pointer text-primary duration-200 hover:scale-110" />
                                 </SheetTrigger>
                                 <SheetContent side="right" className="min-w-[230px] px-3">
                                     <SheetHeader className="mb-4">
@@ -191,22 +225,8 @@ export default function Navbar({ customer }) {
 
                                     <div className="my-3 flex justify-between">
                                         <SheetClose asChild>
-                                            <Button asChild size="sm" className="rounded-full px-4">
-                                                <Link href="/signup" className="group">
-                                                    Book Meeting
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                        fill="currentColor"
-                                                        className="mt-px h-4 w-4 transition-transform group-hover:translate-x-1"
-                                                    >
-                                                        <path
-                                                            fillRule="evenodd"
-                                                            d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                                                            clipRule="evenodd"
-                                                        ></path>
-                                                    </svg>
-                                                </Link>
+                                            <Button asChild size="sm" className="rounded px-4">
+                                                <Link href="/contact">Contact</Link>
                                             </Button>
                                         </SheetClose>
                                     </div>

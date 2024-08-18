@@ -12,7 +12,7 @@ export default function MitigationSection() {
 
             <AlvaroQuote />
 
-            <div className="grid grid-cols-3 justify-center mt-20 gap-4 max-w-screen-lg mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 justify-center mt-20 md:gap-4 gap-12 max-w-screen-lg mx-auto">
                 <div className="grid gap-3">
                     <div className="flex items-center gap-2">
                         <CheckBadgeIcon className="h-6 w-6 text-primary" />

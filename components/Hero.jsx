@@ -7,7 +7,7 @@ import BookMeetingBtn from "./BookMeetingBtn";
 
 export default function Hero() {
     return (
-        <section className="relative grid min-h-screen py-52">
+        <section className="relative grid min-h-screen md:py-52 py-20">
             <Image
                 className="absolute opacity-70"
                 src="/images/water-drop.png"
@@ -21,19 +21,17 @@ export default function Hero() {
             <div className="absolute h-screen w-screen backdrop-blur-sm bg-black/0"></div>
 
             <div className="container z-20 flex flex-col items-center justify-center">
-                <div className="grid gap-16">
-                    {/* <div className="flex justify-center items-center">
-                        <Image
-                            src="/images/logo.png"
-                            alt="Picture of the logo"
-                            width={600}
-                            height={600}
-                        />
-                    </div> */}
-
+                <div className="grid md:gap-16 gap-8">
                     <div className="flex justify-center items-center">
-                        <Image priority src={epaLogo} alt="EPA Approved" height={50} width={50} />
-                        <p className="text-6xl font-bold ml-1 tracking-tighter">EPA Approved</p>
+                        <Image
+                            priority
+                            src={epaLogo}
+                            alt="EPA Approved"
+                            className="h-6 md:h-11 w-auto"
+                        />
+                        <p className="text-3xl md:text-6xl font-bold lg:ml-1 tracking-tighter">
+                            EPA Approved
+                        </p>
                     </div>
 
                     <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-8xl">
