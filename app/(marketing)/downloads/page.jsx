@@ -1,5 +1,7 @@
 import PageHero from "@/components/PageHero";
 
+import { ArrowDownTrayIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+
 export const metadata = {
     title: "CryptoLyte | Downloads",
     description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
@@ -54,13 +56,18 @@ export default function DownloadsPage() {
             <PageHero title="Downloads" />
             <section className="py-20 sm:py-28 container grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:p-6">
                 {resources.map((video) => (
-                    <div
+                    <a
                         key={video.title}
-                        className="rounded-lg bg-background p-6 transition-all hover:scale-105 shadow-md hover:shadow-xl cursor-pointer h-min"
+                        href={video.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative rounded-lg bg-background p-6 transition-all hover:scale-105 shadow-md hover:shadow-xl cursor-pointer h-min"
                     >
-                        <div className="mb-4 text-lg font-semibold">{video.title}</div>
-                        <p className="text-muted-foreground">{video.description}</p>
-                    </div>
+                        <div className="text-lg font-semibold">{video.title}</div>
+                        {/* <p className="text-muted-foreground">{video.description}</p> */}
+
+                        <ArrowTopRightOnSquareIcon className="size-4 absolute top-0 right-0 m-2 text-gray-600" />
+                    </a>
                 ))}
             </section>
         </div>

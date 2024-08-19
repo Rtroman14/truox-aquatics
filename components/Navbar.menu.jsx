@@ -124,16 +124,16 @@ const menuItems = [
         name: "Resources",
         href: "#",
         children: [
-            {
-                title: "Videos",
-                href: "/videos",
-                description: "",
-            },
-            {
-                title: "Blog",
-                href: "/blog",
-                description: "",
-            },
+            // {
+            //     title: "Videos",
+            //     href: "/videos",
+            //     description: "",
+            // },
+            // {
+            //     title: "Blog",
+            //     href: "/blog",
+            //     description: "",
+            // },
             {
                 title: "FAQs",
                 href: "/faqs",

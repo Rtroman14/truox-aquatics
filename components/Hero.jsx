@@ -7,7 +7,7 @@ import BookMeetingBtn from "./BookMeetingBtn";
 
 export default function Hero() {
     return (
-        <section className="relative grid min-h-screen md:py-52 py-20">
+        <section className="relative grid min-h-screen md:py-48 py-20">
             <Image
                 className="absolute opacity-70"
                 src="/images/water-drop.png"
@@ -22,6 +22,14 @@ export default function Hero() {
 
             <div className="container z-20 flex flex-col items-center justify-center">
                 <div className="grid md:gap-16 gap-8">
+                    <div className="flex justify-center">
+                        <Image
+                            src="/images/logo.png"
+                            alt="Picture of the logo"
+                            width={500}
+                            height={500}
+                        />
+                    </div>
                     <div className="flex justify-center items-center">
                         <Image
                             priority
