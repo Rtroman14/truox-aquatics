@@ -140,7 +140,10 @@ export default async function Home() {
                     </div>
                 </section>
 
-                <Banner title="Lets Have A Conversation" description="" />
+                <Banner
+                    title="Lets Have A Conversation"
+                    description="Partner with us to protect your pool patrons from chlorine-resistant pathogens and ensure water safety."
+                />
 
                 <section className="grid gap-8 md:grid-cols-12">
                     <div className="col-span-12 text-center">
@@ -244,11 +247,6 @@ export default async function Home() {
                     </div>
                 </section>
 
-                <Banner
-                    title="Lets Have A Conversation"
-                    description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-                />
-
                 <section className="grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
                     <div className="col-span-6 grid place-items-center md:ml-8 px-8 md:px-2">
                         <Carousel
@@ -308,6 +306,11 @@ export default async function Home() {
                         </div>
                     </div>
                 </section>
+
+                <Banner
+                    title="Lets Have A Conversation"
+                    description="Discover how we can help you maintain the highest standards in pool water hygiene."
+                />
 
                 <section className="grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
                     <div className="col-span-6 place-items-center justify-self-center">
@@ -385,15 +388,6 @@ export default async function Home() {
                             Cryptosporidium oocyst compromising the protective membrane and killing
                             the sporozoites within.
                         </p>
-                        {/* <p className="mt-4 text-slate-800 [text-wrap:balance] text-center">
-                        Cryptolyte® is a <strong>patented</strong> technology designed to target and
-                        mitigate the fundamental factors contributing to recreational water
-                        illnesses (RWI). This technology includes a{" "}
-                        <strong>NEW EPA Registered Disinfectant</strong>, which works alongside your
-                        existing chlorine treatment. Cryptolyte® effectively penetrates the
-                        protective membranes of chlorine resistant Cryptosporidium oocyst, damaging
-                        the protective layer and effectively destroying the sporozoites inside.
-                    </p> */}
                     </div>
 
                     <div className="flex justify-center py-12">

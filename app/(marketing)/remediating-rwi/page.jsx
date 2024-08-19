@@ -163,7 +163,7 @@ export default function Remediation() {
 
             <Banner
                 title="Lets Have A Conversation"
-                description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                description="Discover how we can help you maintain the highest standards in pool water hygiene."
             />
 
             <section className="py-20 sm:py-28 container">

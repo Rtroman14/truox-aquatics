@@ -149,7 +149,7 @@ export default function WaterAndAirQuality() {
 
             <Banner
                 title="Lets Have A Conversation"
-                description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                description="Ensuring healthy and safe swimming environments through advanced water treatments."
             />
 
             <section className="pt-20 sm:pt-20 container">

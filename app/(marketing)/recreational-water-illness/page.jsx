@@ -142,7 +142,7 @@ export default function RecreationalWaterIllness() {
 
                 <Banner
                     title="Lets Have A Conversation"
-                    description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    description="Partner with us to protect your pool patrons from chlorine-resistant pathogens and ensure water safety."
                 />
 
                 <section className="container my-20">
@@ -251,7 +251,7 @@ export default function RecreationalWaterIllness() {
 
                 <Banner
                     title="Lets Have A Conversation"
-                    description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    description="Learn how our innovative solutions can transform your pool’s safety and compliance."
                 />
 
                 <section className="container grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
