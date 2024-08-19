@@ -5,7 +5,7 @@ import AlvaroQuote from "./AlvaroQuote";
 
 export default function MitigationSection() {
     return (
-        <section className="py-20 sm:py-36 container">
+        <section>
             <h2 className="text-4xl mb-8 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                 Mitigating Risk
             </h2>

@@ -1,58 +1,14 @@
-import Image from "next/image";
-
+import Hero from "@/components/Hero";
 import TwoColSection from "@/components/TwoColSection";
 import Banner from "@/components/Banner";
 import MitigationSection from "@/components/MitigationSection";
 // import { SocialProof } from "@/components/SocialProof";
 import ComparisonTable from "@/components/ComparisonTable";
-import BookMeetingBtn from "@/components/BookMeetingBtn";
-import epaLogo from "@/public/images/epa-icon.svg";
 
 export default async function Home() {
     return (
         <>
-            <section className="relative grid min-h-screen py-52 bg-[#D2D6EA]">
-                <div className="container z-20 flex flex-col items-center justify-center">
-                    <div className="grid gap-16">
-                        <div className="flex justify-center items-center">
-                            <Image
-                                priority
-                                src={epaLogo}
-                                alt="EPA Approved"
-                                height={50}
-                                width={50}
-                            />
-                            <p className="text-6xl font-bold ml-1 tracking-tighter">EPA Approved</p>
-                        </div>
-
-                        <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-8xl">
-                            <span className="bg-gradient-to-b from-primary to-black bg-clip-text text-transparent">
-                                Kills 99.9% <span className="italic">Cryptosporidium</span> {"<"}
-                                30min
-                            </span>
-                        </h1>
-
-                        <div className="max-w-6xl mx-auto">
-                            <video
-                                className="rounded-xl shadow-lg"
-                                // src="/videos/cryptolyte.mp4"
-                                src="https://jvehmpwzlnunrewwnlev.supabase.co/storage/v1/object/public/videos/cryptolyte.mp4?t=2024-08-16T15%3A17%3A55.687Z"
-                                width="1440"
-                                height="680"
-                                controls
-                                autoPlay
-                                muted
-                                playsInline
-                                loop
-                            />
-                        </div>
-
-                        <div className="flex justify-center">
-                            <BookMeetingBtn variant="primary" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Hero />
 
             <section className="grid gap-24 py-20 sm:gap-36 sm:py-36">
                 <TwoColSection
@@ -88,21 +44,21 @@ export default async function Home() {
 
             <MitigationSection />
 
-            <TwoColSection
+            {/* <TwoColSection
                 title="Indoor Water & Air Quality"
                 description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
                 imageSrc="/images/placeholder.jpeg"
                 imageAlt=""
                 learnMoreHref="/water-and-air-quality"
-            />
-
+            /> */}
+            {/* 
             <section className="py-20 sm:py-28 container">
                 <h2 className="text-4xl font-semibold text-center mb-8 leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                     Comparison Chart
                 </h2>
 
                 <ComparisonTable />
-            </section>
+            </section> */}
         </>
     );
 }

@@ -13,11 +13,11 @@ export default function ContactPage() {
         <div className="mt-[70px]">
             <PageHero title="Contact" />
 
-            <section className="py-20 sm:py-28 container flex items-center justify-center">
+            <section className="py-20 sm:py-28 flex items-center justify-center container">
                 <ContactForm />
             </section>
 
-            <section className="py-20 sm:py-28 mx-auto">
+            <section className="py-20 sm:py-28 mx-auto container">
                 <Calendly url="https://calendly.com/ryan-truox/30min" />
             </section>
 

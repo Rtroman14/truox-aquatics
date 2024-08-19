@@ -76,81 +76,39 @@ export default function RiskMitigation() {
         <div className="mt-[70px]">
             <PageHero title="Risk Mitigation" />
 
-            <div className="space-y-20 my-16">
-                {/* <section className="container py-20 sm:py-28">
-                    <h2 className="text-4xl mb-12 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+            <div className="space-y-20 my-20 container">
+                <div className="grid grid-cols-1 gap-4 place-items-center">
+                    <h2 className="text-4xl mb-6 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
                         Mitigating Risks
                     </h2>
 
-                    <div className="grid grid-cols-2 gap-4 place-items-center">
-                        <AlvaroQuote />
+                    <AlvaroQuote />
+                </div>
 
-                        <div className="grid grid-cols-2 justify-center mt-20 gap-4 gap-y-10">
-                            {integratedSystems.map((el) => (
-                                <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
-                                    <div className="flex items-center gap-2">
-                                        <div>{el.icon}</div>
-                                        <h3 className="text-xl">{el.title}</h3>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section> */}
-
-                <section className="container ">
-                    <h2 className="text-4xl mb-12 text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
-                        Mitigating Risks
-                    </h2>
-
-                    <div className="grid grid-cols-1 gap-4 place-items-center">
-                        <AlvaroQuote />
-
-                        <div className="grid grid-cols-3 justify-center mt-20 gap-4 gap-y-10 max-w-screen-lg">
-                            <div className="mx-auto col-span-3">
-                                <Image
-                                    priority
-                                    src={epaLogo}
-                                    alt="EPA Approved"
-                                    className="fill-black"
-                                    height={200}
-                                    width={200}
-                                />
-                            </div>
-
-                            {integratedSystems.map((el) => (
-                                <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
-                                    <div className="flex items-center gap-2">
-                                        <div>{el.icon}</div>
-                                        <h3 className="text-xl">{el.title}</h3>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* <section className="w-full flex justify-center">
-                    <div className="max-w-lg">
-                        <h2 className="text-4xl text-center font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
+                <div>
+                    <div className="flex justify-center items-center">
+                        <Image
+                            priority
+                            src={epaLogo}
+                            alt="EPA Approved"
+                            className="h-7 md:h-11 w-auto"
+                        />
+                        <p className="text-4xl md:text-6xl font-bold lg:ml-1 tracking-tighter">
                             EPA Approved
-                        </h2>
-                        <ul className="mt-5 list-disc list-inside">
-                            <li>
-                                <strong>Kills 99.9% of Cryptosporidium {"<"} 30min</strong>
-                            </li>
-                            <li>
-                                <strong>Controls, Confirms & Documents Remediation</strong>
-                            </li>
-                            <li>
-                                Provides Safe-Water Assurance to:
-                                <ul className="list-disc list-inside ml-6">
-                                    <li>hello</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        </p>
                     </div>
-                </section> */}
+
+                    <div className="grid md:grid-cols-3 justify-center mt-20 gap-4 mx-auto gap-y-10 md:max-w-screen-lg">
+                        {integratedSystems.map((el) => (
+                            <div key={el.title} className="grid gap-3 rounded-lg shadow-lg p-3">
+                                <div className="flex items-center gap-2">
+                                    <div>{el.icon}</div>
+                                    <h3 className="text-xl">{el.title}</h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

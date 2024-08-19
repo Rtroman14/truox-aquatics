@@ -5,11 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-    title: "CryptoLyte | Home",
-    description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
-};
-
 // import Navbar from "@/components/Navbar";
 // import Footer from "@/components/Footer";
 

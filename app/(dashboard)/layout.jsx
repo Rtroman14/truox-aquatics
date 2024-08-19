@@ -1,3 +1,149 @@
+"use client";
+
+import { useState } from "react";
+import {
+    ChevronDownIcon,
+    ChevronUpIcon,
+    WrenchScrewdriverIcon,
+    CogIcon,
+    VideoCameraIcon,
+    BoltIcon,
+    ArrowPathIcon,
+    ClipboardDocumentListIcon,
+    MagnifyingGlassIcon,
+    DocumentCheckIcon,
+    CpuChipIcon,
+    CheckCircleIcon,
+    AdjustmentsVerticalIcon,
+    ExclamationCircleIcon,
+    BeakerIcon,
+    ExclamationTriangleIcon,
+    ClipboardDocumentCheckIcon,
+} from "@heroicons/react/24/outline";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+
+const tabs = [
+    {
+        title: "Cryptolyte System Sizing & Controller Configuration",
+        slug: "",
+        icon: <CogIcon className="mr-2 h-5 w-5" />,
+        children: [
+            {
+                title: "Existing System Upgrade",
+                slug: "existing-system-upgrade",
+                icon: <ArrowPathIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "New System Spec",
+                slug: "new-system-spec",
+                icon: <ClipboardDocumentListIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "Tutorial - Sizing & Configuring",
+                slug: "training-videos",
+                icon: <VideoCameraIcon className="mr-2 h-5 w-5" />,
+            },
+        ],
+    },
+    {
+        title: "Pre-Proposal Inspection",
+        slug: "pre-proposal-inspection",
+        icon: <MagnifyingGlassIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Pre-Installation Check List",
+        slug: "pre-installation-check-list",
+        icon: <DocumentCheckIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Installation Diagrams",
+        slug: "installation-diagrams",
+        icon: <ClipboardDocumentCheckIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Cl02 Sensor",
+        slug: "installation",
+        icon: <CpuChipIcon className="mr-2 h-5 w-5" />,
+        children: [
+            {
+                title: "Commissioning",
+                slug: "commissioning",
+                icon: <CheckCircleIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "Calibration",
+                slug: "calibration",
+                icon: <AdjustmentsVerticalIcon className="mr-2 h-5 w-5" />,
+            },
+            // {
+            //     title: "Calibration Procedure & Kemio Instructions",
+            //     slug: "calibration-procedure",
+            //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+            // },
+            {
+                title: "Troubleshooting",
+                slug: "troubleshooting",
+                icon: <ExclamationCircleIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "Maintenance",
+                slug: "maintenance",
+                icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
+            },
+        ],
+    },
+    // {
+    //     title: "Sensor Commissioning",
+    //     slug: "sensor-commissioning",
+    //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
+    // {
+    //     title: "Startup Configuration Settings",
+    //     slug: "startup-configuration-settings",
+    //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
+    {
+        title: "Startup Optimization & Troubleshooting",
+        slug: "startup-troubleshooting",
+        icon: <BoltIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Startup Neutralization (Dechlor)",
+        slug: "startup-neutralization",
+        icon: <BeakerIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
+        title: "Shock (Fecal) Neutralization (Dechlor)",
+        slug: "shock-neutralization",
+        icon: <ExclamationTriangleIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    // {
+    //     title: "Neutralization – Post Shock Treatment",
+    //     slug: "neutralization–post-shock-treatment",
+    //     icon: <BoltIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
+    // {
+    //     title: "Maintenance Schedule",
+    //     slug: "maintenance-schedule",
+    //     icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
+    //     children: [],
+    // },
+];
+
+const selectedClass = "group flex items-center rounded p-2 bg-primary/20 text-primary";
+const defaultClass =
+    "group flex items-center rounded p-2 text-nav-foreground hover:bg-primary/20 hover:text-primary";
+
 import Link from "next/link";
 import {
     Bell,
@@ -30,6 +176,30 @@ import Logo from "@/components/Logo";
 import DashboardNav from "@/components/DashboardNav";
 
 export default function Layout({ children }) {
+    const pathname = usePathname();
+    const slug = pathname.split("dashboard").pop();
+
+    const [expand, setExpand] = useState([]);
+
+    const tabSlugs = tabs.map((tab) => tab.slug);
+    let newActiveTab = tabSlugs.find((tablSlug) => slug.includes(tablSlug));
+
+    if (!newActiveTab) {
+        newActiveTab = "Installation Diagrams";
+    }
+
+    const [activeTab, setActiveTab] = useState(newActiveTab); // default active tab
+
+    const handleExpand = (title) => {
+        if (expand.includes(title)) {
+            // * remove title
+            const newExpand = expand.filter((item) => item !== title);
+            setExpand(newExpand);
+        } else {
+            setExpand([...expand, title]);
+        }
+    };
+
     return (
         <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
             <div className="hidden border-r bg-muted/40 md:block">
@@ -52,69 +222,99 @@ export default function Layout({ children }) {
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left" className="flex flex-col">
-                            <nav className="grid gap-2 text-lg font-medium">
-                                <Link
-                                    href="#"
-                                    className="flex items-center gap-2 text-lg font-semibold"
-                                >
-                                    <Package2 className="h-6 w-6" />
-                                    <span className="sr-only">Acme Inc</span>
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                                >
-                                    <Home className="h-5 w-5" />
-                                    Dashboard
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                                >
-                                    <ShoppingCart className="h-5 w-5" />
-                                    Orders
-                                    <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                                        6
-                                    </Badge>
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                                >
-                                    <Package className="h-5 w-5" />
-                                    Products
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                                >
-                                    <Users className="h-5 w-5" />
-                                    Customers
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                                >
-                                    <LineChart className="h-5 w-5" />
-                                    Analytics
-                                </Link>
+                            <nav className="w-full" aria-label="Sidebar">
+                                <div className="h-full overflow-y-auto p-0 py-2 sm:px-3">
+                                    <ul className="space-y-1 text-sm font-medium ">
+                                        {tabs.map((tab, index) =>
+                                            !tab.children.length ? (
+                                                <Link
+                                                    key={tab.slug}
+                                                    href={`/dashboard/${tab.slug}`}
+                                                    className={cn(
+                                                        activeTab === tab.slug
+                                                            ? selectedClass
+                                                            : defaultClass
+                                                    )}
+                                                    onClick={() => setActiveTab(tab.slug)}
+                                                >
+                                                    <span>{tab.icon}</span>
+                                                    <span>{tab.title}</span>
+                                                </Link>
+                                            ) : (
+                                                <li key={tab.slug}>
+                                                    <div
+                                                        onClick={() => handleExpand(tab.title)}
+                                                        className={cn(
+                                                            "flex cursor-pointer justify-between",
+                                                            activeTab === tab.slug
+                                                                ? selectedClass
+                                                                : defaultClass
+                                                        )}
+                                                    >
+                                                        <div className="flex items-center">
+                                                            <span>{tab.icon}</span>
+                                                            <span>{tab.title}</span>
+                                                        </div>
+                                                        <div>
+                                                            {expand.includes(tab.title) ? (
+                                                                <ChevronUpIcon className="h-5 w-5" />
+                                                            ) : (
+                                                                <ChevronDownIcon className="h-5 w-5" />
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                    <ul
+                                                        className={
+                                                            expand.includes(tab.title)
+                                                                ? ""
+                                                                : "hidden"
+                                                        }
+                                                    >
+                                                        {tab.children.map((child, index) => (
+                                                            <li key={`${child.slug}-${index}`}>
+                                                                {child.title ===
+                                                                "System Sizing & Controller Configuration" ? (
+                                                                    <div
+                                                                        className={cn(
+                                                                            "ml-6 mt-1 cursor-pointer",
+                                                                            slug.includes(
+                                                                                child.slug
+                                                                            )
+                                                                                ? selectedClass
+                                                                                : defaultClass
+                                                                        )}
+                                                                    >
+                                                                        <span>{child.icon}</span>
+                                                                        <span>{child.title}</span>
+                                                                    </div>
+                                                                ) : (
+                                                                    <Link
+                                                                        href={`/dashboard/${child.slug}`}
+                                                                        className={cn(
+                                                                            "ml-6 mt-1",
+                                                                            slug.includes(
+                                                                                child.slug
+                                                                            )
+                                                                                ? selectedClass
+                                                                                : defaultClass
+                                                                        )}
+                                                                        onClick={() =>
+                                                                            setActiveTab(tab.slug)
+                                                                        }
+                                                                    >
+                                                                        <span>{child.icon}</span>
+                                                                        <span>{child.title}</span>
+                                                                    </Link>
+                                                                )}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </li>
+                                            )
+                                        )}
+                                    </ul>
+                                </div>
                             </nav>
-                            <div className="mt-auto">
-                                <Card>
-                                    <CardHeader>
-                                        <CardTitle>Upgrade to Pro</CardTitle>
-                                        <CardDescription>
-                                            Unlock all features and get unlimited access to our
-                                            support team.
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <Button size="sm" className="w-full">
-                                            Upgrade
-                                        </Button>
-                                    </CardContent>
-                                </Card>
-                            </div>
                         </SheetContent>
                     </Sheet>
                     <div className="w-full flex-1"></div>

@@ -195,7 +195,7 @@ export default function Remediation() {
                             <picture className="drop-shadow-lg">
                                 <Image
                                     className="rounded-xl"
-                                    src="/images/crypto-before.jpg"
+                                    src="/images/cryptolyte-before.jpg"
                                     alt="before-cryptolyte"
                                     width={900}
                                     height={900}
@@ -210,7 +210,7 @@ export default function Remediation() {
                             <picture className="drop-shadow-lg">
                                 <Image
                                     className="rounded-xl"
-                                    src="/images/crypto-after.jpg"
+                                    src="/images/cryptolyte-after.jpg"
                                     alt="after-cryptolyte"
                                     width={900}
                                     height={900}

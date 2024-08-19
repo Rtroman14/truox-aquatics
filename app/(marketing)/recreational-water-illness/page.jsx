@@ -13,6 +13,7 @@ export const metadata = {
     title: "CryptoLyte | Recreational Water Illness",
     description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
 };
+
 const biofilmImages = [
     {
         src: "/images/biofilm-evolution.png",
@@ -34,116 +35,6 @@ const cryptosporidiumImages = [
         alt: "Crypto Hatching",
     },
 ];
-
-// export default function RecreationalWaterIllness() {
-//     return (
-//         <div className="mt-[70px]">
-//             <PageHero title="Recreational Water Illness" />
-
-//             <section className="grid gap-24 bg-background py-20 sm:gap-36 sm:py-36 ">
-//                 <div className="container grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
-//                     <div className="col-span-6 place-items-center justify-self-center md:justify-self-start">
-//                         <div className="max-w-lg">
-//                             <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px]">
-//                                 Understanding RWI
-//                             </h2>
-//                             <p className="mt-5 text-slate-600 [text-wrap:balance]">
-//                                 The Centers for Disease Control and Prevention coined the phrase
-//                                 Recreational Water Illness (RWI) to describe various illnesses
-//                                 attributed to contaminated water at Aquatic Facilities. UNDETECTED
-//                                 Microbiological Organisms and accumulated Disinfection Byproducts
-//                                 (DBPs) are accountable for Recreational Water Illness (RWI) in
-//                                 TREATED Aquatic Facilities.
-//                             </p>
-//                         </div>
-//                     </div>
-
-//                     <div className="col-span-6 grid place-items-center">
-//                         <picture className="drop-shadow-xl">
-//                             <Image
-//                                 className="rounded-xl"
-//                                 src="/images/etiology.png"
-//                                 alt=""
-//                                 width={900}
-//                                 height={900}
-//                             />
-//                         </picture>
-//                     </div>
-//                 </div>
-
-//                 <div className="container grid grid-col gap-8 sm:gap-16 md:grid-cols-12">
-//                     <div className="col-span-6 flex items-center">
-//                         <div className="grid gap-6">
-//                             <div>
-//                                 <Image
-//                                     className="rounded-xl drop-shadow-xl"
-//                                     src="/images/biofilm.png"
-//                                     alt=""
-//                                     width={900}
-//                                     height={900}
-//                                 />
-//                             </div>
-
-//                             <div>
-//                                 <p className="text-slate-600 [text-wrap:balance]">
-//                                     Cryptosporidium is the leading cause of RWI, and is usually
-//                                     introduced to the pool water by someone infected by the
-//                                     parasite. Due to its high chlorine resistance, Cryptosporidium
-//                                     can survive and infect countless bathers for over a week under
-//                                     normal chlorine concentrations.
-//                                 </p>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     {/* <div className="col-span-6 grid place-items-center">
-//                         <picture className="drop-shadow-xl">
-//                             <Image
-//                                 className="rounded-xl"
-//                                 src="/images/biofilm.png"
-//                                 alt=""
-//                                 width={900}
-//                                 height={900}
-//                             />
-//                         </picture>
-
-//                         <p className="text-slate-600 [text-wrap:balance]">
-//                             Cryptosporidium is the leading cause of RWI, and is usually introduced
-//                             to the pool water by someone infected by the parasite. Due to its high
-//                             chlorine resistance, Cryptosporidium can survive and infect countless
-//                             bathers for over a week under normal chlorine concentrations.
-//                         </p>
-//                     </div> */}
-
-//                     <div className="col-span-6 grid place-items-center justify-self-center md:justify-self-start">
-//                         <div className="max-w-lg">
-//                             <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] lg:text-[53px]">
-//                                 Challenges of Effective Water Disinfection
-//                             </h2>
-//                             <p className="mt-5 text-slate-600 [text-wrap:balance]">
-//                                 Contaminants contributed by bathers and environment impose oxidant
-//                                 demand on the chlorine used to sanitize/disinfect the water. The
-//                                 interaction between chlorine and contaminants results in generation
-//                                 of Disinfection Byproducts (DBPs) and reduces Oxidation Potential
-//                                 (ORP) for a given concentration of chlorine. Reduced ORP increases
-//                                 the time required for chlorine to kill bacteria.
-//                             </p>
-//                             <p className="mt-5 text-slate-600 [text-wrap:balance]">
-//                                 Furthermore, low solubility organics (body oils, lotions etc.)
-//                                 released into the water adsorb onto the piping of the skimmer/gutter
-//                                 intakes forming a barrier film, creating an environment for
-//                                 surviving bacteria to become entrapped and protected from the
-//                                 chlorine. The barrier film provides a protective shelter from the
-//                                 chlorine within a warm and nutrient rich environment. Adaptive
-//                                 bacteria then form biofilms under which the bacteria thrive and
-//                                 propagate while protected from the chlorine.
-//                             </p>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//         </div>
-//     );
-// }
 
 export default function RecreationalWaterIllness() {
     return (
@@ -227,13 +118,19 @@ export default function RecreationalWaterIllness() {
                             </h2>
                             <p className="mt-5 text-slate-600 [text-wrap:balance]">
                                 The CDC issued a new report on May 20, chronicling a 
-                                <span className="underline">recent bacteria outbreak</span> from a
-                                swimming community pool. According to the report, the Pennsylvania
-                                Department of Health (PADOH) received multiple complaints of
-                                gastrointestinal illness on June 7, 2021, from patrons who had
-                                visited and swam at a community pool on May 31 that year. The agency
-                                identified 15 cases of E. coli infection among children ages 4 to
-                                14, with nine confirmed cases and six probable cases.
+                                <a
+                                    className="text-blue-500 underline"
+                                    href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7120a4.htm"
+                                    target="_blank"
+                                >
+                                    recent bacteria outbreak
+                                </a>
+                                 from a swimming community pool. According to the report, the
+                                Pennsylvania Department of Health (PADOH) received multiple
+                                complaints of gastrointestinal illness on June 7, 2021, from patrons
+                                who had visited and swam at a community pool on May 31 that year.
+                                The agency identified 15 cases of E. coli infection among children
+                                ages 4 to 14, with nine confirmed cases and six probable cases.
                             </p>
                             <p className="mt-5 text-slate-600 italic">
                                 "Some of the children who tested positive for E. coli also tested
@@ -323,8 +220,12 @@ export default function RecreationalWaterIllness() {
                         </div>
                     </div>
 
-                    <div className="col-span-6 grid place-items-center mr-12">
-                        <Carousel>
+                    <div className="col-span-6 grid place-items-center md:mr-12 px-8 md:px-2">
+                        <Carousel
+                            opts={{
+                                loop: true,
+                            }}
+                        >
                             <CarouselContent>
                                 {biofilmImages.map(({ src, alt }) => (
                                     <CarouselItem key={alt}>
@@ -354,7 +255,7 @@ export default function RecreationalWaterIllness() {
                 />
 
                 <section className="container grid gap-8 sm:gap-16 md:grid-cols-12 items-center">
-                    <div className="col-span-6 grid place-items-center mr-12">
+                    <div className="col-span-6 grid place-items-center md:ml-8 px-8 md:px-2">
                         <Carousel>
                             <CarouselContent>
                                 {cryptosporidiumImages.map(({ src, alt }) => (
@@ -393,7 +294,8 @@ export default function RecreationalWaterIllness() {
                                     infected by the parasite.
                                 </li>
                                 <li className=" space-y-1">
-                                    Cryptosporidium oocyst comprise a multi-layer membrane.
+                                    Cryptosporidium <span className="underline">oocyst</span>{" "}
+                                    comprise a multi-layer membrane.
                                 </li>
                                 <li className=" space-y-1">
                                     The sporozoites residing inside are highly protected -{" "}
