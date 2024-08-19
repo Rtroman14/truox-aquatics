@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Resend } from "resend";
 
 import ContactFormEmail from "./(marketing)/contact/_components/ContactFormEmail";
+import slackNotification from "@/lib/utils/slackNotification";
 
 const contactFormSchema = z.object({
     name: z
@@ -17,9 +18,11 @@ const contactFormSchema = z.object({
 });
 
 export async function emailContactForm(values) {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    // const resend = new Resend(process.env.RESEND_API_KEY);
 
     console.log(`Form values -->`, values);
+
+    await slackNotification({ username: "Truox Aquatics", text: JSON.stringify(values) });
 
     return {
         success: true,
