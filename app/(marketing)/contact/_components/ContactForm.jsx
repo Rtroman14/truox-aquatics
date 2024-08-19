@@ -57,14 +57,8 @@ export default function ContactForm() {
     };
 
     return (
-        <Card className="w-full max-w-lg mx-auto">
-            <CardHeader>
-                <CardTitle>Get in Touch</CardTitle>
-                <CardDescription>
-                    Fill out the form below and we'll get back to you as soon as possible.
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
+        <div className="mx-auto shadow border rounded-lg p-6">
+            <div>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4">
                         <div className="grid gap-2">
@@ -169,7 +163,7 @@ export default function ContactForm() {
                         </Button>
                     </form>
                 </Form>
-            </CardContent>
-        </Card>
+            </div>
+        </div>
     );
 }
