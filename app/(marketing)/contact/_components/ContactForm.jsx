@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import {
     Form,
     FormControl,
@@ -17,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { emailContactForm } from "@/app/actions";
 
 const contactFormSchema = z.object({
     name: z
@@ -44,9 +44,21 @@ export default function ContactForm() {
 
     const { isSubmitting, errors } = form.formState;
 
-    const onSubmit = (values) => {
+    const onSubmit = async (values) => {
         // Handle form submission logic here
-        console.log("Form data:", values);
+
+        const { success } = await emailContactForm(values);
+
+        if (!success) {
+            toast({
+                title: "Error",
+                description: "There was an internal error. Please email roy@truox.com",
+                duration: 5000,
+                variant: "destructive",
+            });
+
+            return;
+        }
 
         toast({
             title: "Success",
@@ -54,6 +66,10 @@ export default function ContactForm() {
             duration: 5000,
             variant: "default",
         });
+
+        form.reset();
+
+        return;
     };
 
     return (

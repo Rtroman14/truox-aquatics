@@ -2,6 +2,8 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+// import Script from "next/script";
+// import MicrosoftClarity from "@/components/Clarity";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +19,8 @@ export default function RootLayout({ children }) {
                     <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
                 </main>
                 {/* <Footer /> */}
+
+                {/* <MicrosoftClarity /> */}
 
                 <Toaster />
             </body>
