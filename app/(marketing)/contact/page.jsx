@@ -1,6 +1,5 @@
 import PageHero from "@/components/PageHero";
 import ContactForm from "./_components/ContactForm";
-import QRCode from "react-qr-code";
 import Calendly from "../../../components/Calendly";
 
 export const metadata = {
@@ -43,15 +42,6 @@ export default function ContactPage() {
                     <Calendly url="https://calendly.com/ryan-truox/30min" />
                 </div>
             </section>
-
-            {/* <div style={{ height: "auto", margin: "0 auto", maxWidth: 64, width: "100%" }}>
-                <QRCode
-                    size={256}
-                    style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                    value="https://truox-website.vercel.app/"
-                    viewBox={`0 0 256 256`}
-                />
-            </div> */}
         </div>
     );
 }
