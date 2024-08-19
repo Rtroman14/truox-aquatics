@@ -2,7 +2,7 @@ import QRCode from "react-qr-code";
 
 export default function QRCodesPage() {
     return (
-        <div className="mt-60 flex items-center flex-col h-screen">
+        <div className="md:mt-60 mt-32 flex items-center flex-col h-screen container">
             <h1 className="font-bold text-2xl mb-16">Home page (https://truoxaquatics.com/)</h1>
 
             <div className="h-auto mx-auto w-full flex justify-center">
