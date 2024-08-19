@@ -1,14 +1,6 @@
 import PageHero from "@/components/PageHero";
 
 import { ArrowDownTrayIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -74,15 +66,18 @@ export default function DownloadsPage() {
     return (
         <div className="mt-[70px]">
             <PageHero title="Downloads" />
-            <section className="py-20 sm:py-28 container grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:p-6">
+            <section className="mt-8 sm:py-28 container grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:p-6">
                 {resources.map((resource) => (
-                    <Card key={resource.title}>
-                        <CardHeader>
-                            <CardTitle className="text-xl leading-6">{resource.title}</CardTitle>
-                            <CardDescription>{resource.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="flex gap-3">
+                    <div
+                        key={resource.title}
+                        className="shadow border rounded-lg p-4 flex flex-col justify-between gap-6"
+                    >
+                        <div>
+                            <h2 className="text-xl leading-6 font-bold pb-3">{resource.title}</h2>
+                            <p className="text-sm">{resource.description}</p>
+                        </div>
+                        <div>
+                            <div className="flex gap-3 justify-end">
                                 <Button size="sm" asChild variant="outline">
                                     <Link href={resource.src} download>
                                         Download
@@ -100,8 +95,8 @@ export default function DownloadsPage() {
                                     </Link>
                                 </Button>
                             </div>
-                        </CardContent>
-                    </Card>
+                        </div>
+                    </div>
                 ))}
             </section>
         </div>
