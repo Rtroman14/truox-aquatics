@@ -21,13 +21,13 @@ export default function Hero() {
             <div className="absolute h-screen w-screen backdrop-blur-sm bg-black/0"></div>
 
             <div className="container z-20 flex flex-col items-center justify-center">
-                <div className="grid md:gap-16 gap-8">
+                <div className="grid md:gap-12 gap-8">
                     <div className="flex justify-center">
                         <Image
                             src="/images/logo.png"
                             alt="Picture of the logo"
-                            width={500}
-                            height={500}
+                            width={700}
+                            height={700}
                         />
                     </div>
                     <div className="flex justify-center items-center">
