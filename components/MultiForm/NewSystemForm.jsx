@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
 import Box from "@mui/material/Box";
@@ -71,7 +71,7 @@ export default function NewSystemForm() {
         func(Number(event.target.value));
     };
 
-    useEffect(() => {
+    const handleSubmit = () => {
         const pd1Val = poolDynamic * 3.785 * poolVol;
         setPd1(pd1Val);
 
@@ -81,16 +81,17 @@ export default function NewSystemForm() {
         const chlorineFeedRateVal = cryptolyteFeedRateVal / 0.75;
         setChlorineFeedRate(chlorineFeedRateVal);
 
-        const minBoosterPumpVal = cryptolyteFeedRate / 19;
+        const minBoosterPumpVal = cryptolyteFeedRateVal / 19;
         setMinBoosterPump(minBoosterPumpVal);
 
-        console.log(`cryptolyteFeedRateVal -->`, cryptolyteFeedRateVal);
         setMuriaticAcidFeedRate(cryptolyteFeedRateVal * 0.65);
 
         setSodiumBisulfateAcidFeedRate(cryptolyteFeedRateVal * 0.86);
 
         setTbpSpan(Math.min(poolDynamic * 10, 4.99));
-    }, [poolDynamic, poolVol]);
+
+        handleNext();
+    };
 
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
@@ -177,7 +178,7 @@ export default function NewSystemForm() {
                                 <CardFooter className="flex justify-between">
                                     <Button
                                         size="sm"
-                                        onClick={handleNext}
+                                        onClick={handleSubmit}
                                         disabled={!poolDynamic || !poolVol}
                                     >
                                         Submit

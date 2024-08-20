@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     ChevronDownIcon,
     ChevronUpIcon,
@@ -199,6 +199,15 @@ export default function Layout({ children }) {
             setExpand([...expand, title]);
         }
     };
+
+    useEffect(() => {
+        // * Remove chatbot
+        const chatBubble = document.getElementById("webagent-chat-bubble-container");
+        const webagentIframe = document.getElementById("webagent-iframe");
+
+        if (chatBubble) chatBubble.remove();
+        if (webagentIframe) webagentIframe.remove();
+    }, []);
 
     return (
         <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
