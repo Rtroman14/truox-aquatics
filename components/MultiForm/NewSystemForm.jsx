@@ -81,7 +81,7 @@ export default function NewSystemForm() {
         const chlorineFeedRateVal = cryptolyteFeedRateVal / 0.75;
         setChlorineFeedRate(chlorineFeedRateVal);
 
-        const minBoosterPumpVal = cryptolyteFeedRateVal / 19;
+        const minBoosterPumpVal = cryptolyteFeedRateVal / 10;
         setMinBoosterPump(minBoosterPumpVal);
 
         setMuriaticAcidFeedRate(cryptolyteFeedRateVal * 0.65);
@@ -209,6 +209,14 @@ export default function NewSystemForm() {
                                                 {chlorineFeedRate.toFixed(2)}
                                             </strong>{" "}
                                             lbs/day as Cl<sub>2</sub>
+                                        </div>
+
+                                        <div>
+                                            Cryptolyte® Feed Rate ={" "}
+                                            <strong className="underline underline-offset-2">
+                                                {cryptolyteFeedRate.toFixed(2)}
+                                            </strong>{" "}
+                                            gal/day
                                         </div>
 
                                         <div>

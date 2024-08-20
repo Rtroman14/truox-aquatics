@@ -223,7 +223,7 @@ export default function ExistingSystemForm() {
                                         <div>
                                             Cryptolyte® Feed Rate ={" "}
                                             <strong className="underline underline-offset-2">
-                                                {cryptolyteFeedRate}
+                                                {cryptolyteFeedRate.toFixed(2)}
                                             </strong>{" "}
                                             gal/day
                                         </div>
