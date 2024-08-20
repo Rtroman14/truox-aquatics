@@ -10,7 +10,7 @@ export default function Footer() {
                     </div>
 
                     <p className="text-center text-sm text-slate-600 [text-wrap:balance]">
-                        Copyright © 2023 Cryptolyte®.com. All rights reserved.
+                        Copyright © 2024 Cryptolyte®.com. All rights reserved.
                     </p>
                 </div>
             </div>

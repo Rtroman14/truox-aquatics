@@ -161,17 +161,17 @@ export default function WaterAndAirQuality() {
                     <div className="col-span-6 place-items-center justify-self-center md:justify-self-start">
                         <div className="max-w-lg">
                             <h3 className="text-4xl mb-6 font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[38px]">
-                                Breathe EZ's Immediate Impact
+                                Cryptolyte® with Breathe EZ Activator Immediate Impact
                             </h3>
                             <p className="mt-3 text-slate-600 [text-wrap:balance]">
-                                The graph illustrates the before and after effect of Breathe EZ on
-                                trichloramine concentration. NOTE on 1/31 at 7am the still elevated
-                                trichloramine concentration from the prior days. After addition of
-                                the Breathe EZ treatment, by 11am of the SAME DAY, the trichloramine
-                                concentration was virtually eliminated. In fact comparing
-                                trichloramine concentration at the same time of day (i.e. likely
-                                same bather loading) the 1/31 at 11am concentration is 10x lower
-                                than the 1/30 at 11am measurements.
+                                Implementing Cryptolyte® with Breathe EZ Activator dramatically
+                                decreases trichloramine levels in pool water, ensuring a healthier
+                                and more pleasant swimming environment. This advanced treatment
+                                rapidly reduces harmful irritants, leading to improved air quality
+                                around the pool and minimizing respiratory and eye discomfort for
+                                swimmers. Cryptolyte® delivers immediate, sustained results,
+                                promoting safer and cleaner recreational water, and significantly
+                                enhancing overall public health.
                             </p>
                         </div>
                     </div>
@@ -180,7 +180,7 @@ export default function WaterAndAirQuality() {
                         <picture className="drop-shadow-xl">
                             <Image
                                 className="rounded-xl"
-                                src="/images/university-study-trichloramine.png"
+                                src="/images/trichlor-chart.png"
                                 alt=""
                                 width={900}
                                 height={900}
@@ -192,22 +192,34 @@ export default function WaterAndAirQuality() {
                 <div className="w-10/12 my-24 mx-auto">
                     <div className="mb-12">
                         <h3 className="text-4xl mb-2 font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[38px] text-center">
-                            Data Before & After Breath EZ
+                            Data Before & After Cryptolyte® with Breathe EZ Activator
                         </h3>
 
                         <div className="flex justify-center gap-8">
                             <div className="flex items-center gap-2">
-                                <div className="rounded h-4 w-4 bg-[#A6CBE2]"></div>
+                                <div className="rounded h-4 w-4 bg-[#8FAADA]"></div>
                                 <span>Before Filter</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="rounded h-4 w-4 bg-[#0287F9]"></div>
+                                <div className="rounded h-4 w-4 bg-[#2F5499]"></div>
                                 <span>After Filter</span>
                             </div>
                         </div>
                     </div>
 
-                    <Carousel>
+                    <div className="flex justify-center">
+                        <picture>
+                            <Image
+                                className="rounded-xl"
+                                src="/images/urea-and-dbps.png"
+                                alt=""
+                                width={900}
+                                height={900}
+                            />
+                        </picture>
+                    </div>
+
+                    {/* <Carousel>
                         <CarouselContent>
                             {breatheEzCharts.map(({ title, src }, index) => (
                                 <CarouselItem key={index} className="md:basis-1/2">
@@ -232,9 +244,9 @@ export default function WaterAndAirQuality() {
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
-                    </Carousel>
+                    </Carousel> */}
 
-                    <p className="mt-3 text-slate-600 [text-wrap:balance] text-center">
+                    <p className="mt-4 text-slate-600 [text-wrap:balance] text-center">
                         Other DBP and precursors (i.e. Urea) the following days (right of RED line)
                         after implementation of Breath EZ.
                     </p>
