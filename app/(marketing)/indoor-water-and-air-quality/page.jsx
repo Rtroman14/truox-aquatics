@@ -166,12 +166,13 @@ export default function WaterAndAirQuality() {
                             <p className="mt-3 text-slate-600 [text-wrap:balance]">
                                 Implementing Cryptolyte® with Breathe EZ Activator dramatically
                                 decreases trichloramine levels in pool water, ensuring a healthier
-                                and more pleasant swimming environment. This advanced treatment
-                                rapidly reduces harmful irritants, leading to improved air quality
-                                around the pool and minimizing respiratory and eye discomfort for
-                                swimmers. Cryptolyte® delivers immediate, sustained results,
-                                promoting safer and cleaner recreational water, and significantly
-                                enhancing overall public health.
+                                and more pleasant swimming environment. This{" "}
+                                <strong>PATENTED</strong> treatment rapidly reduces harmful
+                                irritants, leading to improved air quality around the pool and
+                                minimizing respiratory and eye discomfort for swimmers. Cryptolyte®
+                                delivers immediate, sustained results, promoting safer and cleaner
+                                recreational water, and significantly enhancing overall public
+                                health.
                             </p>
                         </div>
                     </div>
@@ -248,7 +249,7 @@ export default function WaterAndAirQuality() {
 
                     <p className="mt-4 text-slate-600 [text-wrap:balance] text-center">
                         Other DBP and precursors (i.e. Urea) the following days (right of RED line)
-                        after implementation of Breath EZ.
+                        after implementation of Breathe EZ.
                     </p>
                 </div>
             </section>
