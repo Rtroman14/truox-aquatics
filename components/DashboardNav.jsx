@@ -26,6 +26,12 @@ import { cn } from "@/lib/utils";
 
 const tabs = [
     {
+        title: "Tutorial - Using the Distributor Portal",
+        slug: "training-videos",
+        icon: <VideoCameraIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
+    {
         title: "Cryptolyte System Sizing & Controller Configuration",
         slug: "",
         icon: <CogIcon className="mr-2 h-5 w-5" />,
@@ -39,11 +45,6 @@ const tabs = [
                 title: "New System Spec",
                 slug: "new-system-spec",
                 icon: <ClipboardDocumentListIcon className="mr-2 h-5 w-5" />,
-            },
-            {
-                title: "Tutorial - Sizing & Configuring",
-                slug: "training-videos",
-                icon: <VideoCameraIcon className="mr-2 h-5 w-5" />,
             },
         ],
     },
