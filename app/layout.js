@@ -2,6 +2,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import Script from "next/script";
 // import Script from "next/script";
 // import MicrosoftClarity from "@/components/Clarity";
 
@@ -23,6 +24,15 @@ export default function RootLayout({ children }) {
                 {/* <MicrosoftClarity /> */}
 
                 <Toaster />
+
+                <Script
+                    type="text/javascript"
+                    id="hs-script-loader"
+                    async
+                    defer
+                    src="//js.hs-scripts.com/44551456.js"
+                    strategy="beforeInteractive"
+                />
             </body>
         </html>
     );
