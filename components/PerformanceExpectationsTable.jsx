@@ -15,6 +15,7 @@ import {
     TableHead,
     TableHeader,
     TableRow,
+    TableFooter,
 } from "@/components/ui/table";
 export default function PerformanceExpectationsTable() {
     const performanceData = [
@@ -85,7 +86,7 @@ export default function PerformanceExpectationsTable() {
     ];
 
     return (
-        <Card>
+        <Card className="relative w-full overflow-auto">
             <CardHeader>
                 <CardTitle className="text-center text-muted-foreground">
                     Performance Expectations

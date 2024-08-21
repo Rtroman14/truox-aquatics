@@ -130,16 +130,9 @@ export default function ExistingSystemForm() {
                 <>
                     <div className="flex flex-col justify-center items-center gap-32">
                         {activeStep === 0 ? (
-                            <Card className="w-[400px]">
+                            <Card className="md:w-[400px] w-full">
                                 <CardHeader>
                                     <CardTitle>Distributor Input Data</CardTitle>
-                                    {/* <CardDescription>
-                                        Cryptolyte Feed-rate based on MAXIMUM{" "}
-                                        <span>
-                                            Cl<sub>2</sub>
-                                        </span>{" "}
-                                        Output
-                                    </CardDescription> */}
                                 </CardHeader>
                                 <CardContent>
                                     <form>
@@ -197,7 +190,7 @@ export default function ExistingSystemForm() {
                         ) : null}
 
                         {activeStep === 1 ? (
-                            <Card className="w-max">
+                            <Card className="w-full md:w-max">
                                 <CardContent className="pt-6">
                                     <h3 className="text-xl font-semibold mb-3">
                                         Feeder System Sizing
