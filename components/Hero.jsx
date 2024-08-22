@@ -10,7 +10,7 @@ export default function Hero() {
         <section className="relative grid min-h-screen md:py-48 py-20">
             <Image
                 className="absolute opacity-50"
-                src="/images/pool-background.jpg"
+                src="/images/pool-background-min.png"
                 alt="Picture of the water"
                 fill
                 sizes="100vw"
