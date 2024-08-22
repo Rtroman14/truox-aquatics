@@ -1,6 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { createClient } from "@/lib/supabase/client";
+import Link from "next/link";
+import { CircleUser, Menu } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Logo from "@/components/Logo";
 import {
     ChevronDownIcon,
     ChevronUpIcon,
@@ -20,8 +38,8 @@ import {
     ExclamationTriangleIcon,
     ClipboardDocumentCheckIcon,
 } from "@heroicons/react/24/outline";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+
+import DashboardNav from "@/components/DashboardNav";
 
 const tabs = [
     {
@@ -144,38 +162,10 @@ const selectedClass = "group flex items-center rounded p-2 bg-primary/20 text-pr
 const defaultClass =
     "group flex items-center rounded p-2 text-nav-foreground hover:bg-primary/20 hover:text-primary";
 
-import Link from "next/link";
-import {
-    Bell,
-    CircleUser,
-    Home,
-    LineChart,
-    Menu,
-    Package,
-    Package2,
-    Search,
-    ShoppingCart,
-    Users,
-} from "lucide-react";
-
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Logo from "@/components/Logo";
-
-import DashboardNav from "@/components/DashboardNav";
-
 export default function Layout({ children }) {
+    const supabase = createClient();
+    const router = useRouter();
+
     const pathname = usePathname();
     const slug = pathname.split("dashboard").pop();
 
@@ -197,6 +187,18 @@ export default function Layout({ children }) {
             setExpand(newExpand);
         } else {
             setExpand([...expand, title]);
+        }
+    };
+
+    const handleSignOut = async () => {
+        try {
+            const { error } = await supabase.auth.signOut();
+
+            if (error) throw new Error(error);
+
+            router.refresh();
+        } catch (error) {
+            console.error(error);
         }
     };
 
@@ -337,10 +339,14 @@ export default function Layout({ children }) {
                         <DropdownMenuContent align="end">
                             <DropdownMenuLabel>My Account</DropdownMenuLabel>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem>Settings</DropdownMenuItem>
-                            <DropdownMenuItem>Support</DropdownMenuItem>
+                            {/* <DropdownMenuItem>Settings</DropdownMenuItem> */}
+                            <DropdownMenuItem>
+                                <Link href="mailto:ryan@truox.com">Support</Link>
+                            </DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem>Logout</DropdownMenuItem>
+                            <DropdownMenuItem className="cursor-pointer" onClick={handleSignOut}>
+                                Logout
+                            </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </header>

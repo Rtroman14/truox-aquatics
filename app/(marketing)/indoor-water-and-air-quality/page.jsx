@@ -249,7 +249,7 @@ export default function WaterAndAirQuality() {
 
                     <p className="mt-4 text-slate-600 [text-wrap:balance] text-center">
                         Other DBP and precursors (i.e. Urea) the following days (right of RED line)
-                        after implementation of Breathe EZ.
+                        after implementation of Cryptolyte® with Breathe EZ Activator.
                     </p>
                 </div>
             </section>

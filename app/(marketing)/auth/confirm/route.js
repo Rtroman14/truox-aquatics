@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
 
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const token_hash = searchParams.get("token_hash");
     const type = searchParams.get("type");
-    const next = searchParams.get("next") ?? "/training-videos";
+    const next = searchParams.get("next") ?? "/dashboard";
 
     const redirectTo = request.nextUrl.clone();
     redirectTo.pathname = next;
@@ -20,12 +21,11 @@ export async function GET(request) {
             token_hash,
         });
         if (!error) {
-            redirectTo.searchParams.delete("next");
-            return NextResponse.redirect(redirectTo);
+            // redirect user to specified redirect URL or root of app
+            redirect(next);
         }
     }
 
-    // return the user to an error page with some instructions
-    redirectTo.pathname = "/error";
-    return NextResponse.redirect(redirectTo);
+    // redirect the user to an error page with some instructions
+    redirect("/error");
 }

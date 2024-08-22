@@ -1,6 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+export const metadata = {
+    title: "CryptoLyte | Dashboard",
+    description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
+};
+
 export default function CalibrationProcedure() {
     return (
         <div className="grid min-h-screen grid-cols-1 py-12 px-8">

@@ -9,30 +9,21 @@ export const metadata = {
 };
 
 export default async function LogInPage() {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     const {
         data: { user },
     } = await supabase.auth.getUser();
 
     if (user) {
-        // redirect("/training-videos");
+        redirect("/dashboard");
     }
 
     return (
-        <div className="grid h-screen grid-cols-1">
+        <div className="grid h-[calc(100vh-71px)]">
             <div className="flex flex-col items-center justify-center">
                 <LogInForm />
             </div>
         </div>
-
-        // <div className="grid h-screen grid-cols-1 lg:grid-cols-2">
-        //     <div className="col-span-1 hidden flex-col items-center justify-center bg-background lg:flex"></div>
-        //     <div className="col-span-1 flex flex-col items-center justify-center">
-        //         <div className="lg:p-8">
-        //             <LogInForm />
-        //         </div>
-        //     </div>
-        // </div>
     );
 }

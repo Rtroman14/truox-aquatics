@@ -1,5 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
+export const metadata = {
+    title: "CryptoLyte | Dashboard",
+    description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
+};
+
 export default function StartupNeutralizationPage() {
     return (
         <div className="grid min-h-screen grid-cols-1">

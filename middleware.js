@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 
-// const protectedRoutes = ["/training-videos"];
-const protectedRoutes = ["/asdf"];
+const protectedRoutes = ["/dashboard"];
 
 export const config = {
     matcher: [
@@ -21,10 +20,10 @@ export async function middleware(req) {
         data: { user },
     } = await updateSession(req);
 
-    const trainingVideoRoute = new RegExp(protectedRoutes[0]);
+    const protectedRoutesRe = new RegExp(protectedRoutes[0]);
 
     // * check if route is protected
-    if (trainingVideoRoute.test(req.nextUrl.pathname)) {
+    if (protectedRoutesRe.test(req.nextUrl.pathname)) {
         if (!user) {
             if (req.nextUrl.pathname === "/") {
                 return NextResponse.next();

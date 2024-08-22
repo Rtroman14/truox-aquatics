@@ -1,4 +1,7 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+export const metadata = {
+    title: "CryptoLyte | Dashboard",
+    description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
+};
 
 export default function CommissioningPage() {
     return (
