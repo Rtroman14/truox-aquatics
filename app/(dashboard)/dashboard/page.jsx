@@ -3,10 +3,6 @@ export const metadata = {
     description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
 };
 
-export default function ResourcesPage() {
-    return (
-        <div>
-            <h1>Dashboard</h1>
-        </div>
-    );
+export default function DashboardPage() {
+    return <div className="h-[calc(100vh-62px)]"></div>;
 }
