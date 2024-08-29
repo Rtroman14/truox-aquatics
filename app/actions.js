@@ -1,10 +1,12 @@
 "use server";
 
 import { z } from "zod";
-import { Resend } from "resend";
+// import { Resend } from "resend";
 
 import ContactFormEmail from "./(marketing)/contact/_components/ContactFormEmail";
 import slackNotification from "@/lib/utils/slackNotification";
+
+import { createClient } from "@/lib/supabase/server";
 
 const contactFormSchema = z.object({
     name: z
@@ -62,3 +64,60 @@ export async function emailContactForm(values) {
         };
     }
 }
+
+export const fetchCustomer = async (select = "*") => {
+    const supabase = await createClient();
+
+    try {
+        const { data, error } = await supabase.from("customers").select(select).maybeSingle();
+        if (error) throw new Error(error.message);
+
+        return { success: true, data };
+    } catch (error) {
+        console.error(error);
+
+        return {
+            success: false,
+            data: null,
+            message: error.message,
+        };
+    }
+};
+
+export const insertExistingSystemUpgrade = async (values) => {
+    const supabase = await createClient();
+
+    try {
+        const { data, error } = await supabase.from("existing_system_upgrade").insert(values);
+        if (error) throw new Error(error.message);
+
+        return { success: true, data };
+    } catch (error) {
+        console.error(error);
+
+        return {
+            success: false,
+            data: null,
+            message: error.message,
+        };
+    }
+};
+
+export const insertNewSystemSpec = async (values) => {
+    const supabase = await createClient();
+
+    try {
+        const { data, error } = await supabase.from("new_system_spec").insert(values);
+        if (error) throw new Error(error.message);
+
+        return { success: true, data };
+    } catch (error) {
+        console.error(error);
+
+        return {
+            success: false,
+            data: null,
+            message: error.message,
+        };
+    }
+};

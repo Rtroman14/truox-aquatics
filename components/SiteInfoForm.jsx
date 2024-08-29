@@ -5,22 +5,22 @@ export default function SiteInfoForm({ formData, handleInputChange }) {
     return (
         <div className="space-y-4">
             <div className="space-y-2">
-                <Label htmlFor="siteName">Site Name</Label>
+                <Label htmlFor="site_name">Site Name</Label>
                 <Input
-                    id="siteName"
-                    name="siteName"
-                    value={formData.siteName}
+                    id="site_name"
+                    name="site_name"
+                    value={formData.site_name}
                     onChange={handleInputChange}
                     required
                 />
             </div>
 
             <div className="space-y-2">
-                <Label htmlFor="companyName">Company Name</Label>
+                <Label htmlFor="company_name">Company Name</Label>
                 <Input
-                    id="companyName"
-                    name="companyName"
-                    value={formData.companyName}
+                    id="company_name"
+                    name="company_name"
+                    value={formData.company_name}
                     onChange={handleInputChange}
                     required
                 />

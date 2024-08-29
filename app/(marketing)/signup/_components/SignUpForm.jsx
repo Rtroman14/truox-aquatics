@@ -54,7 +54,7 @@ export default function SignUpForm() {
                         full_name: `${values.firstName} ${values.lastName}`,
                         first_name: values.firstName,
                         last_name: values.lastName,
-                        conpany_name: values.companyName,
+                        company_name: values.companyName,
                     },
                 },
             });

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useReactToPrint } from "react-to-print";
+import { Loader2 } from "lucide-react";
 
 import {
     Card,
@@ -21,12 +22,7 @@ import StepIndicator from "@/components/StepIndicator";
 
 import SiteInfoForm from "@/components/SiteInfoForm";
 
-const initialFormData = {
-    siteName: "",
-    companyName: "",
-    poolDynamic: "",
-    poolVol: "",
-};
+import { insertNewSystemSpec } from "@/app/actions";
 
 const steps = [
     { label: "Site Info", description: "Enter site details" },
@@ -34,17 +30,27 @@ const steps = [
     { label: "Calculations", description: "View results" },
 ];
 
-export default function NewSystemForm() {
+export default function NewSystemForm({ customer }) {
     const [currentStep, setCurrentStep] = useState(1);
-    const [formData, setFormData] = useState(initialFormData);
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        site_name: "",
+        company_name: customer ? customer.company_name : "",
+        pool_dynamic: "",
+        pool_volume: "",
+    });
     const componentRef = useRef();
 
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
 
-    const handleSubmit = () => {
-        // TODO: save to db
+    const handleSubmit = async () => {
+        setLoading(true);
+        console.log("formData", formData);
+
+        await insertNewSystemSpec(formData);
+        setLoading(false);
 
         handlePrint();
     };
@@ -57,9 +63,9 @@ export default function NewSystemForm() {
     const isStepValid = (step) => {
         switch (step) {
             case 1:
-                return formData.siteName.trim() !== "" && formData.companyName.trim() !== "";
+                return formData.site_name.trim() !== "" && formData.company_name.trim() !== "";
             case 2:
-                return formData.poolDynamic.trim() !== "" && formData.poolVol.trim() !== "";
+                return formData.pool_dynamic.trim() !== "" && formData.pool_volume.trim() !== "";
             default:
                 return true;
         }
@@ -121,7 +127,12 @@ export default function NewSystemForm() {
                         Next
                     </Button>
                 ) : (
-                    <Button onClick={handleSubmit} size="sm" disabled={!isStepValid(currentStep)}>
+                    <Button
+                        onClick={handleSubmit}
+                        size="sm"
+                        disabled={!isStepValid(currentStep) || loading}
+                    >
+                        {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                         Print & Submit
                     </Button>
                 )}
@@ -134,32 +145,32 @@ const InputData = ({ formData, handleInputChange }) => {
     return (
         <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="pool-dynamic" className="flex gap-1 items-center">
+                <Label htmlFor="pool_dynamic" className="flex gap-1 items-center">
                     <span>Pool Dynamic</span>
                     <Badge variant="secondary">
                         Cl0 <sub className="mr-1">2</sub> ppm/min
                     </Badge>
                 </Label>
                 <Input
-                    id="pool-dynamic"
-                    name="poolDynamic"
+                    id="pool_dynamic"
+                    name="pool_dynamic"
                     type="number"
-                    value={formData.poolDynamic}
+                    value={formData.pool_dynamic}
                     onChange={handleInputChange}
                     placeholder="0.25"
                     required
                 />
             </div>
             <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="pool-volumn" className="flex gap-1 items-center">
+                <Label htmlFor="pool_volume" className="flex gap-1 items-center">
                     <span>Pool Volume</span>
                     <Badge variant="secondary">Gal</Badge>
                 </Label>
                 <Input
-                    id="pool-volumn"
-                    name="poolVol"
+                    id="pool_volume"
+                    name="pool_volume"
                     type="number"
-                    value={formData.poolVol}
+                    value={formData.pool_volume}
                     onChange={handleInputChange}
                     placeholder="10,000"
                     required
@@ -180,7 +191,7 @@ const Calculations = ({ formData, componentRef }) => {
     const [minBoosterPump, setMinBoosterPump] = useState(0);
 
     useEffect(() => {
-        const pd1Val = Number(formData.poolDynamic) * 3.785 * Number(formData.poolVol);
+        const pd1Val = Number(formData.pool_dynamic) * 3.785 * Number(formData.pool_volume);
         setPd1(pd1Val);
 
         const cryptolyteFeedRateVal = pd1Val / 593.14;
@@ -196,8 +207,8 @@ const Calculations = ({ formData, componentRef }) => {
 
         setSodiumBisulfateAcidFeedRate(cryptolyteFeedRateVal * 0.86);
 
-        setTbpSpan(Math.min(Number(formData.poolDynamic) * 10, 4.99));
-    }, [formData.poolVol, formData.poolDynamic]);
+        setTbpSpan(Math.min(Number(formData.pool_dynamic) * 10, 4.99));
+    }, [formData.pool_volume, formData.pool_dynamic]);
 
     return (
         <div className="space-y-4">
@@ -207,7 +218,7 @@ const Calculations = ({ formData, componentRef }) => {
                 <div>
                     Pool Volume ={" "}
                     <strong className="underline underline-offset-2">
-                        {formData.poolVol.toLocaleString()}
+                        {formData.pool_volume.toLocaleString()}
                     </strong>{" "}
                     Gal
                 </div>
@@ -272,7 +283,7 @@ const Calculations = ({ formData, componentRef }) => {
                 <div>
                     Pool Dynamic ={" "}
                     <strong className="underline underline-offset-2">
-                        {Number(formData.poolDynamic).toFixed(2)}
+                        {Number(formData.pool_dynamic).toFixed(2)}
                     </strong>{" "}
                     ClO<sub>2</sub> ppm/min
                 </div>
@@ -294,7 +305,7 @@ const Calculations = ({ formData, componentRef }) => {
                                 <div>
                                     Pool Volume ={" "}
                                     <strong className="underline underline-offset-2">
-                                        {formData.poolVol.toLocaleString()}
+                                        {formData.pool_volume.toLocaleString()}
                                     </strong>{" "}
                                     Gal
                                 </div>
@@ -357,7 +368,7 @@ const Calculations = ({ formData, componentRef }) => {
                                 <div>
                                     Pool Dynamic ={" "}
                                     <strong className="underline underline-offset-2">
-                                        {Number(formData.poolDynamic).toFixed(2)}
+                                        {Number(formData.pool_dynamic).toFixed(2)}
                                     </strong>{" "}
                                     ClO<sub>2</sub> ppm/min
                                 </div>

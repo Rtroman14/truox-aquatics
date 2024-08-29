@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { Loader2 } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,12 +14,7 @@ import { useReactToPrint } from "react-to-print";
 import StepIndicator from "@/components/StepIndicator";
 import SiteInfoForm from "@/components/SiteInfoForm";
 
-const initialFormData = {
-    siteName: "",
-    companyName: "",
-    maxClFeedRate: "",
-    poolVol: "",
-};
+import { insertExistingSystemUpgrade } from "@/app/actions";
 
 const steps = [
     { label: "Site Info", description: "Enter site details" },
@@ -25,17 +22,27 @@ const steps = [
     { label: "Calculations", description: "View results" },
 ];
 
-export default function Component() {
+export default function Component({ customer }) {
     const [currentStep, setCurrentStep] = useState(1);
-    const [formData, setFormData] = useState(initialFormData);
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        site_name: "",
+        company_name: customer ? customer.company_name : "",
+        max_chlorine_feed_rate: "",
+        pool_volume: "",
+    });
     const componentRef = useRef();
 
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
 
-    const handleSubmit = () => {
-        // TODO: save to db
+    const handleSubmit = async () => {
+        setLoading(true);
+        console.log("formData", formData);
+
+        await insertExistingSystemUpgrade(formData);
+        setLoading(false);
 
         handlePrint();
     };
@@ -48,9 +55,12 @@ export default function Component() {
     const isStepValid = (step) => {
         switch (step) {
             case 1:
-                return formData.siteName.trim() !== "" && formData.companyName.trim() !== "";
+                return formData.site_name.trim() !== "" && formData.company_name.trim() !== "";
             case 2:
-                return formData.maxClFeedRate.trim() !== "" && formData.poolVol.trim() !== "";
+                return (
+                    formData.max_chlorine_feed_rate.trim() !== "" &&
+                    formData.pool_volume.trim() !== ""
+                );
             default:
                 return true;
         }
@@ -112,7 +122,12 @@ export default function Component() {
                         Next
                     </Button>
                 ) : (
-                    <Button onClick={handleSubmit} size="sm" disabled={!isStepValid(currentStep)}>
+                    <Button
+                        onClick={handleSubmit}
+                        size="sm"
+                        disabled={!isStepValid(currentStep) || loading}
+                    >
+                        {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                         Print & Submit
                     </Button>
                 )}
@@ -136,9 +151,9 @@ const InputData = ({ formData, handleInputChange }) => {
                 </Label>
                 <Input
                     id="cl2-output"
-                    name="maxClFeedRate"
+                    name="max_chlorine_feed_rate"
                     type="number"
-                    value={formData.maxClFeedRate}
+                    value={formData.max_chlorine_feed_rate}
                     onChange={handleInputChange}
                     placeholder="7"
                     required
@@ -151,9 +166,9 @@ const InputData = ({ formData, handleInputChange }) => {
                 </Label>
                 <Input
                     id="booster-pump-flow-rate"
-                    name="poolVol"
+                    name="pool_volume"
                     type="number"
-                    value={formData.poolVol}
+                    value={formData.pool_volume}
                     onChange={handleInputChange}
                     placeholder="10,000"
                     required
@@ -174,12 +189,12 @@ const Calculations = ({ formData, componentRef }) => {
     const [sodiumBisulfateAcidFeetRate, setSodiumBisulfateAcidFeedRate] = useState(0);
 
     useEffect(() => {
-        const cryptoLyteFeedRateVal = formData.maxClFeedRate * 0.75;
+        const cryptoLyteFeedRateVal = formData.max_chlorine_feed_rate * 0.75;
         setCryptolyteFeedRate(cryptoLyteFeedRateVal);
         setMinBoosterPump(cryptoLyteFeedRateVal / 10);
 
         const pd1Val = cryptoLyteFeedRateVal * 593.14;
-        const pd2Val = formData.poolVol * 3.785;
+        const pd2Val = formData.pool_volume * 3.785;
         setPd1(pd1Val);
         setPd2(pd2Val);
         setPoolDynamic(pd1Val / pd2Val);
@@ -189,7 +204,7 @@ const Calculations = ({ formData, componentRef }) => {
 
         setMuriaticAcidFeedRate(cryptoLyteFeedRateVal * 0.65);
         setSodiumBisulfateAcidFeedRate(cryptoLyteFeedRateVal * 0.86);
-    }, [formData.poolVol, formData.maxClFeedRate]);
+    }, [formData.pool_volume, formData.max_chlorine_feed_rate]);
 
     return (
         <div className="space-y-4">
@@ -199,14 +214,15 @@ const Calculations = ({ formData, componentRef }) => {
                 <div>
                     Maximum Chlorine Feed Rate ={" "}
                     <strong className="underline underline-offset-2">
-                        {formData.maxClFeedRate}
+                        {formData.max_chlorine_feed_rate}
                     </strong>{" "}
                     lbs/day as Cl<sub>2</sub>
                 </div>
 
                 <div>
                     Pool Volume ={" "}
-                    <strong className="underline underline-offset-2">{formData.poolVol}</strong> Gal
+                    <strong className="underline underline-offset-2">{formData.pool_volume}</strong>{" "}
+                    Gal
                 </div>
 
                 <div>
@@ -280,7 +296,7 @@ const Calculations = ({ formData, componentRef }) => {
                                 <div>
                                     Maximum Chlorine Feed Rate ={" "}
                                     <strong className="underline underline-offset-2">
-                                        {formData.maxClFeedRate}
+                                        {formData.max_chlorine_feed_rate}
                                     </strong>{" "}
                                     lbs/day as Cl<sub>2</sub>
                                 </div>
@@ -288,7 +304,7 @@ const Calculations = ({ formData, componentRef }) => {
                                 <div>
                                     Pool Volume ={" "}
                                     <strong className="underline underline-offset-2">
-                                        {formData.poolVol}
+                                        {formData.pool_volume}
                                     </strong>{" "}
                                     Gal
                                 </div>
