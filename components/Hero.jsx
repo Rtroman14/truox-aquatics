@@ -9,6 +9,17 @@ export default function Hero() {
     return (
         <section className="relative grid min-h-screen md:py-48 py-20">
             <Image
+                className="absolute opacity-60"
+                src="/images/pool-background-min.png"
+                alt="Picture of the water"
+                fill
+                sizes="100vw"
+                style={{
+                    objectFit: "cover",
+                }}
+            />
+            <div className="absolute h-screen w-screen bg-white/0"></div>
+            {/* <Image
                 className="absolute opacity-50"
                 src="/images/pool-background-min.png"
                 alt="Picture of the water"
@@ -18,7 +29,7 @@ export default function Hero() {
                     objectFit: "cover",
                 }}
             />
-            <div className="absolute h-screen w-screen backdrop-blur-sm bg-black/0"></div>
+            <div className="absolute h-screen w-screen backdrop-blur-sm bg-black/0"></div> */}
 
             <div className="container z-20 flex flex-col items-center justify-center">
                 <div className="grid md:gap-12 gap-8">
