@@ -1,3 +1,5 @@
+import { withPlausibleProxy } from "next-plausible";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
@@ -10,4 +12,4 @@ const nextConfig = {
     },
 };
 
-export default nextConfig;
+export default withPlausibleProxy()(nextConfig);
