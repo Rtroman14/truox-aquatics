@@ -11,10 +11,6 @@ export default function VideoPage({ params }) {
     const guide = guides.find((el) => el.href.includes(slug));
 
     return (
-        <iframe
-            src={guide.src}
-            frameBorder="0"
-            className="w-full h-[calc(100vh-400px)] min-h-[400px]"
-        ></iframe>
+        <iframe src={guide.src} frameBorder="0" className="w-full h-[calc(100vh-400px)]"></iframe>
     );
 }
