@@ -173,6 +173,31 @@ export default function PreInstallationCheckList() {
                                 </strong>
                             </Label>
                         </li>
+                        <li className="flex items-start space-x-2">
+                            <Checkbox id="Testing Procedures" />
+                            <Label className="leading-5" htmlFor="Testing Procedures">
+                                <strong>
+                                    Testing Procedures (Download) – Purchase Test Kits and Supplies
+                                </strong>
+                            </Label>
+                        </li>
+                        <ul className="grid grid-cols-1 gap-3 ml-8">
+                            <li className="flex items-start space-x-2">
+                                <Checkbox id="Testing Breathe EZ Activator" />
+                                <Label className="leading-5" htmlFor="Testing Breathe EZ Activator">
+                                    Testing Breathe EZ Activator (INDOOR Pools)
+                                </Label>
+                            </li>
+                            <li className="flex items-start space-x-2">
+                                <Checkbox id="Testing for Residual Cryptolyte" />
+                                <Label
+                                    className="leading-5"
+                                    htmlFor="Testing for Residual Cryptolyte"
+                                >
+                                    Testing for Residual Cryptolyte
+                                </Label>
+                            </li>
+                        </ul>
                     </ul>
                 </CardContent>
             </Card>

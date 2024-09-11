@@ -128,18 +128,12 @@ const tabs = [
         icon: <ExclamationTriangleIcon className="mr-2 h-5 w-5" />,
         children: [],
     },
-    // {
-    //     title: "Neutralization – Post Shock Treatment",
-    //     slug: "neutralization–post-shock-treatment",
-    //     icon: <BoltIcon className="mr-2 h-5 w-5" />,
-    //     children: [],
-    // },
-    // {
-    //     title: "Maintenance Schedule",
-    //     slug: "maintenance-schedule",
-    //     icon: <WrenchScrewdriverIcon className="mr-2 h-5 w-5" />,
-    //     children: [],
-    // },
+    {
+        title: "Testing Methods",
+        slug: "testing-methods",
+        icon: <BeakerIcon className="mr-2 h-5 w-5" />,
+        children: [],
+    },
 ];
 
 const selectedClass = "group flex items-center rounded p-2 bg-primary/20 text-primary";
