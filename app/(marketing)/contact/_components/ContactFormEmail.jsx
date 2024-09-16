@@ -1,13 +1,11 @@
 export default function ContactFormEmail({ name, email, phone, company, message }) {
     return (
         <div>
-            <ul>
-                <li>Name: {name}</li>
-                <li>Email: {email}</li>
-                <li>Phone Number: {phone}</li>
-                <li>Company: {company}</li>
-                <li>Message: {message}</li>
-            </ul>
+            <p>Name: {name}</p>
+            <p>Email: {email}</p>
+            <p>Phone Number: {phone}</p>
+            <p>Company: {company}</p>
+            <p>Message: {message}</p>
         </div>
     );
 }

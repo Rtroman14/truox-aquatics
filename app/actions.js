@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-// import { Resend } from "resend";
+import { Resend } from "resend";
 
 import ContactFormEmail from "./(marketing)/contact/_components/ContactFormEmail";
 import slackNotification from "@/lib/utils/slackNotification";
@@ -20,15 +20,9 @@ const contactFormSchema = z.object({
 });
 
 export async function emailContactForm(values) {
-    // const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(process.env.RESEND_API);
 
     console.log(`Form values -->`, values);
-
-    await slackNotification({ username: "Truox Aquatics", text: JSON.stringify(values) });
-
-    return {
-        success: true,
-    };
 
     const validatedFields = contactFormSchema.safeParse(values);
 
@@ -41,9 +35,9 @@ export async function emailContactForm(values) {
 
     try {
         const { data, error } = await resend.emails.send({
-            from: "Roy <roy@truox.com>",
-            to: ["ryan@peakleads.io"],
-            subject: "Truox Website Lead",
+            from: "Roy <roy@alerts.truox.com>",
+            to: ["ryan@truox.com"],
+            subject: "Cryptolyte Website Lead",
             react: ContactFormEmail({
                 name: values.name,
                 email: values.email,
@@ -53,6 +47,11 @@ export async function emailContactForm(values) {
             }),
         });
         if (error) throw new Error(error.message);
+
+        await slackNotification({
+            username: "Truox Aquatics",
+            text: JSON.stringify(values, null, 4),
+        });
 
         return { success: true, data };
     } catch (error) {
