@@ -35,6 +35,8 @@ export default function ForgotPasswordForm() {
     const { isSubmitting, errors } = form.formState;
 
     const handleResetPassword = async ({ email }) => {
+        console.log(`process.env.NEXT_PUBLIC_WEBSITE_URL -->`, process.env.NEXT_PUBLIC_WEBSITE_URL);
+
         try {
             const { error } = await supabase.auth.resetPasswordForEmail(email, {
                 redirectTo: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/reset-password`,
@@ -62,7 +64,8 @@ export default function ForgotPasswordForm() {
                     layoutId="123"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}>
+                    exit={{ opacity: 0 }}
+                >
                     <div className="flex flex-col space-y-2 text-center">
                         <h1 className="text-2xl font-semibold tracking-tight">
                             Password reset email sent!
@@ -78,7 +81,8 @@ export default function ForgotPasswordForm() {
                     layoutId="123"
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}>
+                    exit={{ opacity: 0 }}
+                >
                     <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
                         <div className="flex flex-col space-y-2 text-center">
                             <h1 className="text-3xl font-semibold tracking-tight">
@@ -110,7 +114,8 @@ export default function ForgotPasswordForm() {
                                         className="w-full"
                                         type="submit"
                                         disabled={Object.keys(errors).length > 0 || isSubmitting}
-                                        size="sm">
+                                        size="sm"
+                                    >
                                         {isSubmitting ? (
                                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                                         ) : null}
