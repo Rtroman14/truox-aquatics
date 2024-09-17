@@ -46,7 +46,7 @@ export default function ResetPasswordForm() {
 
             if (error) throw new Error(error.message);
 
-            router.push("/chatbots");
+            router.push("/dashboard");
         } catch (error) {
             console.error(error);
 
