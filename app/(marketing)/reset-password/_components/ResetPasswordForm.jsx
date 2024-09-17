@@ -8,8 +8,8 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
-import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
     Form,
     FormControl,
@@ -17,7 +17,7 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/app/components/ui/form";
+} from "@/components/ui/form";
 
 import { resetPasswordFormSchema } from "@/lib/formSchemas";
 
