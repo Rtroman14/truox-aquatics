@@ -1,7 +1,7 @@
-import ForgotPasswordForm from "./_components/ForgotPasswordForm";
+import ResetPasswordForm from "./_components/ResetPasswordForm";
 
 export const metadata = {
-    title: "CryptoLyte | Forgot Passowrd",
+    title: "CryptoLyte | Reset Passowrd",
     description: "Kill 99.9% of Cryptosporidium under 30 minutes with CryptoLyte",
 };
 
@@ -10,7 +10,7 @@ export default function ResetPasswordPage() {
         <div className="flex h-screen items-center justify-center">
             <div className="flex flex-col items-center justify-center">
                 <div className="lg:p-8">
-                    <ForgotPasswordForm />
+                    <ResetPasswordForm />
                 </div>
             </div>
         </div>
