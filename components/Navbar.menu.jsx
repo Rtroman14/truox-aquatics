@@ -146,11 +146,11 @@ const menuItems = [
             },
         ],
     },
-    {
-        name: "Distributor Portal",
-        href: "/dashboard",
-        children: [],
-    },
+    // {
+    //     name: "Distributor Portal",
+    //     href: "/dashboard",
+    //     children: [],
+    // },
     // {
     //     name: "Contact",
     //     href: "/contact",
