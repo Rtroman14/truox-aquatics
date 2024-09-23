@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
+import { sendNewUserApprovalEmail } from "@/app/actions";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,7 +47,7 @@ export default function SignUpForm() {
 
     const handleSignUp = async (values) => {
         try {
-            const { error } = await supabase.auth.signUp({
+            const { data, error } = await supabase.auth.signUp({
                 email: values.email,
                 password: values.password,
                 options: {
@@ -61,6 +62,13 @@ export default function SignUpForm() {
 
             if (error) throw new Error(error.message);
 
+            // Send approval email to admin
+            await sendNewUserApprovalEmail({
+                name: `${values.firstName} ${values.lastName}`,
+                email: values.email,
+                company: values.companyName,
+            });
+
             router.refresh();
 
             return {
@@ -68,11 +76,9 @@ export default function SignUpForm() {
             };
         } catch (error) {
             console.error(error);
-
             form.setError("password", { message: error.message });
-
             return {
-                success: error,
+                success: false,
                 message: error.message,
             };
         }

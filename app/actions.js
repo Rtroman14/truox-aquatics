@@ -6,6 +6,8 @@ import { Resend } from "resend";
 import ContactFormEmail from "./(marketing)/contact/_components/ContactFormEmail";
 import slackNotification from "@/lib/utils/slackNotification";
 
+import NewUserApprovalEmail from "@/emails/new-user-approval";
+
 import { createClient } from "@/lib/supabase/server";
 
 const contactFormSchema = z.object({
@@ -118,5 +120,23 @@ export const insertNewSystemSpec = async (values) => {
             data: null,
             message: error.message,
         };
+    }
+};
+
+export const sendNewUserApprovalEmail = async ({ name, email, company }) => {
+    try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+
+        const data = await resend.emails.send({
+            from: "Roy <roy@alerts.truox.com>",
+            to: ["ryan@peakleads.io"], // Replace with the actual admin email
+            subject: "New User Registration Approval",
+            react: NewUserApprovalEmail({ name, email, company }),
+        });
+
+        return { success: true, data };
+    } catch (error) {
+        console.error("Error sending email:", error);
+        return { success: false, error };
     }
 };
