@@ -129,7 +129,7 @@ export const sendNewUserApprovalEmail = async ({ name, email, company }) => {
 
         const data = await resend.emails.send({
             from: "Roy <roy@alerts.truox.com>",
-            to: ["ryan@peakleads.io"], // Replace with the actual admin email
+            to: ["ryan@truox.com"], // Replace with the actual admin email
             subject: "New User Registration Approval",
             react: NewUserApprovalEmail({ name, email, company }),
         });
