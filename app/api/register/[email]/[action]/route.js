@@ -13,7 +13,7 @@ export const GET = async (request, { params }) => {
         const { data, error } = await supabase
             .from("customers")
             .update({ approved: action === "approve" })
-            .eq("email", email);
+            .eq("email", email.toLowerCase().trim());
 
         if (error) throw error;
 
