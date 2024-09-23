@@ -125,7 +125,7 @@ export const insertNewSystemSpec = async (values) => {
 
 export const sendNewUserApprovalEmail = async ({ name, email, company }) => {
     try {
-        const resend = new Resend(process.env.RESEND_API_KEY);
+        const resend = new Resend(process.env.RESEND_API);
 
         const data = await resend.emails.send({
             from: "Roy <roy@alerts.truox.com>",
