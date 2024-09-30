@@ -40,7 +40,7 @@ const resources = [
         title: "Transform Your Indoor Pool Safety with Cryptolyte",
         description:
             "Discover how Cryptolyte® technology dramatically improves air and water quality by mitigating harmful disinfection byproducts (DBPs) in indoor aquatic facilities, ensuring a safer and cleaner swimming environment.",
-        src: "/pdfs/understanding-and-addressing-indoor-aquatic-illness.pdf",
+        src: "/pdfs/understanding-and-addressing-indoor-aquatic-illness-2.pdf",
     },
     {
         title: "Purdue Blatchley: Enhancing Indoor Pool Air and Water Quality",
