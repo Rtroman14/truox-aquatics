@@ -1,11 +1,9 @@
-import Email from "@/emails/new-user-approval";
+import Email from "@/emails/website-error";
 
 export default function EmailPreview() {
     return (
         <div>
-            <h1>Hello World</h1>
-
-            <Email name="Ryan Roman" email="ryan@peakleads.io" company="Peakleads.io" />
+            <Email func="Sign Up" error="There was an error signup up new user" />
         </div>
     );
 }

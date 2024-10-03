@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
-import { sendNewUserApprovalEmail } from "@/app/actions";
+import { sendErrorAlert } from "@/app/actions";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -77,6 +77,13 @@ export default function SignUpForm() {
         } catch (error) {
             console.error(error);
             form.setError("password", { message: error.message });
+
+            // Send approval email to admin
+            await sendErrorAlert({
+                func: "Sign Up Form",
+                error,
+            });
+
             return {
                 success: false,
                 message: error.message,
