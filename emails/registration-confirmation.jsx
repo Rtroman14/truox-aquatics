@@ -18,7 +18,6 @@ export default function RegistrationConfirmationEmail({ action, name }) {
     const previewText = `Your Distributor Portal registration has been ${
         action === "approve" ? "approved" : "denied"
     }`;
-    const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "http://localhost:3000";
 
     return (
         <Html>
@@ -57,7 +56,7 @@ export default function RegistrationConfirmationEmail({ action, name }) {
                             <Section className="text-center mt-[32px] mb-[32px]">
                                 <Button
                                     className="bg-blue-500 rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                                    href={`${baseUrl}/dashboard`}
+                                    href="https://truoxaquatics.com//dashboard"
                                 >
                                     Access Dashboard
                                 </Button>

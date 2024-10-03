@@ -4,14 +4,13 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import RegistrationConfirmationEmail from "@/emails/registration-confirmation";
 
-const sendRegistrationConfirmation = async ({ action, name, email }) => {
+const sendRegistrationConfirmation = async ({ action, name }) => {
     try {
         const resend = new Resend(process.env.RESEND_API);
 
         const data = await resend.emails.send({
             from: "Roy <roy@alerts.truox.com>",
-            to: [email],
-            bcc: ["ryan@truox.com", "ryan@peakleads.io"],
+            to: ["ryan@peakleads.io"], // Replace with the actual admin email
             subject: `Cryptolyte Registration ${action === "approve" ? "Approved!" : "Denied"}`,
             react: RegistrationConfirmationEmail({ action, name }),
         });
@@ -24,7 +23,7 @@ const sendRegistrationConfirmation = async ({ action, name, email }) => {
 };
 
 export const GET = async (request, { params }) => {
-    const { email, action } = params;
+    const { email, action } = { email: "ryan@peakleads.io", action: "approve" };
     const supabase = createClient();
 
     if (action !== "approve" && action !== "deny") {
@@ -42,7 +41,7 @@ export const GET = async (request, { params }) => {
 
         if (data && data.length > 0) {
             const firstName = data[0].first_name;
-            await sendRegistrationConfirmation({ action, name: firstName, email });
+            await sendRegistrationConfirmation({ action, name: firstName });
         }
 
         return NextResponse.json({ message: `User ${action}ed successfully` }, { status: 200 });
