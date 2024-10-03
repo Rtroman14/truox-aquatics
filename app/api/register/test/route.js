@@ -31,18 +31,18 @@ export const GET = async (request, { params }) => {
     }
 
     try {
-        const { data, error } = await supabase
-            .from("customers")
-            .update({ approved: action === "approve" })
-            .eq("email", email.toLowerCase().trim())
-            .select("first_name");
+        // const { data, error } = await supabase
+        //     .from("customers")
+        //     .update({ approved: action === "approve" })
+        //     .eq("email", email.toLowerCase().trim())
+        //     .select("first_name");
 
-        if (error) throw error;
+        // if (error) throw error;
 
-        if (data && data.length > 0) {
-            const firstName = data[0].first_name;
-            await sendRegistrationConfirmation({ action, name: firstName });
-        }
+        // if (data && data.length > 0) {
+        //     const firstName = data[0].first_name;
+        //     await sendRegistrationConfirmation({ action, name: firstName });
+        // }
 
         return NextResponse.json({ message: `User ${action}ed successfully` }, { status: 200 });
     } catch (error) {
