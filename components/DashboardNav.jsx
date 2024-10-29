@@ -52,7 +52,18 @@ const tabs = [
         title: "Pre-Proposal Inspection",
         slug: "pre-proposal-inspection",
         icon: <MagnifyingGlassIcon className="mr-2 h-5 w-5" />,
-        children: [],
+        children: [
+            {
+                title: "BECSys Requirements",
+                slug: "becsys-requirements",
+                icon: <CheckCircleIcon className="mr-2 h-5 w-5" />,
+            },
+            {
+                title: "Pre-Proposal Check List",
+                slug: "pre-proposal-check-list",
+                icon: <DocumentCheckIcon className="mr-2 h-5 w-5" />,
+            },
+        ],
     },
     {
         title: "Pre-Installation Check List",
@@ -81,11 +92,6 @@ const tabs = [
                 slug: "calibration",
                 icon: <AdjustmentsVerticalIcon className="mr-2 h-5 w-5" />,
             },
-            // {
-            //     title: "Calibration Procedure & Kemio Instructions",
-            //     slug: "calibration-procedure",
-            //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
-            // },
             {
                 title: "Troubleshooting",
                 slug: "troubleshooting",
@@ -98,18 +104,6 @@ const tabs = [
             },
         ],
     },
-    // {
-    //     title: "Sensor Commissioning",
-    //     slug: "sensor-commissioning",
-    //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
-    //     children: [],
-    // },
-    // {
-    //     title: "Startup Configuration Settings",
-    //     slug: "startup-configuration-settings",
-    //     icon: <Cog6ToothIcon className="mr-2 h-5 w-5" />,
-    //     children: [],
-    // },
     {
         title: "Startup Optimization & Troubleshooting",
         slug: "startup-troubleshooting",

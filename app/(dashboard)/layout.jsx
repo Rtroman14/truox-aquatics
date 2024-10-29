@@ -11,8 +11,6 @@ export default async function Layout({ children }) {
 
     const isApproved = customer.data.approved;
 
-    console.log(`isApproved -->`, isApproved);
-
     if (!isApproved) {
         return (
             <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
