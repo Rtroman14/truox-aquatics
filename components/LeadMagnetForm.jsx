@@ -17,10 +17,13 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { addLead } from "@/app/actions";
 import { leadMagnetFormSchema } from "@/lib/formSchemas";
+import { usePlausible } from "next-plausible";
 
 const PDF = "/pdfs/understanding-and-addressing-indoor-aquatic-illness-2.pdf";
 
 export default function LeadMagnetForm() {
+    const plausible = usePlausible();
+
     const { toast } = useToast();
     const form = useForm({
         resolver: zodResolver(leadMagnetFormSchema),
@@ -56,6 +59,8 @@ export default function LeadMagnetForm() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+
+        plausible("Download White Paper");
 
         form.reset();
 
@@ -173,11 +178,7 @@ export default function LeadMagnetForm() {
                             )}
                         />
                     </div> */}
-                    <Button
-                        type="submit"
-                        className="w-full plausible-event-name=Download+White+Paper"
-                        disabled={isSubmitting}
-                    >
+                    <Button type="submit" className="w-full" disabled={isSubmitting}>
                         {isSubmitting ? "Loading..." : "Download White Paper"}
                     </Button>
                 </form>
