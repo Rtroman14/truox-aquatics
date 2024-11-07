@@ -48,37 +48,42 @@ export default async function Home() {
                 />
                 <div className="absolute h-full w-screen bg-white/0"></div>
 
-                <div className="container z-20 flex flex-col items-center justify-center">
-                    <div className="grid md:gap-12 gap-8">
-                        <div className="flex justify-center">
-                            <Image
-                                src="/images/logo.png"
-                                alt="Picture of the logo"
-                                width={700}
-                                height={700}
-                            />
-                        </div>
-                        <div className="flex justify-center items-center">
-                            <Image
-                                priority
-                                src={epaLogo}
-                                alt="EPA Approved"
-                                className="h-6 md:h-11 w-auto"
-                            />
-                            <p className="text-3xl md:text-6xl font-bold lg:ml-1 tracking-tighter">
-                                EPA Approved
-                            </p>
-                        </div>
+                <div className="flex justify-center z-50 mb-8">
+                    <Image
+                        src="/images/logo.png"
+                        alt="Picture of the logo"
+                        width={600}
+                        height={600}
+                    />
+                </div>
 
-                        <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] sm:text-6xl md:text-8xl">
+                <div className="container z-20 grid md:grid-cols-2 gap-8 items-center">
+                    {/* Left Column */}
+                    <div className="grid md:gap-12 gap-8">
+                        <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] md:text-7xl">
                             <span className="bg-gradient-to-b from-primary to-black bg-clip-text text-transparent">
                                 Kills 99.9% <span className="italic">Cryptosporidium</span> {"<"}
                                 30min
                             </span>
                         </h1>
 
-                        <div className="flex justify-center">
-                            {/* <BookMeetingBtn variant="primary" /> */}
+                        <div className="flex justify-center items-center">
+                            <Image
+                                priority
+                                src={epaLogo}
+                                alt="EPA Approved"
+                                className="h-7 md:h-11 w-auto"
+                            />
+                            <p className="text-4xl md:text-5xl font-bold lg:ml-1 tracking-tighter">
+                                EPA Approved
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="flex items-center justify-center">
+                        <div className="w-full max-w-md">
+                            <LeadMagnetForm />
                         </div>
                     </div>
                 </div>
@@ -210,18 +215,6 @@ export default async function Home() {
             </section>
 
             <section id="lead-form" className="max-w-screen-md md:pb-32 pb-20 container">
-                <div className="max-w-screen-md mb-8">
-                    <h2 className="text-4xl font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-[53px] mb-5">
-                        Download Our White Paper
-                    </h2>
-                    <p className="text-slate-700">
-                        Get our comprehensive technical report on indoor pool water treatment,
-                        featuring research data on DBP reduction, energy savings, and equipment
-                        protection. Learn how our EPA-approved technology eliminates up to 99.9% of
-                        harmful byproducts while reducing operational costs.
-                    </p>
-                </div>
-
                 <LeadMagnetForm />
             </section>
         </>

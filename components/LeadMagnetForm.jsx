@@ -68,7 +68,18 @@ export default function LeadMagnetForm() {
     };
 
     return (
-        <div className="mx-auto shadow border rounded-lg p-6">
+        <div className="mx-auto shadow border rounded-lg p-6 bg-card">
+            <div className="max-w-screen-md mb-4">
+                <h2 className="text-3xl font-semibold leading-none [text-wrap:balance] md:tracking-tight lg:text-4x mb-3">
+                    Download Our White Paper
+                </h2>
+                <p className="text-slate-700 text-sm">
+                    Download our technical report on indoor pool water treatment. Learn how our
+                    EPA-approved technology eliminates harmful byproducts while reducing operational
+                    costs.
+                </p>
+            </div>
+
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4">
                     <div className="grid grid-cols-12 gap-4">
@@ -123,7 +134,7 @@ export default function LeadMagnetForm() {
                             )}
                         />
                     </div>
-                    <div className="grid gap-2">
+                    {/* <div className="grid gap-2">
                         <FormField
                             control={form.control}
                             name="phone_number"
@@ -161,8 +172,12 @@ export default function LeadMagnetForm() {
                                 </FormItem>
                             )}
                         />
-                    </div>
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    </div> */}
+                    <Button
+                        type="submit"
+                        className="w-full plausible-event-name=Download+White+Paper"
+                        disabled={isSubmitting}
+                    >
                         {isSubmitting ? "Loading..." : "Download White Paper"}
                     </Button>
                 </form>
