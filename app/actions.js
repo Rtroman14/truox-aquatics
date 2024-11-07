@@ -11,6 +11,8 @@ import WebsiteError from "@/emails/website-error";
 
 import { createClient } from "@/lib/supabase/server";
 
+import { leadMagnetFormSchema } from "@/lib/formSchemas";
+
 const contactFormSchema = z.object({
     name: z
         .string()
@@ -157,5 +159,41 @@ export const sendErrorAlert = async ({ func, error }) => {
     } catch (error) {
         console.error("Error sending email:", error);
         return { success: false, error };
+    }
+};
+
+export const addLead = async (values) => {
+    const validatedFields = leadMagnetFormSchema.safeParse(values);
+
+    // Return early if the form data is invalid
+    if (!validatedFields.success) {
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+        };
+    }
+
+    const supabase = await createClient();
+
+    const leadData = {
+        first_name: values.first_name,
+        last_name: values.last_name,
+        email: values.email,
+        phone_number: values.phone_number || null,
+        company: values.company,
+    };
+
+    try {
+        const { data, error } = await supabase.from("leads").insert(leadData).select().single();
+
+        if (error) throw new Error(error.message);
+
+        return { success: true, data };
+    } catch (error) {
+        console.error("Error adding lead:", error);
+        return {
+            success: false,
+            data: null,
+            message: error.message,
+        };
     }
 };
