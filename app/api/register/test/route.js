@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/admin";
 import { NextResponse } from "next/server";
 
 import { Resend } from "resend";
-import RegistrationConfirmationEmail from "@/emails/registration-confirmation";
+import RegistrationConfirmationEmail from "@/lib/emails/registration-confirmation";
 
 const sendRegistrationConfirmation = async ({ action, name }) => {
     try {

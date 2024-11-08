@@ -32,59 +32,59 @@ const dbpCostsImages = [
     },
 ];
 
-export default async function Home() {
+export default function Home() {
     return (
         <>
-            <section className="relative grid min-h-max md:py-28 py-20">
+            <section className="relative min-h-[80vh] py-20 md:py-28">
+                {/* Background Image */}
                 <Image
-                    className="absolute opacity-60"
                     src="/images/pool-background-min.png"
-                    alt="Picture of the water"
+                    alt="Pool background"
                     fill
                     sizes="100vw"
-                    style={{
-                        objectFit: "cover",
-                    }}
+                    className="object-cover opacity-60"
+                    priority
                 />
-                <div className="absolute h-full w-screen bg-white/0"></div>
 
-                <div className="flex justify-center z-50 mb-8">
+                {/* Logo */}
+                <div className="relative z-10 mb-8">
                     <Image
                         src="/images/logo.png"
-                        alt="Picture of the logo"
+                        alt="CryptoLyte logo"
                         width={600}
                         height={600}
+                        className="mx-auto"
+                        priority
                     />
                 </div>
 
-                <div className="container z-20 grid md:grid-cols-2 gap-8 items-center">
-                    {/* Left Column */}
-                    <div className="grid md:gap-12 gap-8">
-                        <h1 className="text-center text-5xl font-semibold tracking-tight text-white [text-wrap:balance] md:text-7xl">
+                {/* Content Container */}
+                <div className="relative grid gap-8 md:grid-cols-2 items-center px-6 sm:px-0">
+                    {/* Hero Content */}
+                    <div className="space-y-8 md:space-y-12">
+                        <h1 className="text-center text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight">
                             <span className="bg-gradient-to-b from-primary to-black bg-clip-text text-transparent">
                                 Kills 99.9% <span className="italic">Cryptosporidium</span> {"<"}
                                 30min
                             </span>
                         </h1>
 
-                        <div className="flex justify-center items-center">
+                        <div className="flex items-center justify-center gap-1">
                             <Image
-                                priority
                                 src={epaLogo}
                                 alt="EPA Approved"
-                                className="h-7 md:h-11 w-auto"
+                                className="h-7 w-auto md:h-11"
+                                priority
                             />
-                            <p className="text-4xl md:text-5xl font-bold lg:ml-1 tracking-tighter">
+                            <p className="text-3xl md:text-5xl font-bold tracking-tighter">
                                 EPA Approved
                             </p>
                         </div>
                     </div>
 
-                    {/* Right Column */}
-                    <div className="flex items-center justify-center">
-                        <div className="w-full max-w-md">
-                            <LeadMagnetForm />
-                        </div>
+                    {/* Lead Form */}
+                    <div className="max-w-md mx-auto w-full">
+                        <LeadMagnetForm />
                     </div>
                 </div>
             </section>
@@ -124,7 +124,7 @@ export default async function Home() {
                 </div>
 
                 <div className="grid grid-cols-12 gap-8 sm:gap-16 md:grid-cols-12">
-                    <div className="col-span-6 grid place-items-center md:mr-12 px-8 md:px-2">
+                    <div className="md:col-span-6 grid place-items-center md:mr-12 px-8 md:px-2">
                         <Carousel
                             opts={{
                                 loop: true,
@@ -133,7 +133,7 @@ export default async function Home() {
                             <CarouselContent>
                                 {dbpCostsImages.map(({ src, alt, title }) => (
                                     <CarouselItem key={alt}>
-                                        <div className="flex flex-col items-center justify-center p-4">
+                                        <div className="flex flex-col items-center justify-center p-0 sm:p-4">
                                             <p className="text-xl font-semibold mb-1">{title}</p>
                                             <picture className="drop-shadow-xl">
                                                 <Image

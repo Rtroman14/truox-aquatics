@@ -8,6 +8,7 @@ import slackNotification from "@/lib/utils/slackNotification";
 
 import NewUserApprovalEmail from "@/emails/new-user-approval";
 import WebsiteError from "@/emails/website-error";
+import DownloadWhitePaperNotification from "@/emails/download-white-paper";
 
 import { createClient } from "@/lib/supabase/server";
 
@@ -173,6 +174,7 @@ export const addLead = async (values) => {
     }
 
     const supabase = await createClient();
+    const resend = new Resend(process.env.RESEND_API);
 
     const leadData = {
         first_name: values.first_name,
@@ -183,13 +185,31 @@ export const addLead = async (values) => {
     };
 
     try {
+        // Add lead to database
         const { data, error } = await supabase.from("leads").insert(leadData).select().single();
-
         if (error) throw new Error(error.message);
+
+        const name = `${values.first_name} ${values.last_name}`;
+
+        // Send notification email
+        const emailResult = await resend.emails.send({
+            from: "Roy <roy@alerts.truox.com>",
+            to: ["ryan@truox.com"], // Replace with the actual admin email
+            subject: `${values.first_name} Downloaded The White Paper`,
+            react: DownloadWhitePaperNotification({ name, email: values.email }),
+        });
+
+        if (emailResult.error) throw new Error(emailResult.error.message);
 
         return { success: true, data };
     } catch (error) {
         console.error("Error adding lead:", error);
+
+        await slackNotification({
+            username: "White Paper Download",
+            text: `ERROR:\n${JSON.stringify(error, null, 4)}\n\nValues: ${values}`,
+        });
+
         return {
             success: false,
             data: null,

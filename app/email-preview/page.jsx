@@ -1,9 +1,9 @@
-import Email from "@/emails/registration-confirmation";
+import Email from "@/emails/download-white-paper";
 
 export default function EmailPreview() {
     return (
         <div>
-            <Email action="approve" name="Ryan" />
+            <Email email="ryan@peakleads.io" name="Ryan" />
         </div>
     );
 }
