@@ -296,7 +296,12 @@ const Calculations = ({ formData, componentRef }) => {
             </div>
 
             <div className="hidden">
-                <ComponentToPrint ref={componentRef}>
+                <ComponentToPrint
+                    ref={componentRef}
+                    title="New System Spec"
+                    siteName={formData.site_name}
+                    companyName={formData.company_name}
+                >
                     <div className="h-screen">
                         <div className="mb-12 w-max">
                             <h3 className="text-xl font-semibold mb-3">Feeder System Sizing</h3>

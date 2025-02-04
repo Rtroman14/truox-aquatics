@@ -14,6 +14,8 @@ import { useReactToPrint } from "react-to-print";
 import StepIndicator from "@/components/StepIndicator";
 import SiteInfoForm from "@/components/SiteInfoForm";
 
+import Logo from "@/components/Logo";
+
 import { insertExistingSystemUpgrade } from "@/app/actions";
 
 const steps = [
@@ -287,7 +289,12 @@ const Calculations = ({ formData, componentRef }) => {
             </div>
 
             <div className="hidden">
-                <ComponentToPrint ref={componentRef}>
+                <ComponentToPrint
+                    ref={componentRef}
+                    title="Existing System Upgrade"
+                    siteName={formData.site_name}
+                    companyName={formData.company_name}
+                >
                     <div className="h-screen">
                         <div className="mb-12 w-max">
                             <h3 className="text-xl font-semibold mb-3">Feeder System Sizing</h3>
@@ -312,7 +319,7 @@ const Calculations = ({ formData, componentRef }) => {
                                 <div>
                                     Cryptolyte® Feed Rate ={" "}
                                     <strong className="underline underline-offset-2">
-                                        {cryptolyteFeedRate}
+                                        {cryptolyteFeedRate.toFixed(2)}
                                     </strong>{" "}
                                     gal/day
                                 </div>
