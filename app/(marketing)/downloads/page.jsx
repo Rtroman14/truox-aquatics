@@ -60,6 +60,24 @@ const resources = [
             "Dive into groundbreaking research on how UV treatment affects the formation of disinfection by-products in swimming pool water, revealing crucial insights for safer and clearer pools.",
         src: "/pdfs/UV formation of THMs in Pools.pdf",
     },
+    {
+        title: "Code Brown Protocol",
+        description:
+            "Learn effective protocols for managing fecal incidents in commercial pools, based on CDC guidelines and best practices. Covers hyperchlorination, treatment options, and Cryptolyte® for rapid Cryptosporidium control.",
+        src: "/pdfs/Code Brown Article 2025 Florida Pool Pro.pdf",
+    },
+    {
+        title: "Indoor Pool Air Quality Guide",
+        description:
+            "Discover how a YMCA in Atlanta solved chronic chloramine issues and improved air quality using Cryptolyte®, reducing eye and skin irritation while maintaining excellent water quality and enabling rapid recovery from fecal releases.",
+        src: "/pdfs/INDOOR Aquafinity Case Study Cryptolyte YMCA Pool_r.pdf",
+    },
+    {
+        title: "MACH Engineering Report",
+        description:
+            "Discover the EPA-approved Cryptolyte® alternative to hyperchlorination for Cryptosporidium remediation, ensuring controlled, documented, and safer pool management.",
+        src: "/pdfs/MAHC ANNEX STATEMENTS - Managers.pdf",
+    },
 ];
 
 export default function DownloadsPage() {
