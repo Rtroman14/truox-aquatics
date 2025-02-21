@@ -324,6 +324,14 @@ const Calculations = ({ formData, componentRef }) => {
                                 </div>
 
                                 <div>
+                                    Cryptolyte® Feed Rate ={" "}
+                                    <strong className="underline underline-offset-2">
+                                        {cryptolyteFeedRate.toFixed(2)}
+                                    </strong>{" "}
+                                    gal/day
+                                </div>
+
+                                <div>
                                     Minimum Booster Pump ={" "}
                                     <strong className="underline underline-offset-2">
                                         {minBoosterPump.toFixed(2)}
