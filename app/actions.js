@@ -9,6 +9,8 @@ import slackNotification from "@/lib/utils/slackNotification";
 import NewUserApprovalEmail from "@/emails/new-user-approval";
 import WebsiteError from "@/emails/website-error";
 import DownloadWhitePaperNotification from "@/emails/download-white-paper";
+import ExistingSystemUpgradeEmail from "@/emails/existing-system-upgrade";
+import NewSystemSpecEmail from "@/emails/new-system-spec";
 
 import { createClient } from "@/lib/supabase/server";
 
@@ -215,5 +217,55 @@ export const addLead = async (values) => {
             data: null,
             message: error.message,
         };
+    }
+};
+
+export const sendExistingSystemUpgradeEmail = async (values) => {
+    try {
+        const resend = new Resend(process.env.RESEND_API);
+
+        const data = await resend.emails.send({
+            from: "Roy <roy@alerts.truox.com>",
+            to: ["ryan@truox.com"], // Replace with the actual admin email
+            subject: "New Existing System Upgrade Submission",
+            react: ExistingSystemUpgradeEmail({
+                siteName: values.site_name,
+                companyName: values.company_name,
+                maxChlorineFeedRate: values.max_chlorine_feed_rate,
+                poolVolume: values.pool_volume,
+                customerName: values.customer_name || "Not provided",
+                customerEmail: values.customer_email || "Not provided",
+            }),
+        });
+
+        return { success: true, data };
+    } catch (error) {
+        console.error("Error sending email:", error);
+        return { success: false, error };
+    }
+};
+
+export const sendNewSystemSpecEmail = async (values) => {
+    try {
+        const resend = new Resend(process.env.RESEND_API);
+
+        const data = await resend.emails.send({
+            from: "Roy <roy@alerts.truox.com>",
+            to: ["ryan@truox.com"], // Replace with the actual admin email
+            subject: "New System Spec Submission",
+            react: NewSystemSpecEmail({
+                siteName: values.site_name,
+                companyName: values.company_name,
+                poolDynamic: values.pool_dynamic,
+                poolVolume: values.pool_volume,
+                customerName: values.customer_name || "Not provided",
+                customerEmail: values.customer_email || "Not provided",
+            }),
+        });
+
+        return { success: true, data };
+    } catch (error) {
+        console.error("Error sending email:", error);
+        return { success: false, error };
     }
 };

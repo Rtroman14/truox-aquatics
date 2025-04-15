@@ -22,7 +22,7 @@ import StepIndicator from "@/components/StepIndicator";
 
 import SiteInfoForm from "@/components/SiteInfoForm";
 
-import { insertNewSystemSpec } from "@/app/actions";
+import { insertNewSystemSpec, sendNewSystemSpecEmail } from "@/app/actions";
 
 const steps = [
     { label: "Site Info", description: "Enter site details" },
@@ -38,6 +38,8 @@ export default function NewSystemForm({ customer }) {
         company_name: customer ? customer.company_name : "",
         pool_dynamic: "",
         pool_volume: "",
+        customer_name: customer ? `${customer.first_name} ${customer.last_name}` : "",
+        customer_email: customer ? customer.email : "",
     });
     const componentRef = useRef();
 
@@ -50,6 +52,10 @@ export default function NewSystemForm({ customer }) {
         console.log("formData", formData);
 
         await insertNewSystemSpec(formData);
+
+        // Send email notification
+        await sendNewSystemSpecEmail(formData);
+
         setLoading(false);
 
         handlePrint();

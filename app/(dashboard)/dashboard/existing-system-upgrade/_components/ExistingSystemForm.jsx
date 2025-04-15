@@ -16,7 +16,7 @@ import SiteInfoForm from "@/components/SiteInfoForm";
 
 import Logo from "@/components/Logo";
 
-import { insertExistingSystemUpgrade } from "@/app/actions";
+import { insertExistingSystemUpgrade, sendExistingSystemUpgradeEmail } from "@/app/actions";
 
 const steps = [
     { label: "Site Info", description: "Enter site details" },
@@ -32,6 +32,8 @@ export default function Component({ customer }) {
         company_name: customer ? customer.company_name : "",
         max_chlorine_feed_rate: "",
         pool_volume: "",
+        customer_name: customer ? customer.name : "",
+        customer_email: customer ? customer.email : "",
     });
     const componentRef = useRef();
 
@@ -41,9 +43,12 @@ export default function Component({ customer }) {
 
     const handleSubmit = async () => {
         setLoading(true);
-        console.log("formData", formData);
 
         await insertExistingSystemUpgrade(formData);
+
+        // Send email notification
+        await sendExistingSystemUpgradeEmail(formData);
+
         setLoading(false);
 
         handlePrint();
