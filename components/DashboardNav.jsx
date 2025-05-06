@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     ChevronDownIcon,
     ChevronUpIcon,
@@ -20,11 +20,19 @@ import {
     BeakerIcon,
     ExclamationTriangleIcon,
     ClipboardDocumentCheckIcon,
+    ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { createClient } from "@/lib/supabase/client";
 
-const tabs = [
+const adminUserIds = [
+    "03841b00-7050-4835-b263-041d394bae4a",
+    "31bf6f6a-afb3-430b-b914-b0c8d87fca7c",
+    "73e65e07-d19e-4e71-a7bb-0b177244d5f4",
+];
+
+const baseTabs = [
     {
         title: "Tutorial - Using the Distributor Portal",
         slug: "training-videos",
@@ -130,6 +138,13 @@ const tabs = [
     },
 ];
 
+const adminTab = {
+    title: "Admin",
+    slug: "admin",
+    icon: <ShieldCheckIcon className="mr-2 h-5 w-5" />,
+    children: [],
+};
+
 const selectedClass = "group flex items-center rounded p-2 bg-primary/20 text-primary";
 const defaultClass =
     "group flex items-center rounded p-2 text-nav-foreground hover:bg-primary/20 hover:text-primary";
@@ -137,11 +152,28 @@ const defaultClass =
 export default function DashboardNav() {
     const pathname = usePathname();
     const slug = pathname.split("dashboard").pop();
-
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [tabs, setTabs] = useState(baseTabs);
     const [expand, setExpand] = useState([]);
+    const supabase = createClient();
+
+    useEffect(() => {
+        async function checkIfAdmin() {
+            const {
+                data: { user },
+            } = await supabase.auth.getUser();
+
+            if (user && adminUserIds.includes(user.id)) {
+                setIsAdmin(true);
+                setTabs([...baseTabs, adminTab]);
+            }
+        }
+
+        checkIfAdmin();
+    }, []);
 
     const tabSlugs = tabs.map((tab) => tab.slug);
-    let newActiveTab = tabSlugs.find((tablSlug) => slug.includes(tablSlug));
+    let newActiveTab = tabSlugs.find((tabSlug) => slug.includes(tabSlug));
 
     if (!newActiveTab) {
         newActiveTab = "Installation Diagrams";
