@@ -206,7 +206,7 @@ const Calculations = ({ formData, componentRef }) => {
         const chlorineFeedRateVal = cryptolyteFeedRateVal / 0.75;
         setChlorineFeedRate(chlorineFeedRateVal);
 
-        const minBoosterPumpVal = cryptolyteFeedRateVal / 10;
+        const minBoosterPumpVal = cryptolyteFeedRateVal / 30;
         setMinBoosterPump(minBoosterPumpVal);
 
         setMuriaticAcidFeedRate(cryptolyteFeedRateVal * 0.65);

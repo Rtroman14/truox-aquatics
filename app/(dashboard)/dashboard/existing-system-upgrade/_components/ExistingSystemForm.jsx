@@ -198,7 +198,7 @@ const Calculations = ({ formData, componentRef }) => {
     useEffect(() => {
         const cryptoLyteFeedRateVal = formData.max_chlorine_feed_rate * 0.75;
         setCryptolyteFeedRate(cryptoLyteFeedRateVal);
-        setMinBoosterPump(cryptoLyteFeedRateVal / 10);
+        setMinBoosterPump(cryptoLyteFeedRateVal / 30);
 
         const pd1Val = cryptoLyteFeedRateVal * 593.14;
         const pd2Val = formData.pool_volume * 3.785;
