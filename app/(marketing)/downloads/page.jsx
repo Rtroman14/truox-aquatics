@@ -11,10 +11,16 @@ export const metadata = {
 
 const resources = [
     {
-        title: "Restoring Indoor Pool Quality at South Carolina YMCA using Cryptolyte®",
+        title: "Case Study: Restoring Indoor Pool Quality at South Carolina YMCA using Cryptolyte®",
         description:
             "A 2024 pilot at a 120,000‑gallon YMCA indoor pool reveals how an integrated Cryptolyte® control system eradicated chloramines, trimmed chlorine use, and cut fecal‑incident shutdowns from a full day to just 90 minutes—delivering consistently clean water and healthy air even at peak swimmer loads.",
         src: "/pdfs/South-Carolina-YMCA-Case-Study.pdf",
+    },
+    {
+        title: "Case Study: Transforming Air & Water Quality at Atlanta YMCA using Cryptolyte®",
+        description:
+            "February 2024 pilot at a 125 k‑gallon Atlanta YMCA indoor pool: Cryptolyte® drove combined chlorine from 1.5 ppm to 0, slashed fecal‑incident shutdowns from 10–20 hours to 90 minutes, and reduced ongoing chemical use while clearing the air.",
+        src: "/pdfs/INDOOR Aquafinity Case Study Cryptolyte YMCA Pool_r.pdf",
     },
     {
         title: "CDC: Outbreaks Associated with Untreated Recreational Water in the U.S. (2000–2014)",
