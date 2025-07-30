@@ -11,7 +11,12 @@ export const metadata = {
 
 const resources = [
     {
-        // title: "CDC Study 2018",
+        title: "Restoring Indoor Pool Quality at South Carolina YMCA using Cryptolyte®",
+        description:
+            "A 2024 pilot at a 120,000‑gallon YMCA indoor pool reveals how an integrated Cryptolyte® control system eradicated chloramines, trimmed chlorine use, and cut fecal‑incident shutdowns from a full day to just 90 minutes—delivering consistently clean water and healthy air even at peak swimmer loads.",
+        src: "/pdfs/South-Carolina-YMCA-Case-Study.pdf",
+    },
+    {
         title: "CDC: Outbreaks Associated with Untreated Recreational Water in the U.S. (2000–2014)",
         description:
             "A comprehensive report on public health data detailing 140 outbreaks in untreated recreational waters in the United States, highlighting causes, impacted populations, and preventative measures.",

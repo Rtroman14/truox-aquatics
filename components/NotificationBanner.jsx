@@ -26,13 +26,13 @@ export default function NotificationBanner() {
             <div className="container flex items-center justify-center w-full gap-x-6 py-2.5 text-sm">
                 <div className="flex items-center gap-x-4">
                     <p>
-                        <span className="font-semibold">New Case Study:</span> How a YMCA solved
-                        chronic chloramine issues using Cryptolyte®
+                        <span className="font-semibold">New Case Study:</span> Restoring Indoor Pool
+                        Quality at South Carolina YMCA using Cryptolyte®
                     </p>
 
                     <Button variant="outline" className="text-primary" size="xs" asChild>
                         <Link
-                            href="/pdfs/INDOOR Aquafinity Case Study Cryptolyte YMCA Pool_r.pdf"
+                            href="/pdfs/South-Carolina-YMCA-Case-Study.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
