@@ -32,8 +32,7 @@ export default function Component({ customer }) {
         company_name: customer ? customer.company_name : "",
         max_chlorine_feed_rate: "",
         pool_volume: "",
-        customer_name: customer ? customer.name : "",
-        customer_email: customer ? customer.email : "",
+        customer_id: customer.id,
     });
     const componentRef = useRef();
 
@@ -44,10 +43,18 @@ export default function Component({ customer }) {
     const handleSubmit = async () => {
         setLoading(true);
 
+        // Save to DB
         await insertExistingSystemUpgrade(formData);
 
-        // Send email notification
-        await sendExistingSystemUpgradeEmail(formData);
+        // Send email notification with customer details
+        const emailValues = {
+            ...formData,
+            customer_name: customer
+                ? `${customer.first_name || ""} ${customer.last_name || ""}`.trim()
+                : "",
+            customer_email: (customer && customer.email) || "",
+        };
+        await sendExistingSystemUpgradeEmail(emailValues);
 
         setLoading(false);
 

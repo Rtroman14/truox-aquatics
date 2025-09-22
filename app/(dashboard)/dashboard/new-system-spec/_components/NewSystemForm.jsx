@@ -38,8 +38,9 @@ export default function NewSystemForm({ customer }) {
         company_name: customer ? customer.company_name : "",
         pool_dynamic: "",
         pool_volume: "",
-        customer_name: customer ? `${customer.first_name} ${customer.last_name}` : "",
-        customer_email: customer ? customer.email : "",
+        customer_id: customer.id,
+        // customer_name: customer ? `${customer.first_name} ${customer.last_name}` : "",
+        // customer_email: customer ? customer.email : "",
     });
     const componentRef = useRef();
 
@@ -49,12 +50,18 @@ export default function NewSystemForm({ customer }) {
 
     const handleSubmit = async () => {
         setLoading(true);
-        console.log("formData", formData);
 
         await insertNewSystemSpec(formData);
 
-        // Send email notification
-        await sendNewSystemSpecEmail(formData);
+        // Send email notification with customer details
+        const emailValues = {
+            ...formData,
+            customer_name: customer
+                ? `${customer.first_name || ""} ${customer.last_name || ""}`.trim()
+                : "",
+            customer_email: (customer && customer.email) || "",
+        };
+        await sendNewSystemSpecEmail(emailValues);
 
         setLoading(false);
 

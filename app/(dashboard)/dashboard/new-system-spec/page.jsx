@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function NewSystemPage() {
-    const { success, data } = await fetchCustomer("company_name, first_name, last_name, email");
+    const { success, data } = await fetchCustomer("id, company_name, first_name, last_name, email");
 
     return (
         <div className="grid min-h-screen grid-cols-1 gap-24 container">
