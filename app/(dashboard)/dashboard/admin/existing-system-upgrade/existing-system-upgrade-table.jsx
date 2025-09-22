@@ -126,7 +126,17 @@ export function ExistingSystemUpgradeTable({ data }) {
         },
         {
             accessorKey: "created_at",
-            header: "Created At",
+            header: ({ column }) => {
+                return (
+                    <Button
+                        variant="ghost"
+                        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                    >
+                        Created At
+                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                    </Button>
+                );
+            },
             cell: ({ row }) => (
                 <div>{new Date(row.getValue("created_at")).toLocaleDateString()}</div>
             ),

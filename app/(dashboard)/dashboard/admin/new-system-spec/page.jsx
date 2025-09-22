@@ -8,7 +8,8 @@ export default async function NewSystemSpecPage() {
 
     const { data: newSystemSpecs, error } = await supabase
         .from("new_system_spec")
-        .select("*, customer_id(first_name, last_name, email)");
+        .select("*, customer_id(first_name, last_name, email)")
+        .order("created_at", { ascending: false });
 
     if (error) {
         console.error("Error fetching new system specs:", error);

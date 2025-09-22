@@ -46,6 +46,8 @@ export default function Component({ customer }) {
         // Save to DB
         await insertExistingSystemUpgrade(formData);
 
+        return;
+
         // Send email notification with customer details
         const emailValues = {
             ...formData,

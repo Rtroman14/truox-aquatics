@@ -53,6 +53,8 @@ export default function NewSystemForm({ customer }) {
 
         await insertNewSystemSpec(formData);
 
+        return;
+
         // Send email notification with customer details
         const emailValues = {
             ...formData,

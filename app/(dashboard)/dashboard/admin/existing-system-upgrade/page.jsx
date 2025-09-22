@@ -8,7 +8,8 @@ export default async function ExistingSystemUpgradePage() {
 
     const { data: existingSystemUpgrades, error } = await supabase
         .from("existing_system_upgrade")
-        .select("*, customer_id(first_name, last_name, email)");
+        .select("*, customer_id(first_name, last_name, email)")
+        .order("created_at", { ascending: false });
 
     if (error) {
         console.error("Error fetching existing system upgrades:", error);
